@@ -76,11 +76,27 @@ function MainTabs() {
   );
 }
 
+// Configuração de rotas para a Web (GitHub Pages)
+const linking = {
+  prefixes: ['https://tiagof6.github.io/Help-multas/', 'Help-multas://'],
+  config: {
+    screens: {
+      Infrações: {
+        screens: {
+          Home: '',
+          Detail: 'detalhe',
+        }
+      },
+      "Consulta Placa": 'placa',
+    }
+  }
+};
+
 // Navegação Principal com Hack Absoluto para o Rodapé
 export default function App() {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer linking={linking}>
         <StatusBar style="light" />
         <View style={{ flex: 1, backgroundColor: '#0f172a' }}>
           <MainTabs />

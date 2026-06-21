@@ -77,7 +77,18 @@ export default function DetailScreen() {
           <Text style={styles.sectionContent}>{infraction.competencia}</Text>
         </View>
 
-        {/* O campo de observações foi removido do MBFT extraído */}
+        {infraction.exemplosObservacao && infraction.exemplosObservacao.length > 0 && (
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Exemplos de Observação (Toque para copiar)</Text>
+            {infraction.exemplosObservacao.map((ex, index) => (
+              <TouchableOpacity key={index} style={styles.exampleCard} onPress={() => copyToClipboard(ex)}>
+                <Text style={styles.exampleText}>"{ex}"</Text>
+                <Text style={styles.copyHint}>📋 Copiar</Text>
+              </TouchableOpacity>
+            ))}
+            {copied && <Text style={styles.copiedFeedback}>✅ Copiado para a área de transferência!</Text>}
+          </View>
+        )}
 
       </ScrollView>
     </SafeAreaView>
@@ -215,5 +226,34 @@ const styles = StyleSheet.create({
     color: '#451a03',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  exampleCard: {
+    backgroundColor: '#0f172a',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#334155',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  exampleText: {
+    fontSize: 15,
+    color: '#cbd5e1',
+    flex: 1,
+    fontStyle: 'italic',
+    marginRight: 10,
+  },
+  copyHint: {
+    fontSize: 12,
+    color: '#10b981',
+    fontWeight: 'bold',
+  },
+  copiedFeedback: {
+    color: '#10b981',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 8,
   }
 });

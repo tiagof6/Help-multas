@@ -12,6 +12,7 @@ export default function QuickDraftScreen() {
   const [address, setAddress] = useState('Buscando endereço...');
   const [placa, setPlaca] = useState('');
   const [observacao, setObservacao] = useState('');
+  const [numeroResidencia, setNumeroResidencia] = useState('S/N');
   const [loading, setLoading] = useState(true);
   
   // New States
@@ -163,6 +164,11 @@ export default function QuickDraftScreen() {
       alert("Aviso: Digite a Placa ou grave um áudio antes de salvar.");
       return;
     }
+    
+    if (!observacao.trim() && !audioUri) {
+      alert("Aviso: O campo de Observação é obrigatório para registrar a infração. Descreva a situação ou grave um áudio.");
+      return;
+    }
 
     if (placa.trim()) {
       // Regex para validar placa Antiga (ABC1234) ou Mercosul (ABC1D23)
@@ -181,7 +187,7 @@ export default function QuickDraftScreen() {
     }
 
     const textFormat = `PLACA: ${placa.toUpperCase()}
-LOCAL EXATO: ${address}${mapsLink}
+LOCAL EXATO: ${address}, N° ${numeroResidencia}${mapsLink}
 HORÁRIO: ${currentData}
 OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
 
@@ -240,6 +246,14 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
              onChangeText={setAddress}
              multiline
              editable={!loading}
+          />
+          <Text style={styles.labelSmall}>Nº da Residência / Ponto de Referência</Text>
+          <TextInput
+             style={styles.gpsInput}
+             value={numeroResidencia}
+             onChangeText={setNumeroResidencia}
+             placeholder="Ex: S/N"
+             placeholderTextColor="#64748b"
           />
           <TouchableOpacity style={styles.mapBtn} onPress={openMap} disabled={loading || !location}>
             <Text style={styles.mapBtnText}>📍 Abrir no Mapa</Text>
@@ -316,6 +330,7 @@ const styles = StyleSheet.create({
   gpsCard: { backgroundColor: '#1e293b', padding: 15, borderRadius: 10, marginBottom: 20, borderWidth: 1, borderColor: '#334155' },
   gpsTitle: { color: '#f8fafc', fontSize: 16, fontWeight: 'bold', marginBottom: 2 },
   gpsSubTitle: { color: '#64748b', fontSize: 12, marginBottom: 10 },
+  labelSmall: { color: '#e2e8f0', fontSize: 14, fontWeight: 'bold', marginBottom: 6 },
   gpsText: { color: '#94a3b8', fontSize: 14, marginBottom: 15 },
   gpsInput: { color: '#e2e8f0', fontSize: 14, marginBottom: 15, backgroundColor: '#0f172a', padding: 10, borderRadius: 6, minHeight: 45, textAlignVertical: 'center', borderWidth: 1, borderColor: '#334155' },
   mapBtn: { backgroundColor: '#3b82f6', padding: 10, borderRadius: 8, alignItems: 'center' },

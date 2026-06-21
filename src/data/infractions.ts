@@ -10,6 +10,7 @@ export interface Infraction {
   medidaAdministrativa: string;
   competencia: string;
   infrator: string;
+  exemplosObservacao?: string[];
 }
 
 export const infractionsData: Infraction[] = [
@@ -24,7 +25,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não aplicável",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "751-02",
@@ -37,7 +44,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não aplicável",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "752-81",
@@ -50,7 +63,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não aplicável",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "752-82",
@@ -63,7 +82,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não aplicável",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "501-00",
@@ -76,7 +101,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "502-91",
@@ -89,7 +120,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e retenção do veículo até a apresentação de condutor habilitado. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "502-92",
@@ -102,7 +139,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e retenção do veículo até a apresentação de condutor habilitado. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "503-71",
@@ -115,7 +158,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "503-72",
@@ -128,7 +177,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "505-31",
@@ -141,7 +196,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até o saneamento da irregularidade ou apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "505-32",
@@ -154,7 +215,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até o saneamento da irregularidade ou apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "505-33",
@@ -167,7 +234,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até o saneamento da irregularidade ou apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "505-34",
@@ -180,7 +253,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até o saneamento da irregularidade ou apresentação de condutor habilitado. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "774-91",
@@ -193,7 +272,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "774-92",
@@ -206,7 +291,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "506-10",
@@ -219,7 +310,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "507-01",
@@ -232,7 +329,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "507-02",
@@ -245,7 +348,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "508-81",
@@ -258,7 +367,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "508-82",
@@ -271,7 +386,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "509-60",
@@ -284,7 +405,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "510-01",
@@ -297,7 +424,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "510-02",
@@ -310,7 +443,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "510-03",
@@ -323,7 +462,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "510-04",
@@ -336,7 +481,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "777-31",
@@ -349,7 +500,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "777-32",
@@ -362,7 +519,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "511-80",
@@ -375,7 +538,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "512-61",
@@ -388,7 +557,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "512-62",
@@ -401,7 +576,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "513-41",
@@ -414,7 +595,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "513-42",
@@ -427,7 +614,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "514-20",
@@ -440,7 +633,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "515-01",
@@ -453,7 +652,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "515-02",
@@ -466,7 +671,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "515-03",
@@ -479,7 +690,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "515-04",
@@ -492,7 +709,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "778-11",
@@ -505,7 +728,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "778-12",
@@ -518,7 +747,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação de condutor habilitado. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "516-92",
@@ -531,7 +766,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10 vezes) e suspensão do direito de dirigir por 12 (doze) meses.",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e retenção do veículo, observado o disposto no § 4º do art. 270 do CTB. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor apresentou sinais notórios de embriaguez: hálito etílico e fala alterada.",
+      "Condutor recusou-se a realizar o teste do etilômetro (bafômetro).",
+      "Teste do etilômetro realizado com resultado positivo para alcoolemia.",
+      "Condutor encaminhado à delegacia devido ao alto teor alcoólico constatado."
+    ]
   },
   {
     "id": "757-90",
@@ -544,7 +785,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10X) e suspensão do direito de dirigir por 12 (doze) meses",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e retenção do veículo, observado o disposto no § 4º do art. 270. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "764-10",
@@ -557,7 +804,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X) e suspensão do direito de dirigir por 3 (três) meses.",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "765-00",
@@ -570,7 +823,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X) e suspensão do direito de dirigir por 3 (três) meses.",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "517-70",
@@ -583,7 +842,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "518-51",
@@ -596,7 +861,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a colocação do cinto pelo infrator (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor visualizado conduzindo o veículo em via pública sem o uso do cinto de segurança.",
+      "Passageiro do banco dianteiro direito sem utilizar o cinto de segurança no momento da abordagem.",
+      "Passageiro do banco traseiro não utilizava o cinto de segurança.",
+      "Condutor não utilizava cinto de segurança. Abordagem não realizada por motivo de segurança."
+    ]
   },
   {
     "id": "518-52",
@@ -609,7 +880,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a colocação do cinto pelo infrator. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor visualizado conduzindo o veículo em via pública sem o uso do cinto de segurança.",
+      "Passageiro do banco dianteiro direito sem utilizar o cinto de segurança no momento da abordagem.",
+      "Passageiro do banco traseiro não utilizava o cinto de segurança.",
+      "Condutor não utilizava cinto de segurança. Abordagem não realizada por motivo de segurança."
+    ]
   },
   {
     "id": "520-70",
@@ -622,7 +899,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "521-51",
@@ -635,7 +918,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo e recolhimento do documento de habilitação. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "521-52",
@@ -648,7 +937,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo e recolhimento do documento de habilitação. (Vide Parte Geral deste Código).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "522-31",
@@ -661,7 +956,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "522-32",
@@ -674,7 +975,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "523-11",
@@ -687,7 +994,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "523-12",
@@ -700,7 +1013,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "524-00",
@@ -713,7 +1032,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10x) Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "525-81",
@@ -726,7 +1051,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10X)",
     "medidaAdministrativa": "Não Aplicável",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoas Física ou Jurídica"
+    "infrator": "Pessoas Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "525-82",
@@ -739,7 +1070,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10X)",
     "medidaAdministrativa": "Não Aplicável",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoas Física ou Jurídica"
+    "infrator": "Pessoas Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "525-83",
@@ -752,7 +1089,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10X)",
     "medidaAdministrativa": "Não Aplicável",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoas Física ou Jurídica"
+    "infrator": "Pessoas Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "526-61",
@@ -765,7 +1108,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10X) suspensão do direito de dirigir",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e remoção do veículo (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "526-62",
@@ -778,7 +1127,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10X) e suspensão do direito de dirigir.",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e remoção do veículo (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "526-63",
@@ -791,7 +1146,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10X) e suspensão do direito de dirigir.",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e remoção do veículo (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "527-41",
@@ -804,7 +1165,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (dez vezes), suspensão do direito de dirigir",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e remoção do veículo. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "527-42",
@@ -817,7 +1184,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (dez vezes), suspensão do direito de dirigir",
     "medidaAdministrativa": "Recolhimento do documento de habilitação e remoção do veículo. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "528-20",
@@ -830,7 +1203,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X) e Suspensão do direito de dirigir",
     "medidaAdministrativa": "Recolhimento do Documento de Habilitação.",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "529-00",
@@ -843,7 +1222,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X) e Suspensão do direito de dirigir",
     "medidaAdministrativa": "Recolhimento do Documento de Habilitação. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "530-40",
@@ -856,7 +1241,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X) e Suspensão do direito de dirigir",
     "medidaAdministrativa": "",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "531-20",
@@ -869,7 +1260,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X) e Suspensão do direito de dirigir",
     "medidaAdministrativa": "Recolhimento do Documento de Habilitação. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "532-00",
@@ -882,7 +1279,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X e Suspensão do direito de dirigir)",
     "medidaAdministrativa": "Recolhimento do Documento de Habilitação.",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "533-90",
@@ -895,7 +1298,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "534-70",
@@ -908,7 +1317,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "535-50",
@@ -921,7 +1336,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "536-30",
@@ -934,7 +1355,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "537-10",
@@ -947,7 +1374,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "538-00",
@@ -960,7 +1393,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "539-80",
@@ -973,7 +1412,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "540-10",
@@ -986,7 +1431,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "541-00",
@@ -999,7 +1450,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "542-81",
@@ -1012,7 +1469,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "542-82",
@@ -1025,7 +1488,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "542-83",
@@ -1038,7 +1507,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "542-84",
@@ -1051,7 +1526,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "543-60",
@@ -1064,7 +1545,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "544-40",
@@ -1077,7 +1564,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "545-21",
@@ -1090,7 +1583,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "545-22",
@@ -1103,7 +1602,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "545-23",
@@ -1116,7 +1621,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "545-24",
@@ -1129,7 +1640,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "545-25",
@@ -1142,7 +1659,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "545-26",
@@ -1155,7 +1678,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "545-27",
@@ -1168,7 +1697,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "546-00",
@@ -1181,7 +1716,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "547-90",
@@ -1194,7 +1735,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "548-70",
@@ -1207,7 +1754,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "549-50",
@@ -1220,7 +1773,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "550-90",
@@ -1233,7 +1792,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "551-72",
@@ -1246,7 +1811,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "551-73",
@@ -1259,7 +1830,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "552-50",
@@ -1272,7 +1849,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "553-30",
@@ -1285,7 +1868,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "554-11",
@@ -1298,7 +1887,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "554-12",
@@ -1311,7 +1906,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "554-13",
@@ -1324,7 +1925,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "554-14",
@@ -1337,7 +1944,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "554-17",
@@ -1350,7 +1963,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "555-00",
@@ -1363,7 +1982,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou entidade de trânsito municipal e rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "556-80",
@@ -1376,7 +2001,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo. (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "762-51",
@@ -1389,7 +2020,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "762-52",
@@ -1402,7 +2039,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo estacionado em local proibido pela sinalização, condutor ausente.",
+      "Veículo flagrado estacionado de forma irregular, prejudicando a fluidez do trânsito.",
+      "Autuação feita por constatação visual, veículo estacionado sobre a calçada.",
+      "Condutor estacionou o veículo em área de cruzamento e ausentou-se do local."
+    ]
   },
   {
     "id": "557-60",
@@ -1415,7 +2058,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "558-40",
@@ -1428,7 +2077,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "559-20",
@@ -1441,7 +2096,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "560-60",
@@ -1454,7 +2115,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "561-41",
@@ -1467,7 +2134,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "561-42",
@@ -1480,7 +2153,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "561-43",
@@ -1493,7 +2172,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou entidade de trânsito municipal e rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "561-44",
@@ -1506,7 +2191,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "562-21",
@@ -1519,7 +2210,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "562-22",
@@ -1532,7 +2229,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "562-23",
@@ -1545,7 +2248,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "562-24",
@@ -1558,7 +2267,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "562-25",
@@ -1571,7 +2286,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "563-00",
@@ -1584,7 +2305,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "564-91",
@@ -1597,7 +2324,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "564-92",
@@ -1610,7 +2343,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "564-93",
@@ -1623,7 +2362,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "565-70",
@@ -1636,7 +2381,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "767-00",
@@ -1649,7 +2400,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "568-10",
@@ -1662,7 +2419,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "569-00",
@@ -1675,7 +2438,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "758-70",
@@ -1688,7 +2457,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "570-30",
@@ -1701,7 +2476,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "571-10",
@@ -1714,7 +2495,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "572-00",
@@ -1727,7 +2514,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "573-80",
@@ -1740,7 +2533,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "574-61",
@@ -1753,7 +2552,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "574-62",
@@ -1766,7 +2571,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "574-63",
@@ -1779,7 +2590,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "576-20",
@@ -1792,7 +2609,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "577-01",
@@ -1805,7 +2628,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "577-02",
@@ -1818,7 +2647,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "577-03",
@@ -1831,7 +2666,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "577-04",
@@ -1844,7 +2685,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "577-05",
@@ -1857,7 +2704,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "578-90",
@@ -1870,7 +2723,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "579-70",
@@ -1883,7 +2742,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (10x) e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "580-00",
@@ -1896,7 +2761,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-91",
@@ -1909,7 +2780,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-92",
@@ -1922,7 +2799,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-93",
@@ -1935,7 +2818,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-94",
@@ -1948,7 +2837,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-95",
@@ -1961,7 +2856,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-96",
@@ -1974,7 +2875,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-97",
@@ -1987,7 +2894,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "581-98",
@@ -2000,7 +2913,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "582-70",
@@ -2013,7 +2932,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "583-50",
@@ -2026,7 +2951,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "584-31",
@@ -2039,7 +2970,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "584-32",
@@ -2052,7 +2989,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "584-33",
@@ -2065,7 +3008,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "584-34",
@@ -2078,7 +3027,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "585-11",
@@ -2091,7 +3046,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "585-12",
@@ -2104,7 +3065,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "586-00",
@@ -2117,7 +3084,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "587-80",
@@ -2130,7 +3103,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "588-60",
@@ -2143,7 +3122,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "589-40",
@@ -2156,7 +3141,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "590-80",
@@ -2169,7 +3160,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "591-61",
@@ -2182,7 +3179,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "591-62",
@@ -2195,7 +3198,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "592-41",
@@ -2208,7 +3217,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "592-42",
@@ -2221,7 +3236,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "593-20",
@@ -2234,7 +3255,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "594-02",
@@ -2247,7 +3274,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "594-03",
@@ -2260,7 +3293,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "595-91",
@@ -2273,7 +3312,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "595-92",
@@ -2286,7 +3331,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "595-93",
@@ -2299,7 +3350,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "595-94",
@@ -2312,7 +3369,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "596-70",
@@ -2325,7 +3388,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5x)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo flagrado transitando na contramão de direção em via de sentido único.",
+      "Condutor realizou manobra ingressando na contramão da via.",
+      "Veículo transitando na contramão em trecho com linha de divisão amarela contínua.",
+      "Constatado trânsito em contramão, prejudicando a segurança dos demais veículos."
+    ]
   },
   {
     "id": "597-50",
@@ -2338,7 +3407,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "598-30",
@@ -2351,7 +3426,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "601-71",
@@ -2364,7 +3445,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "601-72",
@@ -2377,7 +3464,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "601-73",
@@ -2390,7 +3483,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "601-74",
@@ -2403,7 +3502,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "601-75",
@@ -2416,7 +3521,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "601-76",
@@ -2429,7 +3540,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "604-11",
@@ -2442,7 +3559,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "604-12",
@@ -2455,7 +3578,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "605-01",
@@ -2468,7 +3597,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "605-02",
@@ -2481,7 +3616,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "606-81",
@@ -2494,7 +3635,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "606-82",
@@ -2507,7 +3654,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "606-85",
@@ -2520,7 +3673,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "773-01",
@@ -2533,7 +3692,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "773-02",
@@ -2546,7 +3711,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "607-60",
@@ -2559,7 +3730,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e suspensão do direito de dirigir",
     "medidaAdministrativa": "Remoção do veículo e recolhimento do documento de habilitação (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "608-42",
@@ -2572,7 +3749,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "608-43",
@@ -2585,7 +3768,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "608-44",
@@ -2598,7 +3787,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "609-20",
@@ -2611,7 +3806,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "610-60",
@@ -2624,7 +3825,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "611-40",
@@ -2637,7 +3844,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "612-20",
@@ -2650,7 +3863,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "613-00",
@@ -2663,7 +3882,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "614-90",
@@ -2676,7 +3901,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "615-70",
@@ -2689,7 +3920,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou entidade de trânsito Estadual, Municipal e Rodoviário Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "616-50",
@@ -2702,7 +3939,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou entidade de trânsito Estadual, Municipal e Rodoviário Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "617-31",
@@ -2715,7 +3958,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "617-32",
@@ -2728,7 +3977,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou entidade de trânsito Estadual, Municipal e Rodoviário Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "617-33",
@@ -2741,7 +3996,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "618-10",
@@ -2754,7 +4015,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "619-00",
@@ -2767,7 +4034,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "620-30",
@@ -2780,7 +4053,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "745-50",
@@ -2793,7 +4072,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "746-30",
@@ -2806,7 +4091,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "747-10",
@@ -2819,7 +4110,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (três vezes), suspensão do direito de dirigir",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "625-40",
@@ -2832,7 +4129,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "626-20",
@@ -2845,7 +4148,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "627-00",
@@ -2858,7 +4167,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "628-91",
@@ -2871,7 +4186,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "628-92",
@@ -2884,7 +4205,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "629-70",
@@ -2897,7 +4224,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "630-00",
@@ -2910,7 +4243,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "631-90",
@@ -2923,7 +4262,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "632-70",
@@ -2936,7 +4281,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "NÃO",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "633-50",
@@ -2949,7 +4300,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "634-30",
@@ -2962,7 +4319,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "635-10",
@@ -2975,7 +4338,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "636-00",
@@ -2988,7 +4357,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "637-80",
@@ -3001,7 +4376,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "638-60",
@@ -3014,7 +4395,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "639-41",
@@ -3027,7 +4414,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "639-42",
@@ -3040,7 +4433,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "639-43",
@@ -3053,7 +4452,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "",
     "medidaAdministrativa": "",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "639-44",
@@ -3066,7 +4471,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "641-60",
@@ -3079,7 +4490,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização e apreensão das placas irregulares (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "642-40",
@@ -3092,7 +4509,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "643-21",
@@ -3105,7 +4528,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "643-22",
@@ -3118,7 +4547,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "644-00",
@@ -3131,7 +4566,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "645-91",
@@ -3144,7 +4585,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "645-92",
@@ -3157,7 +4604,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "646-70",
@@ -3170,7 +4623,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "647-50",
@@ -3183,7 +4642,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "648-30",
@@ -3196,7 +4661,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "649-10",
@@ -3209,7 +4680,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "650-50",
@@ -3222,7 +4699,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "651-30",
@@ -3235,7 +4718,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "652-10",
@@ -3248,7 +4737,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "653-00",
@@ -3261,7 +4756,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "654-80",
@@ -3274,7 +4775,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "655-61",
@@ -3287,7 +4794,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual ou Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "655-62",
@@ -3300,7 +4813,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual ou Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "655-63",
@@ -3313,7 +4832,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual ou Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "655-64",
@@ -3326,7 +4851,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual ou Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "655-65",
@@ -3339,7 +4870,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual ou Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "656-40",
@@ -3352,7 +4889,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "657-20",
@@ -3365,7 +4908,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "658-00",
@@ -3378,7 +4927,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "659-91",
@@ -3391,7 +4946,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "659-92",
@@ -3404,7 +4965,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "660-20",
@@ -3417,7 +4984,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "661-01",
@@ -3430,7 +5003,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "661-02",
@@ -3443,7 +5022,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "662-90",
@@ -3456,7 +5041,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do Veículo para Regularização (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "663-71",
@@ -3469,7 +5060,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para Regularização (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "663-72",
@@ -3482,7 +5079,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para Regularização (Vide Parte a Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "664-50",
@@ -3495,7 +5098,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para Regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "665-31",
@@ -3508,7 +5117,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para Regularização (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "665-32",
@@ -3521,7 +5136,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para Regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "666-10",
@@ -3534,7 +5155,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "667-00",
@@ -3547,7 +5174,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "668-80",
@@ -3560,7 +5193,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Velocidade medida por equipamento aferido. Transitar em velocidade superior à máxima permitida.",
+      "Veículo flagrado acima da velocidade regulamentada na via por equipamento eletrônico.",
+      "Autuação gerada por equipamento de fiscalização estático/portátil.",
+      "Velocidade aferida incompatível com a segurança no trecho."
+    ]
   },
   {
     "id": "669-61",
@@ -3573,7 +5212,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "669-62",
@@ -3586,7 +5231,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "670-00",
@@ -3599,7 +5250,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "671-80",
@@ -3612,7 +5269,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "672-61",
@@ -3625,7 +5288,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "672-62",
@@ -3638,7 +5307,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "672-63",
@@ -3651,7 +5326,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "673-40",
@@ -3664,7 +5345,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "674-20",
@@ -3677,7 +5364,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5x)",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "675-00",
@@ -3690,7 +5383,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "676-90",
@@ -3703,7 +5402,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "756-00",
@@ -3716,7 +5421,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para cumprimento do tempo de descanso aplicável. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "677-70",
@@ -3729,7 +5440,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "678-51",
@@ -3742,7 +5459,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "678-52",
@@ -3755,7 +5478,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "678-53",
@@ -3768,7 +5497,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "679-30",
@@ -3781,7 +5516,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "680-70",
@@ -3794,7 +5535,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "681-50",
@@ -3807,7 +5554,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do Veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "682-31",
@@ -3820,7 +5573,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "682-32",
@@ -3833,7 +5592,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "683-11",
@@ -3846,7 +5611,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa acrescida a cada duzentos quilogramas ou fração de excesso de peso apurado, conforme itens 4.1 e 4.2 das Informações Complementares.",
     "medidaAdministrativa": "Retenção do veículo e transbordo da carga excedente (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Embarcador/Transportador"
+    "infrator": "Embarcador/Transportador",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "683-12",
@@ -3859,7 +5630,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa acrescida a cada duzentos quilogramas ou fração de excesso de peso apurado, conforme itens 5.1 e 5.2 das Informações Complementares.",
     "medidaAdministrativa": "Retenção do veículo e transbordo da carga excedente (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Embarcador/Transportador"
+    "infrator": "Embarcador/Transportador",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "683-13",
@@ -3872,7 +5649,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa acrescida a cada duzentos quilogramas ou fração de excesso de peso apurado, conforme itens 5.1 e 5.2 das Informações Complementares.",
     "medidaAdministrativa": "Retenção do veículo e transbordo da carga excedente (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Embarcador/Transportador"
+    "infrator": "Embarcador/Transportador",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "684-01",
@@ -3885,7 +5668,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "684-02",
@@ -3898,7 +5687,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "685-80",
@@ -3911,7 +5706,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "686-61",
@@ -3924,7 +5725,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "686-62",
@@ -3937,7 +5744,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "687-41",
@@ -3950,7 +5763,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "687-42",
@@ -3963,7 +5782,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "688-20",
@@ -3976,7 +5801,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo e transbordo de carga excedente (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "689-00",
@@ -3989,7 +5820,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo e transbordo de carga excedente (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "690-40",
@@ -4002,7 +5839,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo e transbordo de carga excedente (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "691-20",
@@ -4015,7 +5858,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a apresentação do documento (Vide a Parte Geral deste Código).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "692-01",
@@ -4028,7 +5877,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "692-02",
@@ -4041,7 +5896,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "692-03",
@@ -4054,7 +5915,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "692-04",
@@ -4067,7 +5934,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "693-91",
@@ -4080,7 +5953,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "693-92",
@@ -4093,7 +5972,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "694-71",
@@ -4106,7 +5991,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para transbordo. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "694-72",
@@ -4119,7 +6010,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para transbordo. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "694-73",
@@ -4132,7 +6029,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para transbordo. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "695-50",
@@ -4145,7 +6048,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "696-30",
@@ -4158,7 +6067,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo para regularização. (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "697-10",
@@ -4171,7 +6086,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "698-00",
@@ -4184,7 +6105,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do veículo (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "699-80",
@@ -4197,7 +6124,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Recolhimento do Certificado de Registro e do Certificado de Licenciamento Anual. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "700-51",
@@ -4210,7 +6143,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "700-52",
@@ -4223,7 +6162,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "701-31",
@@ -4236,7 +6181,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "701-32",
@@ -4249,7 +6200,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Proprietário"
+    "infrator": "Proprietário",
+    "exemplosObservacao": [
+      "Condutor abordado não apresentou documento de habilitação no momento da fiscalização.",
+      "Verificado via sistema que o condutor não possui CNH.",
+      "Condutor apresentou CNH vencida há mais de 30 dias.",
+      "Condutor dirigindo veículo de categoria diferente da sua habilitação."
+    ]
   },
   {
     "id": "702-10",
@@ -4262,7 +6219,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Recolhimento das placas e dos documentos.",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Pessoa Jurídica"
+    "infrator": "Pessoa Jurídica",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "712-92",
@@ -4275,7 +6238,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "712-93",
@@ -4288,7 +6257,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "703-01",
@@ -4301,7 +6276,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo até regularização e recolhimento do documento de habilitação. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor da motocicleta visualizado transitando sem o capacete de segurança.",
+      "Passageiro da motocicleta flagrado sem o uso do capacete.",
+      "Condutor utilizando capacete sem viseira/óculos de proteção baixados.",
+      "Motociclista com capacete não afivelado corretamente sob o queixo."
+    ]
   },
   {
     "id": "703-03",
@@ -4314,7 +6295,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo até regularização e recolhimento do documento de habilitação. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "704-81",
@@ -4327,7 +6314,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo até regularização e recolhimento do documento de habilitação (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor da motocicleta visualizado transitando sem o capacete de segurança.",
+      "Passageiro da motocicleta flagrado sem o uso do capacete.",
+      "Condutor utilizando capacete sem viseira/óculos de proteção baixados.",
+      "Motociclista com capacete não afivelado corretamente sob o queixo."
+    ]
   },
   {
     "id": "704-83",
@@ -4340,7 +6333,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo até regularização e recolhimento do documento de habilitação do condutor (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "705-61",
@@ -4353,7 +6352,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e suspensão do direito de dirigir",
     "medidaAdministrativa": "Retenção do veículo até regularização e recolhimento do documento de habilitação (Vide Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "707-21",
@@ -4366,7 +6371,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo até regularização e recolhimento do documento de habilitação. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "707-22",
@@ -4379,7 +6390,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e Suspensão do Direito de Dirigir",
     "medidaAdministrativa": "Retenção do veículo até regularização e recolhimento do documento de habilitação. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "708-00",
@@ -4392,7 +6409,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "*Retenção do veículo para regularização (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "709-91",
@@ -4405,7 +6428,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "*Retenção do veículo para regularização (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "710-21",
@@ -4418,7 +6447,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "*Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "710-23",
@@ -4431,7 +6466,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "*Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "755-21",
@@ -4444,7 +6485,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "*Retenção do veículo para regularização (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "755-22",
@@ -4457,7 +6504,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "*Retenção do veículo para regularização (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "768-41",
@@ -4470,7 +6523,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até regularização (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor da motocicleta visualizado transitando sem o capacete de segurança.",
+      "Passageiro da motocicleta flagrado sem o uso do capacete.",
+      "Condutor utilizando capacete sem viseira/óculos de proteção baixados.",
+      "Motociclista com capacete não afivelado corretamente sob o queixo."
+    ]
   },
   {
     "id": "768-42",
@@ -4483,7 +6542,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até regularização (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor da motocicleta visualizado transitando sem o capacete de segurança.",
+      "Passageiro da motocicleta flagrado sem o uso do capacete.",
+      "Condutor utilizando capacete sem viseira/óculos de proteção baixados.",
+      "Motociclista com capacete não afivelado corretamente sob o queixo."
+    ]
   },
   {
     "id": "771-41",
@@ -4496,7 +6561,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até regularização (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor da motocicleta visualizado transitando sem o capacete de segurança.",
+      "Passageiro da motocicleta flagrado sem o uso do capacete.",
+      "Condutor utilizando capacete sem viseira/óculos de proteção baixados.",
+      "Motociclista com capacete não afivelado corretamente sob o queixo."
+    ]
   },
   {
     "id": "771-42",
@@ -4509,7 +6580,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até regularização (Vide Parte Geral deste Manual).",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "714-50",
@@ -4522,7 +6599,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção da mercadoria ou do material.",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "715-31",
@@ -4535,7 +6618,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "715-32",
@@ -4548,7 +6637,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "716-11",
@@ -4561,7 +6656,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "716-12",
@@ -4574,7 +6675,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (2X)",
     "medidaAdministrativa": "Não.",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "717-01",
@@ -4587,7 +6694,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "717-02",
@@ -4600,7 +6713,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (3X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "718-81",
@@ -4613,7 +6732,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (4X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "718-82",
@@ -4626,7 +6751,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (4X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "719-61",
@@ -4639,7 +6770,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Veículo avançou o sinal vermelho do semáforo no cruzamento.",
+      "Condutor não respeitou a fase vermelha do semáforo, seguindo marcha.",
+      "Avanço de sinal vermelho constatado visualmente pelo agente.",
+      "Veículo cruzou a interseção durante o sinal vermelho sem reduzir a velocidade."
+    ]
   },
   {
     "id": "719-62",
@@ -4652,7 +6789,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (5X)",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "720-01",
@@ -4665,7 +6808,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "720-02",
@@ -4678,7 +6827,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal ou Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "722-61",
@@ -4691,7 +6846,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "722-62",
@@ -4704,7 +6865,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "723-40",
@@ -4717,7 +6884,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "724-21",
@@ -4730,7 +6903,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "724-22",
@@ -4743,7 +6922,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "725-00",
@@ -4756,7 +6941,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "726-90",
@@ -4769,7 +6960,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "772-20",
@@ -4782,7 +6979,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "728-50",
@@ -4795,7 +6998,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "775-71",
@@ -4808,7 +7017,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a regularização (Vide a Parte Geral do Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "775-72",
@@ -4821,7 +7036,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Retenção do veículo até a regularização (Vide a Parte Geral do Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "729-30",
@@ -4834,7 +7055,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "730-70",
@@ -4847,7 +7074,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "763-31",
@@ -4860,7 +7093,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor flagrado manuseando telefone celular com a mão enquanto dirigia.",
+      "Condutor visualizado segurando aparelho celular na altura do volante.",
+      "Condutor flagrado utilizando telefone celular junto ao ouvido.",
+      "Autuação por constatação visual do uso do celular. Impossibilidade de abordagem."
+    ]
   },
   {
     "id": "731-50",
@@ -4873,7 +7112,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "732-31",
@@ -4886,7 +7131,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "732-32",
@@ -4899,7 +7150,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "732-33",
@@ -4912,7 +7169,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "733-10",
@@ -4925,7 +7188,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "734-00",
@@ -4938,7 +7207,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "735-80",
@@ -4951,7 +7226,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "736-61",
@@ -4964,7 +7245,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "736-62",
@@ -4977,7 +7264,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Condutor flagrado manuseando telefone celular com a mão enquanto dirigia.",
+      "Condutor visualizado segurando aparelho celular na altura do volante.",
+      "Condutor flagrado utilizando telefone celular junto ao ouvido.",
+      "Autuação por constatação visual do uso do celular. Impossibilidade de abordagem."
+    ]
   },
   {
     "id": "759-50",
@@ -4990,7 +7283,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Municipal, Estadual e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "737-40",
@@ -5003,7 +7302,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Remoção do Veículo (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "761-71",
@@ -5016,7 +7321,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (20X) e Suspensão do Direito de Dirigir por 12 meses",
     "medidaAdministrativa": "Remoção do Veículo. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "761-72",
@@ -5029,7 +7340,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (20X) e Suspensão do Direito de Dirigir por 12 meses",
     "medidaAdministrativa": "Remoção do Veículo. (Vide Parte Geral deste Manual).",
     "competencia": "Órgão de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "761-73",
@@ -5042,7 +7359,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (20X) e Suspensão do Direito de Dirigir por 12 meses",
     "medidaAdministrativa": "Remoção do Veículo. (Vide a Parte Geral deste Manual).",
     "competencia": "Órgão de Trânsito Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "760-90",
@@ -5055,7 +7378,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa (60X)",
     "medidaAdministrativa": "Não aplicável.",
     "competencia": "Órgão de Trânsito Municipal e Rodoviário.",
-    "infrator": "Pessoa Física ou Jurídica"
+    "infrator": "Pessoa Física ou Jurídica",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "776-50",
@@ -5068,7 +7397,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa e suspensão do direito de dirigir.",
     "medidaAdministrativa": "Remoção do veículo e recolhimento do documento de habilitação (Vide a Parte Geral deste Manual)",
     "competencia": "Órgão ou Entidade de Trânsito Estadual, Municipal e Rodoviário.",
-    "infrator": "Condutor"
+    "infrator": "Condutor",
+    "exemplosObservacao": [
+      "Infração constatada visualmente pelo agente de trânsito em patrulhamento.",
+      "Veículo em movimento no momento da constatação da infração, condutor não abordado.",
+      "Autuação lavrada conforme previsão do art. 280, § 3º do CTB. Impossibilidade de abordagem segura.",
+      "Infração flagrada durante operação de fiscalização de trânsito no local."
+    ]
   },
   {
     "id": "754-41",
@@ -5081,7 +7416,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou entidade de trânsito estadual",
-    "infrator": "Pessoa Jurídica ou Física"
+    "infrator": "Pessoa Jurídica ou Física",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "754-42",
@@ -5094,7 +7435,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual.",
-    "infrator": "Pessoa Jurídica ou Física"
+    "infrator": "Pessoa Jurídica ou Física",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "754-43",
@@ -5107,7 +7454,13 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou Entidade de Trânsito Estadual",
-    "infrator": "Pessoa Jurídica ou Física"
+    "infrator": "Pessoa Jurídica ou Física",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   },
   {
     "id": "754-44",
@@ -5120,6 +7473,12 @@ export const infractionsData: Infraction[] = [
     "penalidade": "Multa",
     "medidaAdministrativa": "Não",
     "competencia": "Órgão ou entidade de trânsito estadual",
-    "infrator": "Pessoa Jurídica ou Física"
+    "infrator": "Pessoa Jurídica ou Física",
+    "exemplosObservacao": [
+      "Veículo transitando com placa de identificação ilegível.",
+      "Placa traseira do veículo sem o lacre obrigatório.",
+      "Veículo flagrado transitando sem a placa dianteira.",
+      "Caracteres da placa apagados, impossibilitando a correta identificação à distância."
+    ]
   }
 ];

@@ -93,10 +93,25 @@ export default function QuickDraftScreen() {
     setAudioUri(recording.getURI());
   };
 
+  const handlePlacaChange = (text: string) => {
+    // Permite apenas letras e números, convertendo para maiúsculo
+    const cleaned = text.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+    setPlaca(cleaned);
+  };
+
   const saveDraft = async () => {
     if (!placa.trim() && !audioUri) {
       alert("Aviso: Digite a Placa ou grave um áudio antes de salvar.");
       return;
+    }
+
+    if (placa.trim()) {
+      // Regex para validar placa Antiga (ABC1234) ou Mercosul (ABC1D23)
+      const placaRegex = /^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$/;
+      if (!placaRegex.test(placa)) {
+        alert("A placa digitada é inválida. O padrão aceito é 3 letras e 4 números/letras (ex: ABC1234 ou ABC1D23).");
+        return;
+      }
     }
 
     const currentData = new Date().toLocaleString('pt-BR');
@@ -176,8 +191,9 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
           placeholder="Ex: ABC1D23"
           placeholderTextColor="#64748b"
           value={placa}
-          onChangeText={setPlaca}
+          onChangeText={handlePlacaChange}
           autoCapitalize="characters"
+          maxLength={7}
         />
 
         <Text style={styles.label}>📝 Observação ou Áudio</Text>

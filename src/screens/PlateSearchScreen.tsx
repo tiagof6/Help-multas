@@ -5,20 +5,17 @@ import { useNavigation } from '@react-navigation/native';
 export default function PlateSearchScreen() {
   const navigation = useNavigation();
   
-  const openApp = async (packageName: string) => {
-    // Usa um Intent do Android para abrir diretamente o aplicativo sem passar pela Play Store
-    const intentUrl = `intent://#Intent;package=${packageName};S.browser_fallback_url=https://play.google.com/store/apps/details?id=${packageName};end;`;
+  const openApp = (packageName: string) => {
+    // Usa um Intent completo do Android para abrir o app pela atividade principal
+    const intentUrl = `intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${packageName};S.browser_fallback_url=https://play.google.com/store/apps/details?id=${packageName};end;`;
     
     if (Platform.OS === 'web') {
-      // No PWA (navegador), o Linking.openURL abre em nova guia e bloqueia o Intent.
-      // Modificar o window.location.href resolve isso forçando o redirecionamento na mesma guia.
+      // Executa síncrono no Web para o navegador não perder o contexto de clique do usuário
       window.location.href = intentUrl;
     } else {
-      try {
-        await Linking.openURL(intentUrl);
-      } catch (error) {
+      Linking.openURL(intentUrl).catch(() => {
         Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
-      }
+      });
     }
   };
 

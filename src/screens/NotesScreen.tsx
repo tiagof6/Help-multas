@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView, FlatList, Alert, Modal } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView, FlatList, Alert, Modal, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Audio } from 'expo-av';
 import { useNavigation } from '@react-navigation/native';
@@ -100,13 +100,20 @@ export default function NotesScreen() {
   };
 
   const handleDeleteNote = (id: string) => {
-    Alert.alert("Apagar", "Deseja realmente apagar esta anotação?", [
-      { text: "Cancelar", style: "cancel" },
-      { text: "Apagar", style: "destructive", onPress: () => {
-          const updated = notes.filter(n => n.id !== id);
-          saveNotes(updated);
-      }}
-    ]);
+    if (Platform.OS === 'web') {
+      if (window.confirm("Deseja realmente apagar esta anotação?")) {
+        const updated = notes.filter(n => n.id !== id);
+        saveNotes(updated);
+      }
+    } else {
+      Alert.alert("Apagar", "Deseja realmente apagar esta anotação?", [
+        { text: "Cancelar", style: "cancel" },
+        { text: "Apagar", style: "destructive", onPress: () => {
+            const updated = notes.filter(n => n.id !== id);
+            saveNotes(updated);
+        }}
+      ]);
+    }
   };
 
   // Áudio Functions

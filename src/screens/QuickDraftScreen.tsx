@@ -67,14 +67,8 @@ export default function QuickDraftScreen() {
     }
   };
 
-  const openMasterPlaca = () => {
-    // Usa um Intent do Android para tentar abrir o app diretamente se estiver instalado.
-    // O S.browser_fallback_url garante que ele vá para a loja se o app não existir.
-    const intentUrl = 'intent://#Intent;package=com.devplank.masterplaca;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.devplank.masterplaca;end;';
-    Linking.openURL(intentUrl).catch(() => {
-      // Fallback manual caso o dispositivo não suporte intents (ex: iOS ou PC)
-      Linking.openURL('https://play.google.com/store/apps/details?id=com.devplank.masterplaca');
-    });
+  const openPlateSearch = () => {
+    navigation.navigate('PlateSearch' as never);
   };
 
   const startRecording = async () => {
@@ -173,7 +167,7 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
 
         <View style={styles.placaHeader}>
           <Text style={styles.label}>🚘 Placa do Veículo</Text>
-          <TouchableOpacity onPress={openMasterPlaca}>
+          <TouchableOpacity onPress={openPlateSearch}>
             <Text style={styles.verifyText}>🔍 Verificar Viatura</Text>
           </TouchableOpacity>
         </View>

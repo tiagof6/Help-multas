@@ -1,18 +1,24 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Linking, Alert, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Linking, Alert, ScrollView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function PlateSearchScreen() {
   const navigation = useNavigation();
   
   const openApp = async (packageName: string) => {
-    // Usa um Intent do Android para abrir diretamente o aplicativo sem passar pela página da Play Store
+    // Usa um Intent do Android para abrir diretamente o aplicativo sem passar pela Play Store
     const intentUrl = `intent://#Intent;package=${packageName};S.browser_fallback_url=https://play.google.com/store/apps/details?id=${packageName};end;`;
-    try {
-      await Linking.openURL(intentUrl);
-    } catch (error) {
-      // Fallback para o link web caso dê erro (ex: não seja Android)
-      Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
+    
+    if (Platform.OS === 'web') {
+      // No PWA (navegador), o Linking.openURL abre em nova guia e bloqueia o Intent.
+      // Modificar o window.location.href resolve isso forçando o redirecionamento na mesma guia.
+      window.location.href = intentUrl;
+    } else {
+      try {
+        await Linking.openURL(intentUrl);
+      } catch (error) {
+        Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
+      }
     }
   };
 

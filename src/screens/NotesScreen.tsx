@@ -22,7 +22,7 @@ export default function NotesScreen() {
   const [recording, setRecording] = useState<Audio.Recording | null>(null);
   const [audioUri, setAudioUri] = useState<string | null>(null);
   const [sound, setSound] = useState<Audio.Sound | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [playingNoteId, setPlayingNoteId] = useState<string | null>(null);
 
   useEffect(() => {
     loadNotes();
@@ -161,31 +161,35 @@ export default function NotesScreen() {
     setAudioUri(uri);
   };
 
-  const playSound = async (uri: string) => {
+  const playSound = async (uri: string, noteId: string) => {
     try {
       if (sound) {
-        await sound.unloadAsync();
+        await sound.unloadAsync().catch(() => {});
       }
       const { sound: newSound } = await Audio.Sound.createAsync({ uri });
       setSound(newSound);
-      setIsPlaying(true);
+      setPlayingNoteId(noteId);
+      
       await newSound.playAsync();
       
       newSound.setOnPlaybackStatusUpdate((status) => {
         if (status.isLoaded && status.didJustFinish) {
-          setIsPlaying(false);
+          setPlayingNoteId(null);
         }
       });
     } catch (error) {
       console.log('Error playing sound', error);
-      Alert.alert("Erro", "Não foi possível reproduzir este áudio.");
+      setPlayingNoteId(null);
+      Alert.alert("Erro de Áudio", "Não foi possível reproduzir este áudio. Ele pode ter expirado ou foi corrompido.");
     }
   };
 
   const stopSound = async () => {
     if (sound) {
-      await sound.stopAsync();
-      setIsPlaying(false);
+      await sound.stopAsync().catch(() => {});
+      setPlayingNoteId(null);
+    } else {
+      setPlayingNoteId(null);
     }
   };
 
@@ -210,9 +214,9 @@ export default function NotesScreen() {
       {item.audioUri ? (
         <TouchableOpacity 
           style={styles.playBtn}
-          onPress={() => isPlaying ? stopSound() : playSound(item.audioUri as string)}
+          onPress={() => playingNoteId === item.id ? stopSound() : playSound(item.audioUri as string, item.id)}
         >
-          <Text style={styles.playBtnText}>{isPlaying ? "⏹️ Parar Áudio" : "▶️ Ouvir Áudio da Abordagem"}</Text>
+          <Text style={styles.playBtnText}>{playingNoteId === item.id ? "⏹️ Parar Áudio" : "▶️ Ouvir Áudio da Abordagem"}</Text>
         </TouchableOpacity>
       ) : null}
     </View>

@@ -20,6 +20,15 @@ export default function QuickDraftScreen() {
   const [recording, setRecording] = useState<Audio.Recording | null>(null);
   const [audioUri, setAudioUri] = useState<string | null>(null);
 
+  // Garantir que a gravação pare caso a tela seja fechada
+  useEffect(() => {
+    return () => {
+      if (recording) {
+        recording.stopAndUnloadAsync().catch(() => {});
+      }
+    };
+  }, [recording]);
+
   useEffect(() => {
     (async () => {
       try {
@@ -160,12 +169,26 @@ export default function QuickDraftScreen() {
   };
 
   const saveDraft = async () => {
-    if (!placa.trim() && !audioUri) {
+    let finalAudioUri = audioUri;
+
+    // Se o usuário esqueceu de parar a gravação, para automaticamente e salva
+    if (recording) {
+      try {
+        await recording.stopAndUnloadAsync();
+        finalAudioUri = recording.getURI();
+        setRecording(null);
+        setAudioUri(finalAudioUri);
+      } catch (e) {
+        console.error('Erro ao parar gravação automaticamente', e);
+      }
+    }
+
+    if (!placa.trim() && !finalAudioUri) {
       alert("Aviso: Digite a Placa ou grave um áudio antes de salvar.");
       return;
     }
     
-    if (!observacao.trim() && !audioUri) {
+    if (!observacao.trim() && !finalAudioUri) {
       alert("Aviso: O campo de Observação é obrigatório para registrar a infração. Descreva a situação ou grave um áudio.");
       return;
     }
@@ -194,7 +217,7 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
     const newNote = {
       id: Date.now().toString(),
       text: textFormat,
-      audioUri: audioUri,
+      audioUri: finalAudioUri,
       createdAt: currentData
     };
 

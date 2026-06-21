@@ -28,10 +28,13 @@ export default function NotesScreen() {
     loadNotes();
     return () => {
       if (sound) {
-        sound.unloadAsync();
+        sound.unloadAsync().catch(() => {});
+      }
+      if (recording) {
+        recording.stopAndUnloadAsync().catch(() => {});
       }
     };
-  }, [sound]);
+  }, [sound, recording]);
 
   const loadNotes = async () => {
     try {
@@ -65,8 +68,22 @@ export default function NotesScreen() {
     setModalVisible(true);
   };
 
-  const handleSaveNote = () => {
-    if (!currentText.trim() && !audioUri) {
+  const handleSaveNote = async () => {
+    let finalAudioUri = audioUri;
+
+    // Para a gravação automaticamente se esqueceu de clicar em Parar
+    if (recording) {
+      try {
+        await recording.stopAndUnloadAsync();
+        finalAudioUri = recording.getURI();
+        setRecording(null);
+        setAudioUri(finalAudioUri);
+      } catch (e) {
+        console.error('Erro ao parar gravação', e);
+      }
+    }
+
+    if (!currentText.trim() && !finalAudioUri) {
       Alert.alert("Aviso", "A anotação não pode estar vazia.");
       return;
     }
@@ -76,7 +93,7 @@ export default function NotesScreen() {
     if (editingNoteId) {
       updatedNotes = notes.map(n => {
         if (n.id === editingNoteId) {
-          return { ...n, text: currentText.trim(), audioUri: audioUri };
+          return { ...n, text: currentText.trim(), audioUri: finalAudioUri };
         }
         return n;
       });
@@ -84,7 +101,7 @@ export default function NotesScreen() {
       const newNote: Note = {
         id: Date.now().toString(),
         text: currentText.trim(),
-        audioUri: audioUri,
+        audioUri: finalAudioUri,
         createdAt: new Date().toLocaleString('pt-BR')
       };
       updatedNotes = [newNote, ...notes];

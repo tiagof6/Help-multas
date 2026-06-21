@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 echo "=== 2. Preparando para virar Site ==="
-npx expo export --platform web
+npx expo export --platform web -c
 
 echo "=== CRIANDO ARQUIVO .nojekyll ==="
 New-Item -ItemType File -Path dist\.nojekyll -Force

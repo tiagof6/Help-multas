@@ -12,7 +12,7 @@ export default function QuickDraftScreen() {
   const [address, setAddress] = useState('Buscando endereço...');
   const [placa, setPlaca] = useState('');
   const [observacao, setObservacao] = useState('');
-  const [numeroResidencia, setNumeroResidencia] = useState('S/N');
+  const [numeroResidencia, setNumeroResidencia] = useState('');
   const [loading, setLoading] = useState(true);
   
   // New States
@@ -187,7 +187,7 @@ export default function QuickDraftScreen() {
     }
 
     const textFormat = `PLACA: ${placa.toUpperCase()}
-LOCAL EXATO: ${address}, N° ${numeroResidencia}${mapsLink}
+LOCAL EXATO: ${address}, N° ${numeroResidencia.trim() ? numeroResidencia : 'S/N'}${mapsLink}
 HORÁRIO: ${currentData}
 OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
 
@@ -251,9 +251,10 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
           <TextInput
              style={styles.gpsInput}
              value={numeroResidencia}
-             onChangeText={setNumeroResidencia}
-             placeholder="Ex: S/N"
+             onChangeText={(text) => setNumeroResidencia(text.replace(/[^0-9]/g, ''))}
+             placeholder="S/N"
              placeholderTextColor="#64748b"
+             keyboardType="numeric"
           />
           <TouchableOpacity style={styles.mapBtn} onPress={openMap} disabled={loading || !location}>
             <Text style={styles.mapBtnText}>📍 Abrir no Mapa</Text>

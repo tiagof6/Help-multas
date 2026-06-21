@@ -99,20 +99,18 @@ export default function NotesScreen() {
     setModalVisible(false);
   };
 
+  const [noteToDelete, setNoteToDelete] = useState<string | null>(null);
+
   const handleDeleteNote = (id: string) => {
-    if (Platform.OS === 'web') {
-      if (window.confirm("Deseja realmente apagar esta anotação?")) {
-        const updated = notes.filter(n => n.id !== id);
-        saveNotes(updated);
-      }
-    } else {
-      Alert.alert("Apagar", "Deseja realmente apagar esta anotação?", [
-        { text: "Cancelar", style: "cancel" },
-        { text: "Apagar", style: "destructive", onPress: () => {
-            const updated = notes.filter(n => n.id !== id);
-            saveNotes(updated);
-        }}
-      ]);
+    // Ao invés de usar window.confirm ou Alert (que falham no Brave/Chrome), vamos usar um Modal customizado do React Native
+    setNoteToDelete(id);
+  };
+
+  const confirmDelete = () => {
+    if (noteToDelete) {
+      const updated = notes.filter(n => n.id !== noteToDelete);
+      saveNotes(updated);
+      setNoteToDelete(null);
     }
   };
 
@@ -275,6 +273,27 @@ export default function NotesScreen() {
           </View>
         </View>
       </Modal>
+
+      {/* Modal de Confirmação de Exclusão (Funciona em todos os navegadores) */}
+      <Modal visible={!!noteToDelete} animationType="fade" transparent={true}>
+        <View style={styles.modalOverlayCenter}>
+          <View style={styles.confirmModalContent}>
+            <Text style={styles.confirmTitle}>Apagar Anotação</Text>
+            <Text style={styles.confirmText}>Tem certeza que deseja apagar permanentemente esta anotação?</Text>
+            
+            <View style={styles.confirmButtons}>
+              <TouchableOpacity style={styles.cancelConfirmBtn} onPress={() => setNoteToDelete(null)}>
+                <Text style={styles.cancelConfirmText}>Cancelar</Text>
+              </TouchableOpacity>
+              
+              <TouchableOpacity style={styles.deleteConfirmBtn} onPress={confirmDelete}>
+                <Text style={styles.deleteConfirmText}>Apagar</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
     </SafeAreaView>
   );
 }
@@ -322,5 +341,16 @@ const styles = StyleSheet.create({
   audioReadyText: { color: '#fff', fontWeight: 'bold' },
   removeAudioText: { color: '#fca5a5', fontWeight: 'bold' },
   saveBtn: { backgroundColor: '#3b82f6', padding: 16, borderRadius: 10, alignItems: 'center' },
-  saveBtnText: { color: '#fff', fontSize: 18, fontWeight: 'bold' }
+  saveBtnText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  
+  // Custom Confirm Modal
+  modalOverlayCenter: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'center', alignItems: 'center', padding: 20 },
+  confirmModalContent: { backgroundColor: '#1e293b', padding: 25, borderRadius: 15, width: '100%', maxWidth: 400, borderWidth: 1, borderColor: '#334155' },
+  confirmTitle: { color: '#f8fafc', fontSize: 20, fontWeight: 'bold', marginBottom: 15, textAlign: 'center' },
+  confirmText: { color: '#cbd5e1', fontSize: 16, textAlign: 'center', marginBottom: 25, lineHeight: 22 },
+  confirmButtons: { flexDirection: 'row', justifyContent: 'space-between', gap: 15 },
+  cancelConfirmBtn: { flex: 1, padding: 15, borderRadius: 8, backgroundColor: '#334155', alignItems: 'center' },
+  cancelConfirmText: { color: '#f8fafc', fontSize: 16, fontWeight: 'bold' },
+  deleteConfirmBtn: { flex: 1, padding: 15, borderRadius: 8, backgroundColor: '#ef4444', alignItems: 'center' },
+  deleteConfirmText: { color: '#fff', fontSize: 16, fontWeight: 'bold' }
 });

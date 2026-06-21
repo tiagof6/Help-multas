@@ -80,15 +80,15 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}
       id: Date.now().toString(),
       text: textFormat,
       audioUri: null,
-      timestamp: Date.now()
+      createdAt: currentData
     };
 
     try {
-      const savedNotes = await AsyncStorage.getItem('app_notes');
+      const savedNotes = await AsyncStorage.getItem('@agent_notes');
       let notesArray = [];
       if (savedNotes) notesArray = JSON.parse(savedNotes);
       notesArray.unshift(newNote);
-      await AsyncStorage.setItem('app_notes', JSON.stringify(notesArray));
+      await AsyncStorage.setItem('@agent_notes', JSON.stringify(notesArray));
       Alert.alert("Sucesso", "Rascunho salvo no Bloco de Notas!", [
         { text: "OK", onPress: () => navigation.goBack() }
       ]);

@@ -6,18 +6,13 @@ export default function PlateSearchScreen() {
   const navigation = useNavigation();
   
   const openMasterPlaca = async () => {
-    const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.devplank.masterplaca';
-    // Aqui poderíamos tentar abrir um Deep Link direto (intent), mas o link da Play Store 
-    // já é inteligente: se o usuário tiver o app, ele pode abrir direto, senão, ele baixa.
+    // Usa um Intent do Android para abrir diretamente o aplicativo sem passar pela página da Play Store
+    const intentUrl = 'intent://#Intent;package=com.devplank.masterplaca;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.devplank.masterplaca;end;';
     try {
-      const supported = await Linking.canOpenURL(playStoreUrl);
-      if (supported) {
-        await Linking.openURL(playStoreUrl);
-      } else {
-        Alert.alert("Erro", "Não foi possível abrir o link da Play Store no seu dispositivo.");
-      }
+      await Linking.openURL(intentUrl);
     } catch (error) {
-      Alert.alert("Erro", "Ocorreu um erro ao tentar redirecionar para o aplicativo.");
+      // Fallback para o link web caso dê erro (ex: não seja Android)
+      Linking.openURL('https://play.google.com/store/apps/details?id=com.devplank.masterplaca');
     }
   };
 

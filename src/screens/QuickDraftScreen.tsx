@@ -69,9 +69,14 @@ export default function QuickDraftScreen() {
 
     const currentData = new Date().toLocaleString('pt-BR');
     
+    let mapsLink = '';
+    if (location) {
+      mapsLink = `\nMAPA: https://www.google.com/maps/search/?api=1&query=${location.coords.latitude},${location.coords.longitude}`;
+    }
+
     // Formatting the string based on user's exact specification
     const textFormat = `PLACA: ${placa.toUpperCase()}
-LOCAL EXATO: ${address}
+LOCAL EXATO: ${address}${mapsLink}
 HORÁRIO: ${currentData}
 OBSERVAÇÃO: ${observacao || 'Nenhuma'}
     `;

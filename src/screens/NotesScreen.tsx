@@ -16,6 +16,7 @@ export default function NotesScreen() {
   const [notes, setNotes] = useState<Note[]>([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [currentText, setCurrentText] = useState('');
+  const [editingNoteId, setEditingNoteId] = useState<string | null>(null);
   
   // Audio state
   const [recording, setRecording] = useState<Audio.Recording | null>(null);
@@ -50,25 +51,51 @@ export default function NotesScreen() {
     }
   };
 
+  const openEditModal = (note: Note) => {
+    setEditingNoteId(note.id);
+    setCurrentText(note.text);
+    setAudioUri(note.audioUri);
+    setModalVisible(true);
+  };
+
+  const openNewModal = () => {
+    setEditingNoteId(null);
+    setCurrentText('');
+    setAudioUri(null);
+    setModalVisible(true);
+  };
+
   const handleSaveNote = () => {
     if (!currentText.trim() && !audioUri) {
       Alert.alert("Aviso", "A anotação não pode estar vazia.");
       return;
     }
 
-    const newNote: Note = {
-      id: Date.now().toString(),
-      text: currentText.trim(),
-      audioUri: audioUri,
-      createdAt: new Date().toLocaleString('pt-BR')
-    };
+    let updatedNotes;
 
-    const updated = [newNote, ...notes];
-    saveNotes(updated);
+    if (editingNoteId) {
+      updatedNotes = notes.map(n => {
+        if (n.id === editingNoteId) {
+          return { ...n, text: currentText.trim(), audioUri: audioUri };
+        }
+        return n;
+      });
+    } else {
+      const newNote: Note = {
+        id: Date.now().toString(),
+        text: currentText.trim(),
+        audioUri: audioUri,
+        createdAt: new Date().toLocaleString('pt-BR')
+      };
+      updatedNotes = [newNote, ...notes];
+    }
+
+    saveNotes(updatedNotes);
     
     // Reset state
     setCurrentText('');
     setAudioUri(null);
+    setEditingNoteId(null);
     setModalVisible(false);
   };
 
@@ -144,9 +171,14 @@ export default function NotesScreen() {
     <View style={styles.card}>
       <View style={styles.cardHeader}>
         <Text style={styles.dateText}>{item.createdAt}</Text>
-        <TouchableOpacity onPress={() => handleDeleteNote(item.id)}>
-          <Text style={styles.deleteIcon}>🗑️</Text>
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', gap: 15 }}>
+          <TouchableOpacity onPress={() => openEditModal(item)}>
+            <Text style={styles.actionIcon}>✏️</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => handleDeleteNote(item.id)}>
+            <Text style={styles.actionIcon}>🗑️</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       
       {item.text ? (
@@ -182,7 +214,7 @@ export default function NotesScreen() {
         ListEmptyComponent={<Text style={styles.emptyText}>Nenhuma anotação salva.</Text>}
       />
 
-      <TouchableOpacity style={styles.fab} onPress={() => setModalVisible(true)}>
+      <TouchableOpacity style={styles.fab} onPress={openNewModal}>
         <Text style={styles.fabText}>+</Text>
       </TouchableOpacity>
 
@@ -190,8 +222,11 @@ export default function NotesScreen() {
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>Nova Anotação</Text>
-              <TouchableOpacity onPress={() => setModalVisible(false)}>
+              <Text style={styles.modalTitle}>{editingNoteId ? "Editar Anotação" : "Nova Anotação"}</Text>
+              <TouchableOpacity onPress={() => {
+                setModalVisible(false);
+                setEditingNoteId(null);
+              }}>
                 <Text style={styles.closeIcon}>✖</Text>
               </TouchableOpacity>
             </View>
@@ -250,7 +285,7 @@ const styles = StyleSheet.create({
   card: { backgroundColor: '#1e293b', padding: 16, borderRadius: 10, marginBottom: 12, borderWidth: 1, borderColor: '#334155' },
   cardHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 },
   dateText: { color: '#94a3b8', fontSize: 12 },
-  deleteIcon: { fontSize: 16 },
+  actionIcon: { fontSize: 18, marginLeft: 5 },
   noteText: { color: '#f8fafc', fontSize: 16, lineHeight: 24 },
   playBtn: { marginTop: 15, backgroundColor: '#3b82f6', padding: 10, borderRadius: 6, alignItems: 'center' },
   playBtnText: { color: '#fff', fontWeight: 'bold' },

@@ -45,7 +45,8 @@ const MENU_ITEMS: GridMenu[] = [
   { id: '16', title: 'Rádio Garden', icon: '📻', color: '#84cc16', url: 'https://radio.garden/' },
   { id: '17', title: 'Passatempo', icon: '🎮', color: '#10b981', url: 'https://rachacuca.com.br/' },
   { id: '18', title: 'Cortex MJ', icon: '🏛️', color: '#4f46e5', url: 'https://cortex.mj.gov.br/index.php?e=5#' },
-  { id: '19', title: 'Painel Admin', icon: '⚙️', color: '#334155', route: 'Admin', adminOnly: true },
+  { id: '19', title: 'Timestamp', icon: '📸', color: '#ec4899', url: 'https://play.google.com/store/apps/details?id=com.jeyluta.timestampcamerafree' },
+  { id: '20', title: 'Painel Admin', icon: '⚙️', color: '#334155', route: 'Admin', adminOnly: true },
 ];
 
 export default function DashboardScreen() {

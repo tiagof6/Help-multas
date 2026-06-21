@@ -130,9 +130,32 @@ export default function QuickDraftScreen() {
   };
 
   const handlePlacaChange = (text: string) => {
-    // Permite apenas letras e números, convertendo para maiúsculo
-    const cleaned = text.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
-    setPlaca(cleaned);
+    let raw = text.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    let formatted = '';
+
+    // Aplica a máscara estrita enquanto o usuário digita
+    for (let i = 0; i < raw.length; i++) {
+      const char = raw[i];
+      if (i < 3) {
+        // Posição 1, 2, 3: Apenas Letras
+        if (/[A-Z]/.test(char)) formatted += char;
+        else break;
+      } else if (i === 3) {
+        // Posição 4: Apenas Números
+        if (/[0-9]/.test(char)) formatted += char;
+        else break;
+      } else if (i === 4) {
+        // Posição 5: Letra (Mercosul) ou Número (Antiga)
+        if (/[A-Z0-9]/.test(char)) formatted += char;
+        else break;
+      } else if (i === 5 || i === 6) {
+        // Posição 6, 7: Apenas Números
+        if (/[0-9]/.test(char)) formatted += char;
+        else break;
+      }
+    }
+    
+    setPlaca(formatted);
   };
 
   const saveDraft = async () => {
@@ -210,7 +233,14 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
       <ScrollView style={styles.content}>
         <View style={styles.gpsCard}>
           <Text style={styles.gpsTitle}>🛰️ Localização Satélite</Text>
-          <Text style={styles.gpsText}>{loading ? 'Sincronizando GPS...' : address}</Text>
+          <Text style={styles.gpsSubTitle}>Pode tocar e digitar o número da rua se faltar</Text>
+          <TextInput
+             style={styles.gpsInput}
+             value={loading ? 'Sincronizando GPS...' : address}
+             onChangeText={setAddress}
+             multiline
+             editable={!loading}
+          />
           <TouchableOpacity style={styles.mapBtn} onPress={openMap} disabled={loading || !location}>
             <Text style={styles.mapBtnText}>📍 Abrir no Mapa</Text>
           </TouchableOpacity>
@@ -284,8 +314,10 @@ const styles = StyleSheet.create({
   headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#f8fafc' },
   content: { padding: 20 },
   gpsCard: { backgroundColor: '#1e293b', padding: 15, borderRadius: 10, marginBottom: 20, borderWidth: 1, borderColor: '#334155' },
-  gpsTitle: { color: '#f8fafc', fontSize: 16, fontWeight: 'bold', marginBottom: 5 },
+  gpsTitle: { color: '#f8fafc', fontSize: 16, fontWeight: 'bold', marginBottom: 2 },
+  gpsSubTitle: { color: '#64748b', fontSize: 12, marginBottom: 10 },
   gpsText: { color: '#94a3b8', fontSize: 14, marginBottom: 15 },
+  gpsInput: { color: '#e2e8f0', fontSize: 14, marginBottom: 15, backgroundColor: '#0f172a', padding: 10, borderRadius: 6, minHeight: 45, textAlignVertical: 'center', borderWidth: 1, borderColor: '#334155' },
   mapBtn: { backgroundColor: '#3b82f6', padding: 10, borderRadius: 8, alignItems: 'center' },
   mapBtnText: { color: '#fff', fontWeight: 'bold' },
   placaHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },

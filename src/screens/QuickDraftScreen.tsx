@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput, Alert, ScrollView, Linking } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput, ScrollView, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as Location from 'expo-location';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Audio } from 'expo-av';
 
 export default function QuickDraftScreen() {
   const navigation = useNavigation();
@@ -11,6 +12,11 @@ export default function QuickDraftScreen() {
   const [placa, setPlaca] = useState('');
   const [observacao, setObservacao] = useState('');
   const [loading, setLoading] = useState(true);
+  
+  // New States
+  const [isSaved, setIsSaved] = useState(false);
+  const [recording, setRecording] = useState<Audio.Recording | null>(null);
+  const [audioUri, setAudioUri] = useState<string | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -61,9 +67,35 @@ export default function QuickDraftScreen() {
     }
   };
 
+  const openMasterPlaca = () => {
+    Linking.openURL('https://play.google.com/store/apps/details?id=com.devplank.masterplaca');
+  };
+
+  const startRecording = async () => {
+    try {
+      const permission = await Audio.requestPermissionsAsync();
+      if (permission.status !== 'granted') {
+        alert("Precisamos de acesso ao microfone para gravar.");
+        return;
+      }
+      await Audio.setAudioModeAsync({ allowsRecordingIOS: true, playsInSilentModeIOS: true });
+      const { recording: rec } = await Audio.Recording.createAsync(Audio.RecordingOptionsPresets.HIGH_QUALITY);
+      setRecording(rec);
+    } catch (err) {
+      console.error('Falha ao iniciar gravação', err);
+    }
+  };
+
+  const stopRecording = async () => {
+    if (!recording) return;
+    setRecording(null);
+    await recording.stopAndUnloadAsync();
+    setAudioUri(recording.getURI());
+  };
+
   const saveDraft = async () => {
-    if (!placa.trim()) {
-      Alert.alert("Aviso", "Digite a Placa antes de salvar.");
+    if (!placa.trim() && !audioUri) {
+      alert("Aviso: Digite a Placa ou grave um áudio antes de salvar.");
       return;
     }
 
@@ -74,17 +106,15 @@ export default function QuickDraftScreen() {
       mapsLink = `\nMAPA: https://www.google.com/maps/search/?api=1&query=${location.coords.latitude},${location.coords.longitude}`;
     }
 
-    // Formatting the string based on user's exact specification
     const textFormat = `PLACA: ${placa.toUpperCase()}
 LOCAL EXATO: ${address}${mapsLink}
 HORÁRIO: ${currentData}
-OBSERVAÇÃO: ${observacao || 'Nenhuma'}
-    `;
+OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
 
     const newNote = {
       id: Date.now().toString(),
       text: textFormat,
-      audioUri: null,
+      audioUri: audioUri,
       createdAt: currentData
     };
 
@@ -94,13 +124,27 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}
       if (savedNotes) notesArray = JSON.parse(savedNotes);
       notesArray.unshift(newNote);
       await AsyncStorage.setItem('@agent_notes', JSON.stringify(notesArray));
-      Alert.alert("Sucesso", "Rascunho salvo no Bloco de Notas!", [
-        { text: "OK", onPress: () => navigation.goBack() }
-      ]);
+      
+      // Visual Feedback
+      setIsSaved(true);
+      setTimeout(() => {
+        navigation.goBack();
+      }, 2000);
+
     } catch (e) {
-      Alert.alert("Erro", "Falha ao salvar rascunho.");
+      alert("Erro: Falha ao salvar rascunho.");
     }
   };
+
+  if (isSaved) {
+    return (
+      <View style={styles.successContainer}>
+        <Text style={styles.successIcon}>✅</Text>
+        <Text style={styles.successText}>Salvo com Sucesso!</Text>
+        <Text style={styles.successSubtext}>Enviado para o seu Bloco de Notas</Text>
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -121,7 +165,12 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.label}>🚘 Placa do Veículo (Dite ou Digite)</Text>
+        <View style={styles.placaHeader}>
+          <Text style={styles.label}>🚘 Placa do Veículo</Text>
+          <TouchableOpacity onPress={openMasterPlaca}>
+            <Text style={styles.verifyText}>🔍 Verificar Viatura</Text>
+          </TouchableOpacity>
+        </View>
         <TextInput
           style={styles.inputPlaca}
           placeholder="Ex: ABC1D23"
@@ -131,10 +180,29 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}
           autoCapitalize="characters"
         />
 
-        <Text style={styles.label}>📝 Observação da Infração</Text>
+        <Text style={styles.label}>📝 Observação ou Áudio</Text>
+        
+        {audioUri ? (
+          <View style={styles.audioRecorded}>
+            <Text style={styles.audioReadyText}>✅ Áudio Anexado</Text>
+            <TouchableOpacity onPress={() => setAudioUri(null)}>
+              <Text style={styles.removeAudioText}>Excluir Áudio</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <TouchableOpacity 
+            style={[styles.recordBtn, recording ? styles.recordingActive : null]}
+            onPress={recording ? stopRecording : startRecording}
+          >
+            <Text style={styles.recordBtnText}>
+              {recording ? "⏹️ Parar Gravação" : "🎤 Gravar Relatório em Áudio"}
+            </Text>
+          </TouchableOpacity>
+        )}
+
         <TextInput
           style={styles.inputObs}
-          placeholder="Dite os detalhes da abordagem..."
+          placeholder="Dite ou digite os detalhes da abordagem..."
           placeholderTextColor="#64748b"
           value={observacao}
           onChangeText={setObservacao}
@@ -161,9 +229,23 @@ const styles = StyleSheet.create({
   gpsText: { color: '#94a3b8', fontSize: 14, marginBottom: 15 },
   mapBtn: { backgroundColor: '#3b82f6', padding: 10, borderRadius: 8, alignItems: 'center' },
   mapBtnText: { color: '#fff', fontWeight: 'bold' },
-  label: { color: '#f8fafc', fontSize: 16, fontWeight: 'bold', marginBottom: 8 },
+  placaHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
+  label: { color: '#f8fafc', fontSize: 16, fontWeight: 'bold' },
+  verifyText: { color: '#f59e0b', fontSize: 14, fontWeight: 'bold' },
   inputPlaca: { backgroundColor: '#1e293b', color: '#f8fafc', padding: 15, borderRadius: 8, fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginBottom: 20, borderWidth: 1, borderColor: '#334155' },
-  inputObs: { backgroundColor: '#1e293b', color: '#f8fafc', padding: 15, borderRadius: 8, fontSize: 16, minHeight: 120, textAlignVertical: 'top', marginBottom: 30, borderWidth: 1, borderColor: '#334155' },
+  inputObs: { backgroundColor: '#1e293b', color: '#f8fafc', padding: 15, borderRadius: 8, fontSize: 16, minHeight: 100, textAlignVertical: 'top', marginBottom: 30, borderWidth: 1, borderColor: '#334155' },
   saveBtn: { backgroundColor: '#10b981', padding: 15, borderRadius: 8, alignItems: 'center', marginBottom: 40 },
-  saveBtnText: { color: '#fff', fontSize: 18, fontWeight: 'bold' }
+  saveBtnText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  
+  recordBtn: { backgroundColor: '#334155', padding: 16, borderRadius: 8, alignItems: 'center', borderWidth: 1, borderColor: '#475569', marginBottom: 10 },
+  recordingActive: { backgroundColor: '#ef4444', borderColor: '#b91c1c' },
+  recordBtnText: { color: '#f8fafc', fontWeight: 'bold', fontSize: 16 },
+  audioRecorded: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#166534', padding: 16, borderRadius: 8, marginBottom: 10 },
+  audioReadyText: { color: '#fff', fontWeight: 'bold' },
+  removeAudioText: { color: '#fca5a5', fontWeight: 'bold' },
+  
+  successContainer: { flex: 1, backgroundColor: '#064e3b', justifyContent: 'center', alignItems: 'center' },
+  successIcon: { fontSize: 80, marginBottom: 20 },
+  successText: { color: '#fff', fontSize: 28, fontWeight: 'bold', marginBottom: 10 },
+  successSubtext: { color: '#a7f3d0', fontSize: 16 }
 });

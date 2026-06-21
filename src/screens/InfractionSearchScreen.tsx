@@ -65,16 +65,23 @@ export default function InfractionSearchScreen() {
     return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/-/g, "");
   };
 
-  const mapSynonyms = (query: string) => {
-    let q = query;
-    q = q.replace(/empina[a-z]*/g, 'malabaris');
-    q = q.replace(/careca/g, 'estado');
-    q = q.replace(/bafometro/g, 'alcoo');
-    q = q.replace(/fura sinal/g, 'vermelho');
-    q = q.replace(/escapamento/g, 'descarga');
-    q = q.replace(/radar/g, 'velocidade');
-    q = q.replace(/insulfilm/g, 'pelicula');
-    return q;
+  const getSynonyms = (word: string) => {
+    const synonymMap = [
+      { prefix: 'emp', target: 'malabaris', min: 3 },
+      { prefix: 'carec', target: 'estado', min: 5 },
+      { prefix: 'bafo', target: 'alcoo', min: 4 },
+      { prefix: 'fura', target: 'vermelho', min: 4 },
+      { prefix: 'escap', target: 'descarga', min: 5 },
+      { prefix: 'rad', target: 'velocidade', min: 3 },
+      { prefix: 'insul', target: 'pelicula', min: 5 },
+    ];
+    
+    for (const syn of synonymMap) {
+      if (word.startsWith(syn.prefix) && word.length >= syn.min) {
+        return syn.target;
+      }
+    }
+    return word;
   };
 
   const filteredData = infractionsData.filter(item => {
@@ -86,14 +93,14 @@ export default function InfractionSearchScreen() {
     // Se digitou código exato (ex 70561) acha 705-61
     if (codeNormalized.includes(rawQuery)) return true;
 
-    const mappedQuery = mapSynonyms(rawQuery);
     const descNormalized = normalizeText(item.descricao);
     const artNormalized = normalizeText(item.artigo);
 
     // Dividimos a pesquisa em palavras. TODAS as palavras devem estar na descrição/artigo
-    const searchWords = mappedQuery.split(' ').filter(w => w.trim().length > 0);
+    const searchWords = rawQuery.split(' ').filter(w => w.trim().length > 0);
+    const mappedWords = searchWords.map(getSynonyms);
     
-    const matchesAllWords = searchWords.every(word => 
+    const matchesAllWords = mappedWords.every(word => 
       descNormalized.includes(word) || artNormalized.includes(word)
     );
 

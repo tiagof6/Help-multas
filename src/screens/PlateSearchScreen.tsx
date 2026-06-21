@@ -53,25 +53,7 @@ export default function PlateSearchScreen() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#eab308' }]} onPress={() => openApp('br.com.muriel.placafip')}>
-          <View style={styles.buttonContent}>
-            <Text style={styles.actionIcon}>🚕</Text>
-            <View style={styles.textColumn}>
-              <Text style={styles.actionButtonText}>PlacaFip</Text>
-              <Text style={styles.actionButtonSubtext}>Muriel Tecnologia</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#3b82f6' }]} onPress={() => openApp('br.gov.serpro.fiscalizacao')}>
-          <View style={styles.buttonContent}>
-            <Text style={styles.actionIcon}>👮</Text>
-            <View style={styles.textColumn}>
-              <Text style={styles.actionButtonText}>Fiscalização Senatran</Text>
-              <Text style={styles.actionButtonSubtext}>Serviços Oficiais do Brasil</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
 
       </ScrollView>
     </SafeAreaView>

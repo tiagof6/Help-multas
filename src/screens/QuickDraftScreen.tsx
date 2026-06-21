@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as Location from 'expo-location';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Audio } from 'expo-av';
+import * as Clipboard from 'expo-clipboard';
 
 export default function QuickDraftScreen() {
   const navigation = useNavigation();
@@ -31,18 +32,46 @@ export default function QuickDraftScreen() {
         const loc = await Location.getCurrentPositionAsync({});
         setLocation(loc);
 
-        const geocode = await Location.reverseGeocodeAsync({
-          latitude: loc.coords.latitude,
-          longitude: loc.coords.longitude
-        });
+        let addressStr = '';
 
-        if (geocode.length > 0) {
-          const { street, streetNumber, district, city } = geocode[0];
-          const rua = street || 'Rua desconhecida';
-          const numero = streetNumber ? `, ${streetNumber}` : '';
-          const bairro = district ? ` - ${district}` : '';
-          const cidade = city ? ` (${city})` : '';
-          setAddress(`${rua}${numero}${bairro}${cidade}`);
+        try {
+          const geocode = await Location.reverseGeocodeAsync({
+            latitude: loc.coords.latitude,
+            longitude: loc.coords.longitude
+          });
+
+          if (geocode && geocode.length > 0) {
+            const { street, streetNumber, district, city } = geocode[0];
+            if (street) {
+              const numero = streetNumber ? `, ${streetNumber}` : '';
+              const bairro = district ? ` - ${district}` : '';
+              const cidade = city ? ` (${city})` : '';
+              addressStr = `${street}${numero}${bairro}${cidade}`;
+            }
+          }
+        } catch (e) {
+          console.log('Expo Geocode failed, using fallback.');
+        }
+
+        // Se o Expo falhou (comum no Web), faz um fallback para o OpenStreetMap
+        if (!addressStr) {
+          try {
+            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${loc.coords.latitude}&lon=${loc.coords.longitude}&addressdetails=1`);
+            const data = await response.json();
+            if (data && data.address) {
+              const rua = data.address.road || 'Rua desconhecida';
+              const numero = data.address.house_number ? `, ${data.address.house_number}` : '';
+              const bairro = data.address.suburb || data.address.neighbourhood ? ` - ${data.address.suburb || data.address.neighbourhood}` : '';
+              const cidade = data.address.city || data.address.town || data.address.village ? ` (${data.address.city || data.address.town || data.address.village})` : '';
+              addressStr = `${rua}${numero}${bairro}${cidade}`;
+            }
+          } catch (e) {
+            console.log('OSM Geocode failed', e);
+          }
+        }
+
+        if (addressStr) {
+          setAddress(addressStr);
         } else {
           setAddress(`Lat: ${loc.coords.latitude.toFixed(4)}, Lng: ${loc.coords.longitude.toFixed(4)}`);
         }
@@ -69,6 +98,13 @@ export default function QuickDraftScreen() {
 
   const openPlateSearch = () => {
     navigation.navigate('PlateSearch' as never);
+  };
+
+  const copyPlate = async () => {
+    if (placa) {
+      await Clipboard.setStringAsync(placa);
+      alert('Placa copiada para a área de transferência!');
+    }
   };
 
   const startRecording = async () => {
@@ -182,9 +218,16 @@ OBSERVAÇÃO: ${observacao || 'Nenhuma'}`;
 
         <View style={styles.placaHeader}>
           <Text style={styles.label}>🚘 Placa do Veículo</Text>
-          <TouchableOpacity onPress={openPlateSearch}>
-            <Text style={styles.verifyText}>🔍 Verificar Viatura</Text>
-          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', gap: 15, alignItems: 'center' }}>
+            {placa.length > 0 && (
+              <TouchableOpacity onPress={copyPlate}>
+                <Text style={styles.copyText}>📋 Copiar</Text>
+              </TouchableOpacity>
+            )}
+            <TouchableOpacity onPress={openPlateSearch}>
+              <Text style={styles.verifyText}>🔍 Verificar Viatura</Text>
+            </TouchableOpacity>
+          </View>
         </View>
         <TextInput
           style={styles.inputPlaca}
@@ -247,6 +290,7 @@ const styles = StyleSheet.create({
   mapBtnText: { color: '#fff', fontWeight: 'bold' },
   placaHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
   label: { color: '#f8fafc', fontSize: 16, fontWeight: 'bold' },
+  copyText: { color: '#10b981', fontSize: 14, fontWeight: 'bold' },
   verifyText: { color: '#f59e0b', fontSize: 14, fontWeight: 'bold' },
   inputPlaca: { backgroundColor: '#1e293b', color: '#f8fafc', padding: 15, borderRadius: 8, fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginBottom: 20, borderWidth: 1, borderColor: '#334155' },
   inputObs: { backgroundColor: '#1e293b', color: '#f8fafc', padding: 15, borderRadius: 8, fontSize: 16, minHeight: 100, textAlignVertical: 'top', marginBottom: 30, borderWidth: 1, borderColor: '#334155' },

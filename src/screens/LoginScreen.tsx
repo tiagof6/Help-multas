@@ -19,6 +19,9 @@ export default function LoginScreen({ navigation }: any) {
     }
     setLoading(true);
     try {
+      // Previne que o App.tsx derrube a sessão durante a transição
+      await AsyncStorage.setItem('@login_timestamp', Date.now().toString());
+      
       const userCredential = await signInWithEmailAndPassword(auth, email.trim(), password);
       
       // Gera um Session ID único para esta sessão neste aparelho

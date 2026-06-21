@@ -92,12 +92,18 @@ export default function App() {
             setUserStatus(data.status);
             
             try {
-              const localSessionId = await AsyncStorage.getItem('@help_multas_session_id');
-              if (data.sessionId && localSessionId && data.sessionId !== localSessionId) {
-                if (window && window.alert) {
-                  window.alert('Acesso Derrubado: Sua conta foi acessada em outro dispositivo.');
+              const loginTimestamp = await AsyncStorage.getItem('@login_timestamp');
+              const now = Date.now();
+              const isRecentLogin = loginTimestamp && (now - parseInt(loginTimestamp)) < 15000;
+
+              if (!isRecentLogin) {
+                const localSessionId = await AsyncStorage.getItem('@help_multas_session_id');
+                if (data.sessionId && localSessionId && data.sessionId !== localSessionId) {
+                  if (window && window.alert) {
+                    window.alert('Acesso Derrubado: Sua conta foi acessada em outro dispositivo.');
+                  }
+                  signOut(auth);
                 }
-                signOut(auth);
               }
             } catch (e) {
               console.error(e);

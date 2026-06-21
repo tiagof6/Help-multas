@@ -1,0 +1,994 @@
+[
+  {
+    "id": "A-10A",
+    "code": "A-10A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-10A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Brasil_A-10a.svg"
+  },
+  {
+    "id": "A-10B",
+    "code": "A-10B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-10B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Brasil_A-10b.svg"
+  },
+  {
+    "id": "A-11A",
+    "code": "A-11A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-11A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Brasil_A-11a.svg"
+  },
+  {
+    "id": "A-11B",
+    "code": "A-11B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-11B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Brasil_A-11b.svg"
+  },
+  {
+    "id": "A-12",
+    "code": "A-12",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-12",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Brasil_A-12.svg"
+  },
+  {
+    "id": "A-13A",
+    "code": "A-13A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-13A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Brasil_A-13a.svg"
+  },
+  {
+    "id": "A-13B",
+    "code": "A-13B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-13B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Brasil_A-13b.svg"
+  },
+  {
+    "id": "A-14",
+    "code": "A-14",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-14",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Brasil_A-14.svg"
+  },
+  {
+    "id": "A-15",
+    "code": "A-15",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-15",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Brasil_A-15.svg"
+  },
+  {
+    "id": "A-16",
+    "code": "A-16",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-16",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Brasil_A-16.svg"
+  },
+  {
+    "id": "A-17",
+    "code": "A-17",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-17",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/Brasil_A-17.svg"
+  },
+  {
+    "id": "A-18",
+    "code": "A-18",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-18",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Brasil_A-18.svg"
+  },
+  {
+    "id": "A-19",
+    "code": "A-19",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-19",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Brasil_A-19.svg"
+  },
+  {
+    "id": "A-1A",
+    "code": "A-1A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-1A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Brasil_A-1a.svg"
+  },
+  {
+    "id": "A-1B",
+    "code": "A-1B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-1B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Brasil_A-1b.svg"
+  },
+  {
+    "id": "A-20A",
+    "code": "A-20A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-20A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Brasil_A-20a.svg"
+  },
+  {
+    "id": "A-20B",
+    "code": "A-20B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-20B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Brasil_A-20b.svg"
+  },
+  {
+    "id": "A-21A",
+    "code": "A-21A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-21A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Brasil_A-21a.svg"
+  },
+  {
+    "id": "A-21B",
+    "code": "A-21B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-21B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Brasil_A-21b.svg"
+  },
+  {
+    "id": "A-21C",
+    "code": "A-21C",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-21C",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Brasil_A-21c.svg"
+  },
+  {
+    "id": "A-21D",
+    "code": "A-21D",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-21D",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Brasil_A-21d.svg"
+  },
+  {
+    "id": "A-21E",
+    "code": "A-21E",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-21E",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Brasil_A-21e.svg"
+  },
+  {
+    "id": "A-22",
+    "code": "A-22",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-22",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Brasil_A-22.svg"
+  },
+  {
+    "id": "A-23",
+    "code": "A-23",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-23",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Brasil_A-23.svg"
+  },
+  {
+    "id": "A-24",
+    "code": "A-24",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-24",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Brasil_A-24.svg"
+  },
+  {
+    "id": "A-25",
+    "code": "A-25",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-25",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Brasil_A-25.svg"
+  },
+  {
+    "id": "A-26A",
+    "code": "A-26A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-26A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Brasil_A-26a.svg"
+  },
+  {
+    "id": "A-26B",
+    "code": "A-26B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-26B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Brasil_A-26b.svg"
+  },
+  {
+    "id": "A-27",
+    "code": "A-27",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-27",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Brasil_A-27.svg"
+  },
+  {
+    "id": "A-28",
+    "code": "A-28",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-28",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Brasil_A-28.svg"
+  },
+  {
+    "id": "A-29",
+    "code": "A-29",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-29",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Brasil_A-29.svg"
+  },
+  {
+    "id": "A-2A",
+    "code": "A-2A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-2A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Brasil_A-2a.svg"
+  },
+  {
+    "id": "A-2B",
+    "code": "A-2B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-2B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Brasil_A-2b.svg"
+  },
+  {
+    "id": "A-30A",
+    "code": "A-30A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-30A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Brasil_A-30a.svg"
+  },
+  {
+    "id": "A-30B",
+    "code": "A-30B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-30B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Brasil_A-30b.svg"
+  },
+  {
+    "id": "A-30C",
+    "code": "A-30C",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-30C",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Brasil_A-30c.svg"
+  },
+  {
+    "id": "A-31",
+    "code": "A-31",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-31",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Brasil_A-31.svg"
+  },
+  {
+    "id": "A-32A",
+    "code": "A-32A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-32A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Brasil_A-32a.svg"
+  },
+  {
+    "id": "A-32B",
+    "code": "A-32B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-32B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Brasil_A-32b.svg"
+  },
+  {
+    "id": "A-33A",
+    "code": "A-33A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-33A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Brasil_A-33a.svg"
+  },
+  {
+    "id": "A-33B",
+    "code": "A-33B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-33B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Brasil_A-33b.svg"
+  },
+  {
+    "id": "A-34",
+    "code": "A-34",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-34",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Brasil_A-34.svg"
+  },
+  {
+    "id": "A-35",
+    "code": "A-35",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-35",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Brasil_A-35.svg"
+  },
+  {
+    "id": "A-36",
+    "code": "A-36",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-36",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Brasil_A-36.svg"
+  },
+  {
+    "id": "A-37",
+    "code": "A-37",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-37",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Brasil_A-37.svg"
+  },
+  {
+    "id": "A-38",
+    "code": "A-38",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-38",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Brasil_A-38.svg"
+  },
+  {
+    "id": "A-39",
+    "code": "A-39",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-39",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Brasil_A-39.svg"
+  },
+  {
+    "id": "A-3A",
+    "code": "A-3A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-3A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Brasil_A-3a.svg"
+  },
+  {
+    "id": "A-3B",
+    "code": "A-3B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-3B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Brasil_A-3b.svg"
+  },
+  {
+    "id": "A-40",
+    "code": "A-40",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-40",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Brasil_A-40.svg"
+  },
+  {
+    "id": "A-41A",
+    "code": "A-41A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-41A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Brasil_A-41a.svg"
+  },
+  {
+    "id": "A-41B",
+    "code": "A-41B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-41B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Brasil_A-41b.svg"
+  },
+  {
+    "id": "A-42A",
+    "code": "A-42A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-42A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Brasil_A-42a.svg"
+  },
+  {
+    "id": "A-42B",
+    "code": "A-42B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-42B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Brasil_A-42b.svg"
+  },
+  {
+    "id": "A-42C",
+    "code": "A-42C",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-42C",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Brasil_A-42c.svg"
+  },
+  {
+    "id": "A-43",
+    "code": "A-43",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-43",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Brasil_A-43.svg"
+  },
+  {
+    "id": "A-44",
+    "code": "A-44",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-44",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Brasil_A-44.svg"
+  },
+  {
+    "id": "A-45",
+    "code": "A-45",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-45",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/Brasil_A-45.svg"
+  },
+  {
+    "id": "A-46",
+    "code": "A-46",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-46",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Brasil_A-46.svg"
+  },
+  {
+    "id": "A-47",
+    "code": "A-47",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-47",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Brasil_A-47.svg"
+  },
+  {
+    "id": "A-48",
+    "code": "A-48",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-48",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Brasil_A-48.svg"
+  },
+  {
+    "id": "A-4A",
+    "code": "A-4A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-4A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Brasil_A-4a.svg"
+  },
+  {
+    "id": "A-4B",
+    "code": "A-4B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-4B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Brasil_A-4b.svg"
+  },
+  {
+    "id": "A-5A",
+    "code": "A-5A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-5A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Brasil_A-5a.svg"
+  },
+  {
+    "id": "A-5B",
+    "code": "A-5B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-5B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Brasil_A-5b.svg"
+  },
+  {
+    "id": "A-6",
+    "code": "A-6",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-6",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Brasil_A-6.svg"
+  },
+  {
+    "id": "A-7A",
+    "code": "A-7A",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-7A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Brasil_A-7a.svg"
+  },
+  {
+    "id": "A-7B",
+    "code": "A-7B",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-7B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/Brasil_A-7b.svg"
+  },
+  {
+    "id": "A-8",
+    "code": "A-8",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-8",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Brasil_A-8.svg"
+  },
+  {
+    "id": "A-9",
+    "code": "A-9",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa A-9",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Brasil_A-9.svg"
+  },
+  {
+    "id": "Brasil Fim do trecho pavimentado",
+    "code": "Brasil Fim do trecho pavimentado",
+    "category": "advertencia",
+    "categoryName": "Advertência",
+    "description": "Placa Brasil Fim do trecho pavimentado",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Brasil_Fim_do_trecho_pavimentado.svg"
+  },
+  {
+    "id": "Brasil No motos",
+    "code": "Brasil No motos",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa Brasil No motos",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Brasil_No_motos.svg"
+  },
+  {
+    "id": "R-1",
+    "code": "R-1",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-1",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Brasil_R-1.svg"
+  },
+  {
+    "id": "R-10",
+    "code": "R-10",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-10",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/Brasil_R-10.svg"
+  },
+  {
+    "id": "R-11",
+    "code": "R-11",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-11",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Brasil_R-11.svg"
+  },
+  {
+    "id": "R-12",
+    "code": "R-12",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-12",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Brasil_R-12.svg"
+  },
+  {
+    "id": "R-13",
+    "code": "R-13",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-13",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/8/83/Brasil_R-13.svg"
+  },
+  {
+    "id": "R-14",
+    "code": "R-14",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-14",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Brasil_R-14.svg"
+  },
+  {
+    "id": "R-15",
+    "code": "R-15",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-15",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Brasil_R-15.svg"
+  },
+  {
+    "id": "R-16",
+    "code": "R-16",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-16",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Brasil_R-16.svg"
+  },
+  {
+    "id": "R-17",
+    "code": "R-17",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-17",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Brasil_R-17.svg"
+  },
+  {
+    "id": "R-18",
+    "code": "R-18",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-18",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Brasil_R-18.svg"
+  },
+  {
+    "id": "R-19",
+    "code": "R-19",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-19",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Brasil_R-19_%2880%29.svg"
+  },
+  {
+    "id": "R-2",
+    "code": "R-2",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-2",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Brasil_R-2.svg"
+  },
+  {
+    "id": "R-20",
+    "code": "R-20",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-20",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Brasil_R-20.svg"
+  },
+  {
+    "id": "R-21",
+    "code": "R-21",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-21",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Brasil_R-21.svg"
+  },
+  {
+    "id": "R-22",
+    "code": "R-22",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-22",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Brasil_R-22.svg"
+  },
+  {
+    "id": "R-23",
+    "code": "R-23",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-23",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Brasil_R-23.svg"
+  },
+  {
+    "id": "R-24A",
+    "code": "R-24A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-24A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Brasil_R-24a.svg"
+  },
+  {
+    "id": "R-24B",
+    "code": "R-24B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-24B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Brasil_R-24b.svg"
+  },
+  {
+    "id": "R-25A",
+    "code": "R-25A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-25A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Brasil_R-25a.svg"
+  },
+  {
+    "id": "R-25B",
+    "code": "R-25B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-25B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Brasil_R-25b.svg"
+  },
+  {
+    "id": "R-25C",
+    "code": "R-25C",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-25C",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Brasil_R-25c.svg"
+  },
+  {
+    "id": "R-25D",
+    "code": "R-25D",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-25D",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/Brasil_R-25d.svg"
+  },
+  {
+    "id": "R-26",
+    "code": "R-26",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-26",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Brasil_R-26.svg"
+  },
+  {
+    "id": "R-27",
+    "code": "R-27",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-27",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Brasil_R-27.svg"
+  },
+  {
+    "id": "R-28",
+    "code": "R-28",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-28",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Brasil_R-28.svg"
+  },
+  {
+    "id": "R-29",
+    "code": "R-29",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-29",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Brasil_R-29.svg"
+  },
+  {
+    "id": "R-3",
+    "code": "R-3",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-3",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Brasil_R-3.svg"
+  },
+  {
+    "id": "R-30",
+    "code": "R-30",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-30",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Brasil_R-30.svg"
+  },
+  {
+    "id": "R-31",
+    "code": "R-31",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-31",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Brasil_R-31.svg"
+  },
+  {
+    "id": "R-32",
+    "code": "R-32",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-32",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Brasil_R-32.svg"
+  },
+  {
+    "id": "R-33",
+    "code": "R-33",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-33",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Brasil_R-33.svg"
+  },
+  {
+    "id": "R-34",
+    "code": "R-34",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-34",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/8/83/Brasil_R-34.svg"
+  },
+  {
+    "id": "R-35A",
+    "code": "R-35A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-35A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Brasil_R-35a.svg"
+  },
+  {
+    "id": "R-35B",
+    "code": "R-35B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-35B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Brasil_R-35b.svg"
+  },
+  {
+    "id": "R-36A",
+    "code": "R-36A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-36A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Brasil_R-36a.svg"
+  },
+  {
+    "id": "R-36B",
+    "code": "R-36B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-36B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Brasil_R-36b.svg"
+  },
+  {
+    "id": "R-36C",
+    "code": "R-36C",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-36C",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Brasil_R-36c.svg"
+  },
+  {
+    "id": "R-37",
+    "code": "R-37",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-37",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Brasil_R-37.svg"
+  },
+  {
+    "id": "R-38",
+    "code": "R-38",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-38",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Brasil_R-38.svg"
+  },
+  {
+    "id": "R-39",
+    "code": "R-39",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-39",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Brasil_R-39.svg"
+  },
+  {
+    "id": "R-40",
+    "code": "R-40",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-40",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Brasil_R-40.svg"
+  },
+  {
+    "id": "R-4A",
+    "code": "R-4A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-4A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Brasil_R-4a.svg"
+  },
+  {
+    "id": "R-4B",
+    "code": "R-4B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-4B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Brasil_R-4b.svg"
+  },
+  {
+    "id": "R-5A",
+    "code": "R-5A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-5A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Brasil_R-5a.svg"
+  },
+  {
+    "id": "R-5B",
+    "code": "R-5B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-5B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Brasil_R-5b.svg"
+  },
+  {
+    "id": "R-6A",
+    "code": "R-6A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-6A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Brasil_R-6a.svg"
+  },
+  {
+    "id": "R-6B",
+    "code": "R-6B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-6B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Brasil_R-6b.svg"
+  },
+  {
+    "id": "R-6C",
+    "code": "R-6C",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-6C",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Brasil_R-6c.svg"
+  },
+  {
+    "id": "R-7",
+    "code": "R-7",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-7",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Brasil_R-7.svg"
+  },
+  {
+    "id": "R-8A",
+    "code": "R-8A",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-8A",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Brasil_R-8a.svg"
+  },
+  {
+    "id": "R-8B",
+    "code": "R-8B",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-8B",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Brasil_R-8b.svg"
+  },
+  {
+    "id": "R-9",
+    "code": "R-9",
+    "category": "regulamentacao",
+    "categoryName": "Regulamentação",
+    "description": "Placa R-9",
+    "svgUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Brasil_R-9.svg"
+  }
+]

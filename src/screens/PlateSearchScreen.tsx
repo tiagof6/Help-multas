@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Linking, Alert, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function PlateSearchScreen() {
+  const navigation = useNavigation();
   
   const openMasterPlaca = async () => {
     const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.devplank.masterplaca';
@@ -22,8 +24,16 @@ export default function PlateSearchScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Consulta de Veículos</Text>
-        <Text style={styles.subtitle}>Verifique restrições e dados oficiais</Text>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
+          <Text style={styles.backBtnText}>← Voltar</Text>
+        </TouchableOpacity>
+        <View style={styles.headerTitleContainer}>
+          <View>
+            <Text style={styles.title}>Consulta de Veículos</Text>
+            <Text style={styles.subtitle}>Verifique restrições e dados oficiais</Text>
+          </View>
+        </View>
+        <View style={{ width: 60 }} />
       </View>
 
       <View style={styles.content}>
@@ -60,16 +70,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#1e293b',
     borderBottomWidth: 1,
     borderBottomColor: '#334155',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerTitleContainer: {
+    alignItems: 'center',
+  },
+  backBtn: {
+    padding: 8,
+  },
+  backBtnText: {
+    color: '#60a5fa',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#f8fafc',
+    textAlign: 'center',
   },
   subtitle: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#94a3b8',
-    marginTop: 4,
+    marginTop: 2,
+    textAlign: 'center',
   },
   content: {
     padding: 20,

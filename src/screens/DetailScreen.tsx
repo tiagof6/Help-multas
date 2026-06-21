@@ -19,7 +19,6 @@ export default function DetailScreen() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const observacaoTexto = infraction.observacoes || "Nenhuma observação específica obrigatória para este enquadramento. Preencha conforme as regras gerais do manual.";
 
   return (
     <SafeAreaView style={styles.container}>
@@ -78,20 +77,7 @@ export default function DetailScreen() {
           <Text style={styles.sectionContent}>{infraction.competencia}</Text>
         </View>
 
-        {/* CAMPO DE OBSERVAÇÃO DESTACADO */}
-        <View style={[styles.section, styles.obsSection]}>
-          <Text style={styles.obsTitle}>Campo de Observações no AIT</Text>
-          <Text style={styles.obsContent}>{observacaoTexto}</Text>
-          
-          <TouchableOpacity 
-            style={styles.copyButton} 
-            onPress={() => copyToClipboard(observacaoTexto)}
-          >
-            <Text style={styles.copyButtonText}>
-              {copied ? "✅ Copiado!" : "📋 Copiar Texto"}
-            </Text>
-          </TouchableOpacity>
-        </View>
+        {/* O campo de observações foi removido do MBFT extraído */}
 
       </ScrollView>
     </SafeAreaView>

@@ -5,6 +5,8 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 import { signOut } from 'firebase/auth';
 import { auth } from '../services/firebase';
+import * as IntentLauncher from 'expo-intent-launcher';
+import { Platform } from 'react-native';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Dashboard'>;
 
@@ -23,6 +25,7 @@ interface GridMenu {
   color: string;
   route?: keyof RootStackParamList;
   url?: string;
+  packageName?: string;
   adminOnly?: boolean;
 }
 
@@ -36,8 +39,8 @@ const MENU_ITEMS: GridMenu[] = [
   { id: '7', title: 'Licenciamento Nacional', icon: '📅', color: '#14b8a6', route: 'LicensingTable' },
   { id: '8', title: 'Anotar Placa', icon: '📍', color: '#ef4444', route: 'QuickDraft' },
   { id: '9', title: 'Bloco de Notas', icon: '📝', color: '#f43f5e', route: 'Notes' },
-  { id: '10', title: 'App Senatran', icon: '📱', color: '#2563eb', url: 'https://play.google.com/store/apps/details?id=br.gov.serpro.denatran.fiscalizacaodenatran' },
-  { id: '11', title: 'Consulta Fipe', icon: '🚗', color: '#0ea5e9', url: 'https://play.google.com/store/apps/details?id=br.kms.placafipe' },
+  { id: '10', title: 'App Senatran', icon: '📱', color: '#2563eb', url: 'https://play.google.com/store/apps/details?id=br.gov.serpro.denatran.fiscalizacaodenatran', packageName: 'br.gov.serpro.denatran.fiscalizacaodenatran' },
+  { id: '11', title: 'Consulta Fipe', icon: '🚗', color: '#0ea5e9', url: 'https://play.google.com/store/apps/details?id=br.kms.placafipe', packageName: 'br.kms.placafipe' },
   { id: '12', title: 'Sinesp', icon: '🛡️', color: '#0284c7', url: 'https://seguranca.sinesp.gov.br/' },
   { id: '13', title: 'PSIE Inmetro', icon: '⚖️', color: '#eab308', url: 'https://servicos.rbmlq.gov.br/' },
   { id: '14', title: 'BNMP (Mandados)', icon: '⚖️', color: '#475569', url: 'https://portalbnmp.cnj.jus.br/' },
@@ -45,7 +48,7 @@ const MENU_ITEMS: GridMenu[] = [
   { id: '16', title: 'Rádio Garden', icon: '📻', color: '#84cc16', url: 'https://radio.garden/' },
   { id: '17', title: 'Passatempo', icon: '🎮', color: '#10b981', url: 'https://rachacuca.com.br/' },
   { id: '18', title: 'Cortex MJ', icon: '🏛️', color: '#4f46e5', url: 'https://cortex.mj.gov.br/index.php?e=5#' },
-  { id: '19', title: 'Timestamp', icon: '📸', color: '#ec4899', url: 'https://play.google.com/store/apps/details?id=com.jeyluta.timestampcamerafree' },
+  { id: '19', title: 'Timestamp', icon: '📸', color: '#ec4899', url: 'https://play.google.com/store/apps/details?id=com.jeyluta.timestampcamerafree', packageName: 'com.jeyluta.timestampcamerafree' },
   { id: '20', title: 'Painel Admin', icon: '⚙️', color: '#334155', route: 'Admin', adminOnly: true },
 ];
 
@@ -56,8 +59,24 @@ export default function DashboardScreen() {
 
   const visibleMenuItems = MENU_ITEMS.filter(item => !item.adminOnly || isAdmin);
 
-  const handlePress = (item: GridMenu) => {
-    if (item.url) {
+  const handlePress = async (item: GridMenu) => {
+    if (item.packageName && Platform.OS !== 'web') {
+      try {
+        await IntentLauncher.startActivityAsync(
+          IntentLauncher.ActivityAction.MAIN,
+          {
+            category: 'android.intent.category.LAUNCHER',
+            packageName: item.packageName,
+          }
+        );
+      } catch (error) {
+        if (item.url) {
+          Linking.openURL(`market://details?id=${item.packageName}`).catch(() => {
+            Linking.openURL(item.url!);
+          });
+        }
+      }
+    } else if (item.url) {
       Linking.openURL(item.url).catch(() => {
         Alert.alert('Erro', 'Não foi possível abrir o link externo.');
       });

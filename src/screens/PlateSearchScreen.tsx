@@ -1,19 +1,27 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Linking, Alert, ScrollView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import * as IntentLauncher from 'expo-intent-launcher';
 
 export default function PlateSearchScreen() {
   const navigation = useNavigation();
   
-  const openApp = (packageName: string) => {
-    // Usa um Intent completo do Android para abrir o app pela atividade principal
-    const intentUrl = `intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${packageName};S.browser_fallback_url=https://play.google.com/store/apps/details?id=${packageName};end;`;
-    
+  const openApp = async (packageName: string) => {
     if (Platform.OS === 'web') {
-      // Executa síncrono no Web para o navegador não perder o contexto de clique do usuário
-      window.location.href = intentUrl;
-    } else {
-      Linking.openURL(intentUrl).catch(() => {
+      Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
+      return;
+    }
+
+    try {
+      await IntentLauncher.startActivityAsync(
+        IntentLauncher.ActivityAction.MAIN,
+        {
+          category: 'android.intent.category.LAUNCHER',
+          packageName: packageName,
+        }
+      );
+    } catch (error) {
+      Linking.openURL(`market://details?id=${packageName}`).catch(() => {
         Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
       });
     }

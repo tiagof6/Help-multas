@@ -25,6 +25,19 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "O aplicativo precisa acessar o microfone para gravar áudios de abordagem."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "861703c3-9e3d-452d-b34e-e727bf2ed857"
+      }
     }
   }
 }

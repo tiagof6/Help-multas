@@ -1,29 +1,28 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Linking, Alert, ScrollView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import * as IntentLauncher from 'expo-intent-launcher';
+import SendIntentAndroid from 'react-native-send-intent';
 
 export default function PlateSearchScreen() {
   const navigation = useNavigation();
   
   const openApp = async (packageName: string) => {
-    if (Platform.OS === 'web') {
+    if (Platform.OS === 'web' || Platform.OS === 'ios') {
       Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
       return;
     }
 
     try {
-      await IntentLauncher.startActivityAsync(
-        IntentLauncher.ActivityAction.MAIN,
-        {
-          category: 'android.intent.category.LAUNCHER',
-          packageName: packageName,
-        }
-      );
+      const isInstalled = await SendIntentAndroid.isAppInstalled(packageName);
+      if (isInstalled) {
+        SendIntentAndroid.openApp(packageName);
+      } else {
+        Linking.openURL(`market://details?id=${packageName}`).catch(() => {
+          Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
+        });
+      }
     } catch (error) {
-      Linking.openURL(`market://details?id=${packageName}`).catch(() => {
-        Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
-      });
+      Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
     }
   };
 

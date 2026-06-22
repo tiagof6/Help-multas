@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 import { signOut } from 'firebase/auth';
 import { auth } from '../services/firebase';
-import * as IntentLauncher from 'expo-intent-launcher';
+import SendIntentAndroid from 'react-native-send-intent';
 import { Platform } from 'react-native';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Dashboard'>;
@@ -60,20 +60,21 @@ export default function DashboardScreen() {
   const visibleMenuItems = MENU_ITEMS.filter(item => !item.adminOnly || isAdmin);
 
   const handlePress = async (item: GridMenu) => {
-    if (item.packageName && Platform.OS !== 'web') {
+    if (item.packageName && Platform.OS !== 'web' && Platform.OS !== 'ios') {
       try {
-        await IntentLauncher.startActivityAsync(
-          IntentLauncher.ActivityAction.MAIN,
-          {
-            category: 'android.intent.category.LAUNCHER',
-            packageName: item.packageName,
+        const isInstalled = await SendIntentAndroid.isAppInstalled(item.packageName);
+        if (isInstalled) {
+          SendIntentAndroid.openApp(item.packageName);
+        } else {
+          if (item.url) {
+            Linking.openURL(`market://details?id=${item.packageName}`).catch(() => {
+              Linking.openURL(item.url!);
+            });
           }
-        );
+        }
       } catch (error) {
         if (item.url) {
-          Linking.openURL(`market://details?id=${item.packageName}`).catch(() => {
-            Linking.openURL(item.url!);
-          });
+          Linking.openURL(item.url);
         }
       }
     } else if (item.url) {

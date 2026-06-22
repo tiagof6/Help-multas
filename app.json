@@ -27,6 +27,7 @@
       "bundler": "metro"
     },
     "plugins": [
+      "./withAndroidQueries.js",
       [
         "expo-av",
         {

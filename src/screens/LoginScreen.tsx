@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator, Modal } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { doc, updateDoc } from 'firebase/firestore';
@@ -11,6 +11,12 @@ export default function LoginScreen({ navigation }: any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const [resetModalVisible, setResetModalVisible] = useState(false);
+  const [resetEmail, setResetEmail] = useState('');
+  const [resetLoading, setResetLoading] = useState(false);
+  const [resetMessage, setResetMessage] = useState('');
+  const [resetError, setResetError] = useState(false);
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -42,15 +48,22 @@ export default function LoginScreen({ navigation }: any) {
   };
 
   const handleForgotPassword = async () => {
-    if (!email) {
-      Alert.alert('Aviso', 'Digite o seu e-mail no campo acima e clique em "Esqueci a senha" novamente.');
+    if (!resetEmail) {
+      setResetError(true);
+      setResetMessage('Digite seu e-mail para continuar.');
       return;
     }
+    setResetLoading(true);
+    setResetMessage('');
     try {
-      await sendPasswordResetEmail(auth, email.trim());
-      Alert.alert('Sucesso!', 'Um link para redefinir sua senha foi enviado para o seu e-mail. Verifique a caixa de entrada (e o Spam).');
+      await sendPasswordResetEmail(auth, resetEmail.trim());
+      setResetError(false);
+      setResetMessage('E-mail de recuperação enviado! Verifique sua caixa de entrada e a pasta de Spam.');
     } catch (error: any) {
-      Alert.alert('Erro', 'Não foi possível enviar o e-mail. Tem certeza que o e-mail está correto?');
+      setResetError(true);
+      setResetMessage('Erro ao enviar. Verifique se o e-mail está correto e cadastrado.');
+    } finally {
+      setResetLoading(false);
     }
   };
 
@@ -80,7 +93,11 @@ export default function LoginScreen({ navigation }: any) {
 
         <TouchableOpacity 
           style={{ alignItems: 'flex-end', marginBottom: 15 }} 
-          onPress={handleForgotPassword}
+          onPress={() => {
+            setResetEmail(email); // Puxa o email que ele já tinha digitado (se tiver)
+            setResetMessage('');
+            setResetModalVisible(true);
+          }}
         >
           <Text style={{ color: '#94a3b8', fontSize: 14 }}>Esqueci a senha</Text>
         </TouchableOpacity>
@@ -104,6 +121,56 @@ export default function LoginScreen({ navigation }: any) {
           <Text style={styles.linkText}>Não tem conta? Solicite Acesso</Text>
         </TouchableOpacity>
       </View>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={resetModalVisible}
+        onRequestClose={() => setResetModalVisible(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Recuperar Senha</Text>
+              <TouchableOpacity onPress={() => setResetModalVisible(false)}>
+                <Text style={styles.closeButtonText}>❌</Text>
+              </TouchableOpacity>
+            </View>
+            
+            <Text style={styles.modalSubtitle}>
+              Enviaremos um link para o seu e-mail para você criar uma nova senha.
+            </Text>
+
+            <TextInput
+              style={[styles.input, { marginBottom: 10 }]}
+              placeholder="Digite seu e-mail cadastrado"
+              placeholderTextColor="#64748b"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              value={resetEmail}
+              onChangeText={setResetEmail}
+            />
+
+            {resetMessage ? (
+              <Text style={[styles.resetMessage, resetError ? styles.resetError : styles.resetSuccess]}>
+                {resetMessage}
+              </Text>
+            ) : null}
+
+            <TouchableOpacity 
+              style={styles.resetButton} 
+              onPress={handleForgotPassword}
+              disabled={resetLoading}
+            >
+              {resetLoading ? (
+                <ActivityIndicator color="#0f172a" />
+              ) : (
+                <Text style={styles.resetButtonText}>Enviar Link de Recuperação</Text>
+              )}
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -165,5 +232,62 @@ const styles = StyleSheet.create({
   linkText: {
     color: '#f59e0b',
     fontSize: 14,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  modalContent: {
+    backgroundColor: '#1e293b',
+    borderRadius: 12,
+    width: '100%',
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#334155',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  modalTitle: {
+    color: '#f8fafc',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  closeButtonText: {
+    fontSize: 18,
+  },
+  modalSubtitle: {
+    color: '#94a3b8',
+    fontSize: 14,
+    marginBottom: 20,
+  },
+  resetButton: {
+    backgroundColor: '#f59e0b',
+    padding: 14,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  resetButtonText: {
+    color: '#0f172a',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  resetMessage: {
+    fontSize: 14,
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  resetError: {
+    color: '#ef4444',
+  },
+  resetSuccess: {
+    color: '#22c55e',
   }
 });

@@ -45,9 +45,9 @@ const MENU_ITEMS: GridMenu[] = [
   { id: '13', title: 'PSIE Inmetro', icon: '⚖️', color: '#eab308', url: 'https://servicos.rbmlq.gov.br/' },
   { id: '14', title: 'BNMP (Mandados)', icon: '⚖️', color: '#475569', url: 'https://portalbnmp.cnj.jus.br/' },
   { id: '15', title: 'Veículos SP', icon: '🚘', color: '#dc2626', url: 'https://www3.fazenda.sp.gov.br/SIVEI/' },
-  { id: '16', title: 'Rádio Garden', icon: '📻', color: '#84cc16', url: 'https://radio.garden/' },
-  { id: '17', title: 'Passatempo', icon: '🎮', color: '#10b981', url: 'https://rachacuca.com.br/' },
-  { id: '18', title: 'Cortex MJ', icon: '🏛️', color: '#4f46e5', url: 'https://cortex.mj.gov.br/index.php?e=5#' },
+  { id: '16', title: 'Legislação GCM', icon: '🏛️', color: '#10b981', route: 'GCMLaws' },
+  { id: '17', title: 'Rádio Garden', icon: '📻', color: '#84cc16', url: 'https://radio.garden/' },
+  { id: '18', title: 'Cortex MJ', icon: '🛡️', color: '#4f46e5', url: 'https://cortex.mj.gov.br/index.php?e=5#' },
   { id: '19', title: 'Timestamp', icon: '📸', color: '#ec4899', url: 'https://play.google.com/store/apps/details?id=com.jeyluta.timestampcamerafree', packageName: 'com.jeyluta.timestampcamerafree' },
   { id: '20', title: 'Painel Admin', icon: '⚙️', color: '#334155', route: 'Admin', adminOnly: true },
 ];

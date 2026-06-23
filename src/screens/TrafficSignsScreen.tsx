@@ -22,7 +22,10 @@ export default function TrafficSignsScreen() {
     <View style={styles.card}>
       <View style={styles.imageContainer}>
         <Image 
-          source={{ uri: item.svgUrl }} 
+          source={{ 
+            uri: item.svgUrl,
+            headers: { 'User-Agent': 'HelpMultas/1.0 (Mobile App)' }
+          }} 
           style={{ width: '100%', height: '100%' }} 
           contentFit="contain"
           transition={200}

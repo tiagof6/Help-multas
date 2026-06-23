@@ -10,6 +10,7 @@ import InfractionSearchScreen from './src/screens/InfractionSearchScreen';
 import DetailScreen from './src/screens/DetailScreen';
 import PlateSearchScreen from './src/screens/PlateSearchScreen';
 import ResolutionScreen from './src/screens/ResolutionScreen';
+import ResolutionDetailScreen from './src/screens/ResolutionDetailScreen';
 import TrafficSignsScreen from './src/screens/TrafficSignsScreen';
 import CTBScreen from './src/screens/CTBScreen';
 import CTBDetailScreen from './src/screens/CTBDetailScreen';
@@ -20,6 +21,8 @@ import RegisterScreen from './src/screens/RegisterScreen';
 import AdminScreen from './src/screens/AdminScreen';
 import NotesScreen from './src/screens/NotesScreen';
 import QuickDraftScreen from './src/screens/QuickDraftScreen';
+import GCMLawsScreen from './src/screens/GCMLawsScreen';
+import GCMLawDetailScreen from './src/screens/GCMLawDetailScreen';
 
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { doc, onSnapshot } from 'firebase/firestore';
@@ -34,6 +37,7 @@ export type RootStackParamList = {
   Detail: { infraction: any };
   PlateSearch: undefined;
   Resolution: undefined;
+  ResolutionDetail: { title: string; text: string };
   TrafficSigns: undefined;
   CTB: undefined;
   CTBDetail: { chapter: any };
@@ -42,6 +46,8 @@ export type RootStackParamList = {
   Admin: undefined;
   Notes: undefined;
   QuickDraft: undefined;
+  GCMLaws: undefined;
+  GCMLawDetail: { title: string; text: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -63,6 +69,7 @@ function MainStack() {
       <Stack.Screen name="Detail" component={DetailScreen} />
       <Stack.Screen name="PlateSearch" component={PlateSearchScreen} />
       <Stack.Screen name="Resolution" component={ResolutionScreen} />
+      <Stack.Screen name="ResolutionDetail" component={ResolutionDetailScreen} />
       <Stack.Screen name="TrafficSigns" component={TrafficSignsScreen} />
       <Stack.Screen name="CTB" component={CTBScreen} />
       <Stack.Screen name="CTBDetail" component={CTBDetailScreen} />
@@ -71,6 +78,8 @@ function MainStack() {
       <Stack.Screen name="Admin" component={AdminScreen} />
       <Stack.Screen name="Notes" component={NotesScreen} />
       <Stack.Screen name="QuickDraft" component={QuickDraftScreen} />
+      <Stack.Screen name="GCMLaws" component={GCMLawsScreen} />
+      <Stack.Screen name="GCMLawDetail" component={GCMLawDetailScreen} />
     </Stack.Navigator>
   );
 }

@@ -4,93 +4,21 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
-import { resolucao996Text } from '../data/res996';
-import { resolucao985Text } from '../data/res985';
-import { resolucao960Text } from '../data/res960';
-import { resolucao916Text } from '../data/res916';
-import { resolucao432Text } from '../data/res432';
-import { resolucao923Text } from '../data/res923';
-import { resolucao940Text } from '../data/res940';
-import { resolucao969Text } from '../data/res969';
-import { resolucao819Text } from '../data/res819';
-import { resolucao798Text } from '../data/res798';
+import { leisGCM } from '../data/lawsGCM';
 
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Resolution'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'GCMLaws'>;
 
-const RESOLUTIONS = [
-  {
-    id: '996',
-    title: 'Ciclomotores e Bicicletas Elétricas',
-    description: 'Resolução 996/23',
-    text: resolucao996Text
-  },
-  {
-    id: '985',
-    title: 'Manual Brasileiro de Fiscalização (MBFT)',
-    description: 'Resolução 985/22',
-    text: resolucao985Text
-  },
-  {
-    id: '960',
-    title: 'Requisitos para Vidros (Insulfilm)',
-    description: 'Resolução 960/22',
-    text: resolucao960Text
-  },
-  {
-    id: '916',
-    title: 'Modificações (Rebaixamento, Cor, LED)',
-    description: 'Resolução 916/22',
-    text: resolucao916Text
-  },
-  {
-    id: '432',
-    title: 'Fiscalização de Álcool (Lei Seca)',
-    description: 'Resolução 432/13',
-    text: resolucao432Text
-  },
-  {
-    id: '923',
-    title: 'Exame Toxicológico (Cat. C, D, E)',
-    description: 'Resolução 923/22',
-    text: resolucao923Text
-  },
-  {
-    id: '940',
-    title: 'Uso de Capacete Motociclístico',
-    description: 'Resolução 940/22',
-    text: resolucao940Text
-  },
-  {
-    id: '969',
-    title: 'Placas Padrão Mercosul (PIV)',
-    description: 'Resolução 969/22',
-    text: resolucao969Text
-  },
-  {
-    id: '819',
-    title: 'Transporte de Crianças (Cadeirinha)',
-    description: 'Resolução 819/21',
-    text: resolucao819Text
-  },
-  {
-    id: '798',
-    title: 'Fiscalização de Velocidade (Radares)',
-    description: 'Resolução 798/20',
-    text: resolucao798Text
-  }
-];
-
-export default function ResolutionScreen() {
+export default function GCMLawsScreen() {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<NavigationProp>();
 
-  const renderItem = ({ item }: { item: typeof RESOLUTIONS[0] }) => (
+  const renderItem = ({ item }: { item: typeof leisGCM[0] }) => (
     <TouchableOpacity 
       style={styles.card}
-      onPress={() => navigation.navigate('ResolutionDetail' as any, { title: item.title, text: item.text })}
+      onPress={() => navigation.navigate('GCMLawDetail' as any, { title: item.title, text: item.text })}
     >
       <View style={styles.cardIcon}>
-        <Text style={{ fontSize: 24 }}>📄</Text>
+        <Text style={{ fontSize: 24 }}>🏛️</Text>
       </View>
       <View style={styles.cardContent}>
         <Text style={styles.cardTitle}>{item.title}</Text>
@@ -106,12 +34,12 @@ export default function ResolutionScreen() {
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
           <Text style={styles.backBtnText}>← Voltar</Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Resoluções</Text>
+        <Text style={styles.headerTitle}>Leis e Estatutos</Text>
         <View style={{ width: 60 }} />
       </View>
       
       <FlatList
-        data={RESOLUTIONS}
+        data={leisGCM}
         keyExtractor={item => item.id}
         renderItem={renderItem}
         contentContainerStyle={styles.listContainer}

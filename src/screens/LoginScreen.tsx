@@ -11,6 +11,7 @@ export default function LoginScreen({ navigation }: any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [loginError, setLoginError] = useState('');
 
   const [resetModalVisible, setResetModalVisible] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
@@ -19,8 +20,9 @@ export default function LoginScreen({ navigation }: any) {
   const [resetError, setResetError] = useState(false);
 
   const handleLogin = async () => {
+    setLoginError('');
     if (!email || !password) {
-      Alert.alert('Erro', 'Preencha todos os campos!');
+      setLoginError('Por favor, preencha todos os campos.');
       return;
     }
     setLoading(true);
@@ -41,7 +43,7 @@ export default function LoginScreen({ navigation }: any) {
         sessionId: newSessionId
       });
     } catch (error: any) {
-      Alert.alert('Erro no Login', 'Usuário não encontrado ou senha incorreta.');
+      setLoginError('E-mail ou senha incorretos. Tente novamente.');
     } finally {
       setLoading(false);
     }
@@ -87,22 +89,24 @@ export default function LoginScreen({ navigation }: any) {
 
       <View style={styles.form}>
         <TextInput
-          style={styles.input}
+          style={[styles.input, loginError ? styles.inputError : null]}
           placeholder="E-mail"
           placeholderTextColor="#64748b"
           keyboardType="email-address"
           autoCapitalize="none"
           value={email}
-          onChangeText={setEmail}
+          onChangeText={(text) => { setEmail(text); setLoginError(''); }}
         />
         <TextInput
-          style={styles.input}
+          style={[styles.input, loginError ? styles.inputError : null]}
           placeholder="Senha"
           placeholderTextColor="#64748b"
           secureTextEntry
           value={password}
-          onChangeText={setPassword}
+          onChangeText={(text) => { setPassword(text); setLoginError(''); }}
         />
+
+        {loginError ? <Text style={styles.loginErrorText}>{loginError}</Text> : null}
 
         <TouchableOpacity 
           style={{ alignItems: 'flex-end', marginBottom: 15 }} 
@@ -225,6 +229,16 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
     borderColor: '#334155',
+  },
+  inputError: {
+    borderColor: '#ef4444',
+  },
+  loginErrorText: {
+    color: '#ef4444',
+    fontSize: 14,
+    marginBottom: 15,
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
   button: {
     backgroundColor: '#f59e0b',

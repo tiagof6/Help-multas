@@ -27,6 +27,17 @@ export default function AdminScreen() {
       querySnapshot.forEach((docSnap) => {
         usersList.push({ id: docSnap.id, ...docSnap.data() });
       });
+      
+      // Ordena a lista: pendentes primeiro, e depois pelos mais recentes
+      usersList.sort((a, b) => {
+        if (a.status === 'aguardando' && b.status !== 'aguardando') return -1;
+        if (b.status === 'aguardando' && a.status !== 'aguardando') return 1;
+        
+        const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        return dateB - dateA;
+      });
+      
       setUsers(usersList);
     } catch (error) {
       console.error(error);
@@ -69,6 +80,28 @@ export default function AdminScreen() {
     else if (view === 'drafts') fetchDrafts();
     else if (view === 'versions') fetchConfig();
   }, [view]);
+
+  const deleteUser = async (userId: string, userName: string) => {
+    Alert.alert(
+      "Excluir Usuário",
+      `Tem certeza que deseja excluir permanentemente o perfil de ${userName}?`,
+      [
+        { text: "Cancelar", style: "cancel" },
+        { 
+          text: "Excluir", 
+          style: "destructive",
+          onPress: async () => {
+            try {
+              await deleteDoc(doc(db, 'users', userId));
+              setUsers(users.filter(u => u.id !== userId));
+            } catch (error) {
+              Alert.alert("Erro", "Falha ao excluir o usuário.");
+            }
+          }
+        }
+      ]
+    );
+  };
 
   const changeStatus = async (userId: string, newStatus: string) => {
     try {
@@ -194,6 +227,9 @@ export default function AdminScreen() {
             <Text style={styles.btnText}>Bloquear</Text>
           </TouchableOpacity>
         )}
+        <TouchableOpacity style={[styles.btn, styles.btnDelete]} onPress={() => deleteUser(item.id, item.name)}>
+          <Text style={styles.btnText}>Excluir</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -379,6 +415,7 @@ const styles = StyleSheet.create({
   btn: { flex: 1, padding: 12, borderRadius: 6, alignItems: 'center' },
   btnApprove: { backgroundColor: '#22c55e' },
   btnBlock: { backgroundColor: '#ef4444' },
-  btnText: { color: '#fff', fontWeight: 'bold' },
+  btnDelete: { backgroundColor: '#334155' },
+  btnText: { color: '#fff', fontWeight: 'bold', fontSize: 13 },
   emptyText: { color: '#94a3b8', textAlign: 'center', marginTop: 50 }
 });

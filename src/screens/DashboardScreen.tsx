@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, Alert, FlatList, Linking, Platform } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, Alert, FlatList, Linking, Platform, TextInput, Modal, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
-import { signOut } from 'firebase/auth';
+import { signOut, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
 import { auth } from '../services/firebase';
 import SendIntentAndroid from 'react-native-send-intent';
 
@@ -62,6 +62,50 @@ export default function DashboardScreen() {
 
   const [isEditing, setIsEditing] = useState(false);
   const [menuOrder, setMenuOrder] = useState<string[]>([]);
+  
+  const [pwdModalVisible, setPwdModalVisible] = useState(false);
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  const [pwdLoading, setPwdLoading] = useState(false);
+  const [pwdError, setPwdError] = useState('');
+
+  const handleChangePassword = async () => {
+    setPwdError('');
+    if (!currentPassword || !newPassword || !confirmNewPassword) {
+      setPwdError('Preencha todos os campos.');
+      return;
+    }
+    if (newPassword !== confirmNewPassword) {
+      setPwdError('As novas senhas não conferem.');
+      return;
+    }
+    if (newPassword.length < 6) {
+      setPwdError('A nova senha deve ter no mínimo 6 caracteres.');
+      return;
+    }
+    if (!currentUser?.email) return;
+
+    setPwdLoading(true);
+    try {
+      const credential = EmailAuthProvider.credential(currentUser.email, currentPassword);
+      await reauthenticateWithCredential(currentUser, credential);
+      await updatePassword(currentUser, newPassword);
+      Alert.alert('Sucesso', 'Senha alterada com sucesso!');
+      setPwdModalVisible(false);
+      setCurrentPassword('');
+      setNewPassword('');
+      setConfirmNewPassword('');
+    } catch (error: any) {
+      if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+        setPwdError('A senha atual está incorreta.');
+      } else {
+        setPwdError('Erro ao alterar senha. Verifique sua conexão.');
+      }
+    } finally {
+      setPwdLoading(false);
+    }
+  };
 
   useEffect(() => {
     loadMenuOrder();
@@ -210,6 +254,9 @@ export default function DashboardScreen() {
           <TouchableOpacity onPress={() => setIsEditing(!isEditing)} style={[styles.actionBtn, isEditing && styles.actionBtnActive]}>
             <Text style={styles.actionText}>{isEditing ? 'Concluir ✅' : 'Organizar ⚙️'}</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => setPwdModalVisible(true)} style={styles.pwdBtn}>
+            <Text style={styles.actionText}>Senha 🔑</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={handleLogout} style={styles.logoutBtn}>
             <Text style={styles.logoutText}>Sair 🚪</Text>
           </TouchableOpacity>
@@ -225,6 +272,51 @@ export default function DashboardScreen() {
         columnWrapperStyle={styles.row}
         showsVerticalScrollIndicator={false}
       />
+
+      <Modal visible={pwdModalVisible} transparent animationType="slide" onRequestClose={() => setPwdModalVisible(false)}>
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Alterar Senha</Text>
+              <TouchableOpacity onPress={() => setPwdModalVisible(false)}>
+                <Text style={styles.closeButtonText}>❌</Text>
+              </TouchableOpacity>
+            </View>
+            
+            <TextInput
+              style={[styles.input, pwdError ? styles.inputError : null]}
+              placeholder="Senha Atual"
+              placeholderTextColor="#64748b"
+              secureTextEntry
+              value={currentPassword}
+              onChangeText={(text) => { setCurrentPassword(text); setPwdError(''); }}
+            />
+            <TextInput
+              style={[styles.input, pwdError ? styles.inputError : null]}
+              placeholder="Nova Senha"
+              placeholderTextColor="#64748b"
+              secureTextEntry
+              value={newPassword}
+              onChangeText={(text) => { setNewPassword(text); setPwdError(''); }}
+            />
+            <TextInput
+              style={[styles.input, pwdError ? styles.inputError : null]}
+              placeholder="Repetir Nova Senha"
+              placeholderTextColor="#64748b"
+              secureTextEntry
+              value={confirmNewPassword}
+              onChangeText={(text) => { setConfirmNewPassword(text); setPwdError(''); }}
+            />
+
+            {pwdError ? <Text style={styles.errorText}>{pwdError}</Text> : null}
+
+            <TouchableOpacity style={styles.saveBtn} onPress={handleChangePassword} disabled={pwdLoading}>
+              {pwdLoading ? <ActivityIndicator color="#0f172a" /> : <Text style={styles.saveBtnText}>Salvar Nova Senha</Text>}
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
       <View style={styles.footerInfo}>
         <Text style={styles.footerText}>Help Multas</Text>
         <Text style={styles.footerSub}>App Não Governamental</Text>
@@ -377,5 +469,70 @@ const styles = StyleSheet.create({
   footerSub: {
     color: '#64748b',
     fontSize: 12,
+  },
+  pwdBtn: {
+    padding: 8,
+    backgroundColor: '#3b82f6',
+    borderRadius: 8,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  modalContent: {
+    backgroundColor: '#1e293b',
+    borderRadius: 12,
+    width: '100%',
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#334155',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  modalTitle: {
+    color: '#f8fafc',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  closeButtonText: {
+    fontSize: 18,
+  },
+  input: {
+    backgroundColor: '#0f172a',
+    color: '#f8fafc',
+    borderRadius: 8,
+    padding: 15,
+    marginBottom: 15,
+    borderWidth: 1,
+    borderColor: '#334155',
+  },
+  inputError: {
+    borderColor: '#ef4444',
+  },
+  errorText: {
+    color: '#ef4444',
+    fontSize: 14,
+    marginBottom: 15,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  saveBtn: {
+    backgroundColor: '#f59e0b',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 5,
+  },
+  saveBtnText: {
+    color: '#0f172a',
+    fontWeight: 'bold',
+    fontSize: 16,
   }
 });

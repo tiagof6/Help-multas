@@ -10,7 +10,6 @@ import { auth, db } from '../services/firebase';
 export default function RegisterScreen({ navigation }: any) {
   const insets = useSafeAreaInsets();
   const [name, setName] = useState('');
-  const [matricula, setMatricula] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [agreeTerms, setAgreeTerms] = useState(false);
@@ -52,7 +51,7 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
   };
 
   const handleRegister = async () => {
-    if (!email || !password || !name || !matricula) {
+    if (!email || !password || !name) {
       Alert.alert('Erro', 'Preencha todos os campos!');
       return;
     }
@@ -70,7 +69,6 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
       // Salva os dados no Firestore com status inicial aguardando aprovação
       await setDoc(doc(db, 'users', userCredential.user.uid), {
         name: name.trim(),
-        matricula: matricula.trim(),
         email: email.trim(),
         status: 'aguardando', 
         createdAt: new Date().toISOString(),
@@ -100,14 +98,6 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
           autoCapitalize="words"
           value={name}
           onChangeText={setName}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Matrícula / RE (Opcional ou Obrigatório)"
-          placeholderTextColor="#64748b"
-          autoCapitalize="none"
-          value={matricula}
-          onChangeText={setMatricula}
         />
         <TextInput
           style={styles.input}

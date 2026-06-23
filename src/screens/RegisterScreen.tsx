@@ -18,10 +18,15 @@ export default function RegisterScreen({ navigation }: any) {
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [agreeResponsibility, setAgreeResponsibility] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({ name: '', email: '', password: '', confirmPassword: '', terms: '', general: '' });
 
   const [modalVisible, setModalVisible] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [modalContent, setModalContent] = useState('');
+
+  const hasMinLength = password.length >= 6;
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasSpecialChar = /[!@#\$%\^&\*\(\)_\+\-\=\{\}\[\]\|\\:;"'<>,\.\?\/]/.test(password);
 
   const TERMS_OF_USE = `1. Aceitação
 Ao acessar e usar o aplicativo Help Multas, você concorda em cumprir e ficar vinculado aos seguintes termos de uso.
@@ -54,29 +59,31 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
   };
 
   const handleRegister = async () => {
-    if (!email || !password || !confirmPassword || !name) {
-      Alert.alert('Erro', 'Preencha todos os campos!');
-      return;
-    }
+    let newErrors = { name: '', email: '', password: '', confirmPassword: '', terms: '', general: '' };
+    let hasError = false;
+
+    if (!name.trim()) { newErrors.name = 'Por favor, preencha o Nome Completo.'; hasError = true; }
     
-    if (password !== confirmPassword) {
-      Alert.alert('Erro', 'As senhas não coincidem!');
-      return;
+    if (!email.trim()) { newErrors.email = 'Por favor, preencha o E-mail.'; hasError = true; }
+    else if (!email.includes('@')) { newErrors.email = 'Por favor, insira um e-mail válido.'; hasError = true; }
+    
+    if (!password) { newErrors.password = 'A senha é obrigatória.'; hasError = true; }
+    else if (!hasMinLength || !hasUpperCase || !hasSpecialChar) {
+      newErrors.password = 'A senha não atende a todos os requisitos abaixo.'; hasError = true;
     }
 
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#\$%\^&\*\(\)_\+\-\=\{\}\[\]\|\\:;"'<>,\.\?\/]).{6,}$/;
-    if (!passwordRegex.test(password)) {
-      Alert.alert(
-        'Senha Fraca', 
-        'A senha deve conter:\\n- No mínimo 6 caracteres\\n- Pelo menos uma letra maiúscula\\n- Pelo menos um caractere especial (ex: @, !, #, $)'
-      );
-      return;
+    if (!confirmPassword) { newErrors.confirmPassword = 'Por favor, repita a senha.'; hasError = true; }
+    else if (password !== confirmPassword) { newErrors.confirmPassword = 'As senhas digitadas não são iguais.'; hasError = true; }
+
+    if (!agreeTerms || !agreeResponsibility) { 
+      newErrors.terms = 'É necessário ler e aceitar os Termos e declarar sua responsabilidade para criar a conta.'; 
+      hasError = true; 
     }
 
-    if (!agreeTerms || !agreeResponsibility) {
-      Alert.alert('Aviso Jurídico', 'Você precisa ler e concordar com os Termos e Políticas, além de confirmar a sua responsabilidade no uso do aplicativo para criar a conta.');
-      return;
-    }
+    setErrors(newErrors);
+
+    if (hasError) return;
+
     setLoading(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email.trim(), password);
@@ -97,7 +104,7 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
       
       Alert.alert('Sucesso', 'Conta criada! Você precisará aguardar a aprovação do administrador para usar o app.');
     } catch (error: any) {
-      Alert.alert('Erro no Cadastro', error.message);
+      setErrors(prev => ({ ...prev, general: 'Erro no Firebase: ' + error.message }));
     } finally {
       setLoading(false);
     }
@@ -109,51 +116,70 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
       <Text style={styles.subtitle}>Solicitar Acesso ao Help Multas</Text>
 
       <ScrollView style={styles.form} showsVerticalScrollIndicator={false}>
+        {errors.general ? <Text style={styles.generalError}>{errors.general}</Text> : null}
+
         <TextInput
-          style={styles.input}
+          style={[styles.input, errors.name ? styles.inputError : null]}
           placeholder="Nome Completo"
           placeholderTextColor="#64748b"
           autoCapitalize="words"
           value={name}
-          onChangeText={setName}
+          onChangeText={(text) => { setName(text); setErrors(prev => ({...prev, name: ''})); }}
         />
+        {errors.name ? <Text style={styles.errorText}>{errors.name}</Text> : null}
+
         <TextInput
-          style={styles.input}
+          style={[styles.input, errors.email ? styles.inputError : null]}
           placeholder="E-mail Institucional ou Pessoal"
           placeholderTextColor="#64748b"
           keyboardType="email-address"
           autoCapitalize="none"
           value={email}
-          onChangeText={setEmail}
+          onChangeText={(text) => { setEmail(text); setErrors(prev => ({...prev, email: ''})); }}
         />
+        {errors.email ? <Text style={styles.errorText}>{errors.email}</Text> : null}
 
-        <View style={styles.passwordContainer}>
+        <View style={[styles.passwordContainer, errors.password ? styles.inputError : null]}>
           <TextInput
             style={styles.passwordInput}
             placeholder="Senha"
             placeholderTextColor="#64748b"
             secureTextEntry={!showPassword}
             value={password}
-            onChangeText={setPassword}
+            onChangeText={(text) => { setPassword(text); setErrors(prev => ({...prev, password: ''})); }}
           />
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
             <MaterialIcons name={showPassword ? "visibility" : "visibility-off"} size={22} color="#94a3b8" />
           </TouchableOpacity>
         </View>
+        {errors.password ? <Text style={styles.errorText}>{errors.password}</Text> : null}
 
-        <View style={styles.passwordContainer}>
+        <View style={styles.requirementsContainer}>
+          <Text style={[styles.reqText, hasMinLength ? styles.reqMet : styles.reqMissing]}>
+            {hasMinLength ? '✓' : '○'} No mínimo 6 caracteres
+          </Text>
+          <Text style={[styles.reqText, hasUpperCase ? styles.reqMet : styles.reqMissing]}>
+            {hasUpperCase ? '✓' : '○'} Pelo menos uma letra maiúscula
+          </Text>
+          <Text style={[styles.reqText, hasSpecialChar ? styles.reqMet : styles.reqMissing]}>
+            {hasSpecialChar ? '✓' : '○'} Pelo menos um caractere especial (ex: @, !, #)
+          </Text>
+        </View>
+
+        <View style={[styles.passwordContainer, errors.confirmPassword ? styles.inputError : null]}>
           <TextInput
             style={styles.passwordInput}
             placeholder="Repetir Senha"
             placeholderTextColor="#64748b"
             secureTextEntry={!showConfirmPassword}
             value={confirmPassword}
-            onChangeText={setConfirmPassword}
+            onChangeText={(text) => { setConfirmPassword(text); setErrors(prev => ({...prev, confirmPassword: ''})); }}
           />
           <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)} style={styles.eyeIcon}>
             <MaterialIcons name={showConfirmPassword ? "visibility" : "visibility-off"} size={22} color="#94a3b8" />
           </TouchableOpacity>
         </View>
+        {errors.confirmPassword ? <Text style={styles.errorText}>{errors.confirmPassword}</Text> : null}
 
         <View style={styles.checkboxContainer}>
           <TouchableOpacity style={styles.checkbox} onPress={() => setAgreeTerms(!agreeTerms)}>
@@ -175,6 +201,8 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
             Declaro ser agente público e assumo total responsabilidade pelo uso das consultas deste app (não governamental) no meu trabalho.
           </Text>
         </View>
+
+        {errors.terms ? <Text style={styles.errorTextTerms}>{errors.terms}</Text> : null}
 
         <TouchableOpacity 
           style={styles.button} 
@@ -260,6 +288,50 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
     borderColor: '#334155',
+  },
+  inputError: {
+    borderColor: '#ef4444',
+  },
+  errorText: {
+    color: '#ef4444',
+    fontSize: 12,
+    marginTop: -10,
+    marginBottom: 15,
+    marginLeft: 5,
+  },
+  errorTextTerms: {
+    color: '#ef4444',
+    fontSize: 13,
+    marginBottom: 15,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  generalError: {
+    color: '#ef4444',
+    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 15,
+    textAlign: 'center',
+    borderWidth: 1,
+    borderColor: '#ef4444',
+  },
+  requirementsContainer: {
+    backgroundColor: 'rgba(15, 23, 42, 0.5)',
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 15,
+    marginTop: -5,
+  },
+  reqText: {
+    fontSize: 12,
+    marginBottom: 4,
+  },
+  reqMet: {
+    color: '#22c55e',
+  },
+  reqMissing: {
+    color: '#64748b',
   },
   passwordContainer: {
     flexDirection: 'row',

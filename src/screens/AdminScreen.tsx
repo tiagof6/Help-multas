@@ -15,6 +15,8 @@ export default function AdminScreen() {
   const [drafts, setDrafts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [view, setView] = useState<'users' | 'drafts' | 'versions'>('users');
+  const [pushMessage, setPushMessage] = useState('');
+  const [pushError, setPushError] = useState(false);
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -211,6 +213,7 @@ export default function AdminScreen() {
     if (changelogData.length === 0) return;
     const latest = changelogData[0];
     setLoading(true);
+    setPushMessage('');
     try {
       // Pega o config atual para não perder o downloadUrl
       const { getDoc } = require('firebase/firestore');
@@ -227,12 +230,16 @@ export default function AdminScreen() {
         downloadUrl: currentDownloadUrl
       }, { merge: true });
 
-      Alert.alert("Sucesso", `O aplicativo agora vai alertar os usuários sobre a versão ${latest.version}! Lembre-se de colocar o APK novo no link de download.`);
+      setPushError(false);
+      setPushMessage(`✅ Sucesso! Os usuários agora serão notificados sobre a versão ${latest.version}. Lembre-se de colocar o APK novo no link de download.`);
     } catch (e) {
       console.error(e);
-      Alert.alert("Erro", "Não foi possível avisar os usuários.");
+      setPushError(true);
+      setPushMessage(`❌ Erro: Não foi possível avisar os usuários.`);
     } finally {
       setLoading(false);
+      // Limpa a mensagem depois de 10 segundos
+      setTimeout(() => setPushMessage(''), 10000);
     }
   };
 
@@ -244,10 +251,19 @@ export default function AdminScreen() {
         <Text style={{ color: '#cbd5e1', marginTop: 10 }}>{item.message}</Text>
       </View>
       {index === 0 && (
-        <View style={styles.actions}>
-          <TouchableOpacity style={[styles.btn, { backgroundColor: '#8b5cf6' }]} onPress={handlePushUpdate}>
-            <Text style={styles.btnText}>Lançar para Usuários 🚀</Text>
-          </TouchableOpacity>
+        <View style={{ marginTop: 15 }}>
+          {pushMessage ? (
+            <View style={{ backgroundColor: pushError ? '#ef444420' : '#22c55e20', padding: 10, borderRadius: 8, marginBottom: 10, borderWidth: 1, borderColor: pushError ? '#ef4444' : '#22c55e' }}>
+              <Text style={{ color: pushError ? '#ef4444' : '#22c55e', textAlign: 'center', fontWeight: 'bold' }}>
+                {pushMessage}
+              </Text>
+            </View>
+          ) : null}
+          <View style={styles.actions}>
+            <TouchableOpacity style={[styles.btn, { backgroundColor: '#8b5cf6' }]} onPress={handlePushUpdate}>
+              <Text style={styles.btnText}>Lançar para Usuários 🚀</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       )}
     </View>

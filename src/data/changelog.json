@@ -1,0 +1,12 @@
+[
+  {
+    "version": "1.0.1",
+    "date": "2026-06-23T13:19:51.135Z",
+    "message": "Corrigido email de contato, criada aba Sobre e implementado sistema de alertas automáticos"
+  },
+  {
+    "version": "1.0.0",
+    "date": "2026-06-23T00:00:00.000Z",
+    "message": "Versão inicial com controle de quarentena e infrações"
+  }
+]

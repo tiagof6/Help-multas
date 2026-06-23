@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { View, Text, ActivityIndicator, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, ActivityIndicator, TouchableOpacity, Alert, Platform, Linking } from 'react-native';
 
 import DashboardScreen from './src/screens/DashboardScreen';
 import InfractionSearchScreen from './src/screens/InfractionSearchScreen';
@@ -23,11 +23,13 @@ import NotesScreen from './src/screens/NotesScreen';
 import QuickDraftScreen from './src/screens/QuickDraftScreen';
 import GCMLawsScreen from './src/screens/GCMLawsScreen';
 import GCMLawDetailScreen from './src/screens/GCMLawDetailScreen';
+import AboutScreen from './src/screens/AboutScreen';
 
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { doc, onSnapshot } from 'firebase/firestore';
+import { doc, onSnapshot, getDoc } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { auth, db } from './src/services/firebase';
+import appJson from './app.json';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -48,6 +50,7 @@ export type RootStackParamList = {
   QuickDraft: undefined;
   GCMLaws: undefined;
   GCMLawDetail: { title: string; text: string };
+  About: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -80,6 +83,7 @@ function MainStack() {
       <Stack.Screen name="QuickDraft" component={QuickDraftScreen} />
       <Stack.Screen name="GCMLaws" component={GCMLawsScreen} />
       <Stack.Screen name="GCMLawDetail" component={GCMLawDetailScreen} />
+      <Stack.Screen name="About" component={AboutScreen} />
     </Stack.Navigator>
   );
 }
@@ -90,6 +94,40 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const checkVersion = async () => {
+      try {
+        const configRef = doc(db, 'settings', 'appConfig');
+        const configSnap = await getDoc(configRef);
+        if (configSnap.exists()) {
+          const data = configSnap.data();
+          const latestVersion = data.latestVersion;
+          const currentVersion = appJson.expo.version;
+          if (latestVersion && latestVersion > currentVersion) {
+            if (Platform.OS === 'web' && window && window.alert) {
+              window.alert(`Nova atualização disponível! Versão mais recente: ${latestVersion}`);
+            } else {
+              Alert.alert(
+                'Atualização Disponível', 
+                `Uma nova versão do aplicativo está disponível. Versão mais recente: ${latestVersion}`,
+                [
+                  { text: 'Agora não', style: 'cancel' },
+                  { text: 'Baixar', onPress: () => {
+                      if (data.downloadUrl) {
+                        Linking.openURL(data.downloadUrl);
+                      }
+                    }
+                  }
+                ]
+              );
+            }
+          }
+        }
+      } catch (error) {
+        console.log('Error checking version:', error);
+      }
+    };
+    checkVersion();
+
     let unsubscribeSnapshot: any = null;
 
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {

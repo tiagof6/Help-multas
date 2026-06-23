@@ -6,6 +6,7 @@ import { db } from '../services/firebase';
 import { seedInfractionsToFirebase } from '../data/seedFirebase';
 
 import { useNavigation } from '@react-navigation/native';
+import changelogData from '../data/changelog.json';
 
 export default function AdminScreen() {
   const insets = useSafeAreaInsets();
@@ -13,7 +14,7 @@ export default function AdminScreen() {
   const [users, setUsers] = useState<any[]>([]);
   const [drafts, setDrafts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [view, setView] = useState<'users' | 'drafts'>('users');
+  const [view, setView] = useState<'users' | 'drafts' | 'versions'>('users');
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -206,6 +207,52 @@ export default function AdminScreen() {
     );
   };
 
+  const handlePushUpdate = async () => {
+    if (changelogData.length === 0) return;
+    const latest = changelogData[0];
+    setLoading(true);
+    try {
+      // Pega o config atual para não perder o downloadUrl
+      const { getDoc } = require('firebase/firestore');
+      const configRef = doc(db, 'settings', 'appConfig');
+      const configSnap = await getDoc(configRef);
+      let currentDownloadUrl = '';
+      if (configSnap.exists()) {
+        currentDownloadUrl = configSnap.data().downloadUrl || '';
+      }
+
+      await setDoc(configRef, {
+        latestVersion: latest.version,
+        releaseNotes: latest.message,
+        downloadUrl: currentDownloadUrl
+      }, { merge: true });
+
+      Alert.alert("Sucesso", `O aplicativo agora vai alertar os usuários sobre a versão ${latest.version}! Lembre-se de colocar o APK novo no link de download.`);
+    } catch (e) {
+      console.error(e);
+      Alert.alert("Erro", "Não foi possível avisar os usuários.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const renderVersion = ({ item, index }: { item: any, index: number }) => (
+    <View style={[styles.card, index === 0 ? { borderColor: '#8b5cf6', borderWidth: 2 } : {}]}>
+      <View style={styles.userInfo}>
+        <Text style={styles.userName}>Versão {item.version}</Text>
+        <Text style={styles.userEmail}>{new Date(item.date).toLocaleDateString('pt-BR')}</Text>
+        <Text style={{ color: '#cbd5e1', marginTop: 10 }}>{item.message}</Text>
+      </View>
+      {index === 0 && (
+        <View style={styles.actions}>
+          <TouchableOpacity style={[styles.btn, { backgroundColor: '#8b5cf6' }]} onPress={handlePushUpdate}>
+            <Text style={styles.btnText}>Lançar para Usuários 🚀</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </View>
+  );
+
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
@@ -220,10 +267,13 @@ export default function AdminScreen() {
 
       <View style={styles.tabsContainer}>
         <TouchableOpacity style={[styles.tab, view === 'users' && styles.tabActive]} onPress={() => setView('users')}>
-          <Text style={styles.tabText}>Usuários</Text>
+          <Text style={[styles.tabText, view === 'users' && { color: '#f59e0b' }]}>Usuários</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.tab, view === 'drafts' && styles.tabActive]} onPress={() => setView('drafts')}>
-          <Text style={styles.tabText}>Quarentena/Rascunhos</Text>
+          <Text style={[styles.tabText, view === 'drafts' && { color: '#f59e0b' }]}>Quarentena</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.tab, view === 'versions' && styles.tabActive]} onPress={() => setView('versions')}>
+          <Text style={[styles.tabText, view === 'versions' && { color: '#f59e0b' }]}>Versões</Text>
         </TouchableOpacity>
       </View>
 
@@ -247,13 +297,13 @@ export default function AdminScreen() {
         <ActivityIndicator size="large" color="#f59e0b" style={{ marginTop: 50 }} />
       ) : (
         <FlatList
-          data={view === 'users' ? users : drafts}
-          keyExtractor={(item) => item.id}
-          renderItem={view === 'users' ? renderUser : renderDraft}
+          data={view === 'users' ? users : view === 'drafts' ? drafts : changelogData}
+          keyExtractor={(item, index) => item.id || String(index)}
+          renderItem={view === 'users' ? renderUser : view === 'drafts' ? renderDraft : renderVersion}
           contentContainerStyle={{ padding: 20 }}
           ListEmptyComponent={
             <Text style={styles.emptyText}>
-              {view === 'users' ? "Nenhum usuário." : "Nenhuma nova infração na quarentena."}
+              {view === 'users' ? "Nenhum usuário." : view === 'drafts' ? "Nenhuma infração na quarentena." : "Nenhuma versão."}
             </Text>
           }
         />

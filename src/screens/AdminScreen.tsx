@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator, Alert, TextInput } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { collection, getDocs, doc, updateDoc, setDoc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, updateDoc, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { seedInfractionsToFirebase } from '../data/seedFirebase';
 
@@ -17,6 +17,7 @@ export default function AdminScreen() {
   const [view, setView] = useState<'users' | 'drafts' | 'versions'>('users');
   const [pushMessage, setPushMessage] = useState('');
   const [pushError, setPushError] = useState(false);
+  const [downloadUrlInput, setDownloadUrlInput] = useState('');
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -52,9 +53,21 @@ export default function AdminScreen() {
     }
   };
 
+  const fetchConfig = async () => {
+    try {
+      const configSnap = await getDoc(doc(db, 'settings', 'appConfig'));
+      if (configSnap.exists()) {
+        setDownloadUrlInput(configSnap.data().downloadUrl || '');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     if (view === 'users') fetchUsers();
-    else fetchDrafts();
+    else if (view === 'drafts') fetchDrafts();
+    else if (view === 'versions') fetchConfig();
   }, [view]);
 
   const changeStatus = async (userId: string, newStatus: string) => {
@@ -215,19 +228,12 @@ export default function AdminScreen() {
     setLoading(true);
     setPushMessage('');
     try {
-      // Pega o config atual para não perder o downloadUrl
-      const { getDoc } = require('firebase/firestore');
       const configRef = doc(db, 'settings', 'appConfig');
-      const configSnap = await getDoc(configRef);
-      let currentDownloadUrl = '';
-      if (configSnap.exists()) {
-        currentDownloadUrl = configSnap.data().downloadUrl || '';
-      }
 
       await setDoc(configRef, {
         latestVersion: latest.version,
         releaseNotes: latest.message,
-        downloadUrl: currentDownloadUrl
+        downloadUrl: downloadUrlInput
       }, { merge: true });
 
       setPushError(false);
@@ -252,6 +258,14 @@ export default function AdminScreen() {
       </View>
       {index === 0 && (
         <View style={{ marginTop: 15 }}>
+          <Text style={{ color: '#94a3b8', marginBottom: 5 }}>Link de Download do APK:</Text>
+          <TextInput
+            style={{ backgroundColor: '#0f172a', color: '#f8fafc', padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#334155', marginBottom: 10 }}
+            placeholder="Ex: https://drive.google.com/..."
+            placeholderTextColor="#64748b"
+            value={downloadUrlInput}
+            onChangeText={setDownloadUrlInput}
+          />
           {pushMessage ? (
             <View style={{ backgroundColor: pushError ? '#ef444420' : '#22c55e20', padding: 10, borderRadius: 8, marginBottom: 10, borderWidth: 1, borderColor: pushError ? '#ef4444' : '#22c55e' }}>
               <Text style={{ color: pushError ? '#ef4444' : '#22c55e', textAlign: 'center', fontWeight: 'bold' }}>

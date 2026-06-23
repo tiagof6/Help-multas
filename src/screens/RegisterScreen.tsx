@@ -12,6 +12,9 @@ export default function RegisterScreen({ navigation }: any) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [agreeResponsibility, setAgreeResponsibility] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -51,10 +54,25 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
   };
 
   const handleRegister = async () => {
-    if (!email || !password || !name) {
+    if (!email || !password || !confirmPassword || !name) {
       Alert.alert('Erro', 'Preencha todos os campos!');
       return;
     }
+    
+    if (password !== confirmPassword) {
+      Alert.alert('Erro', 'As senhas não coincidem!');
+      return;
+    }
+
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#\$%\^&\*\(\)_\+\-\=\{\}\[\]\|\\:;"'<>,\.\?\/]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      Alert.alert(
+        'Senha Fraca', 
+        'A senha deve conter:\\n- No mínimo 6 caracteres\\n- Pelo menos uma letra maiúscula\\n- Pelo menos um caractere especial (ex: @, !, #, $)'
+      );
+      return;
+    }
+
     if (!agreeTerms || !agreeResponsibility) {
       Alert.alert('Aviso Jurídico', 'Você precisa ler e concordar com os Termos e Políticas, além de confirmar a sua responsabilidade no uso do aplicativo para criar a conta.');
       return;
@@ -108,14 +126,34 @@ Ao criar uma conta e utilizar o app, você concorda com a forma como suas inform
           value={email}
           onChangeText={setEmail}
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          placeholderTextColor="#64748b"
-          secureTextEntry
-          value={password}
-          onChangeText={setPassword}
-        />
+
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.passwordInput}
+            placeholder="Senha"
+            placeholderTextColor="#64748b"
+            secureTextEntry={!showPassword}
+            value={password}
+            onChangeText={setPassword}
+          />
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
+            <MaterialIcons name={showPassword ? "visibility" : "visibility-off"} size={22} color="#94a3b8" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.passwordInput}
+            placeholder="Repetir Senha"
+            placeholderTextColor="#64748b"
+            secureTextEntry={!showConfirmPassword}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+          />
+          <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)} style={styles.eyeIcon}>
+            <MaterialIcons name={showConfirmPassword ? "visibility" : "visibility-off"} size={22} color="#94a3b8" />
+          </TouchableOpacity>
+        </View>
 
         <View style={styles.checkboxContainer}>
           <TouchableOpacity style={styles.checkbox} onPress={() => setAgreeTerms(!agreeTerms)}>
@@ -222,6 +260,23 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
     borderColor: '#334155',
+  },
+  passwordContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0f172a',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#334155',
+    marginBottom: 15,
+  },
+  passwordInput: {
+    flex: 1,
+    color: '#f8fafc',
+    padding: 15,
+  },
+  eyeIcon: {
+    padding: 15,
   },
   button: {
     backgroundColor: '#f59e0b',

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator, Modal } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { auth, db } from '../services/firebase';
 
@@ -56,6 +56,19 @@ export default function LoginScreen({ navigation }: any) {
     setResetLoading(true);
     setResetMessage('');
     try {
+      // Firebase by default hides if an email exists for security (Enumeration Protection).
+      // So we must manually check our database first.
+      const usersRef = collection(db, 'users');
+      const q = query(usersRef, where('email', '==', resetEmail.trim()));
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty) {
+        setResetError(true);
+        setResetMessage('Este e-mail não está cadastrado no sistema.');
+        setResetLoading(false);
+        return;
+      }
+
       await sendPasswordResetEmail(auth, resetEmail.trim());
       setResetError(false);
       setResetMessage('E-mail de recuperação enviado! Verifique sua caixa de entrada e a pasta de Spam.');

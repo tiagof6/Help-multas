@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, Alert, FlatList, Linking } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, Alert, FlatList, Linking, Platform } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 import { signOut } from 'firebase/auth';
 import { auth } from '../services/firebase';
 import SendIntentAndroid from 'react-native-send-intent';
-import { Platform } from 'react-native';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Dashboard'>;
+
+const MENU_ORDER_KEY = '@dashboard_menu_order';
 
 const handleLogout = async () => {
   try {
@@ -58,7 +60,65 @@ export default function DashboardScreen() {
   const currentUser = auth.currentUser;
   const isAdmin = currentUser?.email === 'acerola106@gmail.com';
 
-  const visibleMenuItems = MENU_ITEMS.filter(item => !item.adminOnly || isAdmin);
+  const [isEditing, setIsEditing] = useState(false);
+  const [menuOrder, setMenuOrder] = useState<string[]>([]);
+
+  useEffect(() => {
+    loadMenuOrder();
+  }, []);
+
+  const loadMenuOrder = async () => {
+    try {
+      const savedOrder = await AsyncStorage.getItem(MENU_ORDER_KEY);
+      if (savedOrder) {
+        setMenuOrder(JSON.parse(savedOrder));
+      } else {
+        setMenuOrder(MENU_ITEMS.map(item => item.id));
+      }
+    } catch (e) {
+      setMenuOrder(MENU_ITEMS.map(item => item.id));
+    }
+  };
+
+  const saveMenuOrder = async (newOrder: string[]) => {
+    setMenuOrder(newOrder);
+    try {
+      await AsyncStorage.setItem(MENU_ORDER_KEY, JSON.stringify(newOrder));
+    } catch (e) {
+      console.error('Failed to save menu order');
+    }
+  };
+
+  const moveItem = (index: number, direction: 'prev' | 'next' | 'up' | 'down' | 'first') => {
+    const newOrder = [...menuOrder];
+    
+    if (direction === 'first' && index > 0) {
+      const item = newOrder.splice(index, 1)[0];
+      newOrder.unshift(item);
+    } else if (direction === 'prev' && index > 0) {
+      [newOrder[index - 1], newOrder[index]] = [newOrder[index], newOrder[index - 1]];
+    } else if (direction === 'next' && index < menuOrder.length - 1) {
+      [newOrder[index + 1], newOrder[index]] = [newOrder[index], newOrder[index + 1]];
+    } else if (direction === 'up' && index >= 2) {
+      [newOrder[index - 2], newOrder[index]] = [newOrder[index], newOrder[index - 2]];
+    } else if (direction === 'down' && index < menuOrder.length - 2) {
+      [newOrder[index + 2], newOrder[index]] = [newOrder[index], newOrder[index + 2]];
+    }
+    
+    saveMenuOrder(newOrder);
+  };
+
+  // Sort visible items based on menuOrder
+  const sortedMenuItems = [...MENU_ITEMS]
+    .filter(item => !item.adminOnly || isAdmin)
+    .sort((a, b) => {
+      const indexA = menuOrder.indexOf(a.id);
+      const indexB = menuOrder.indexOf(b.id);
+      if (indexA === -1 && indexB === -1) return 0;
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      return indexA - indexB;
+    });
 
   const handlePress = async (item: GridMenu) => {
     if (item.packageName && Platform.OS !== 'web' && Platform.OS !== 'ios') {
@@ -87,15 +147,52 @@ export default function DashboardScreen() {
     }
   };
 
-  const renderItem = ({ item }: { item: GridMenu }) => (
+  const renderItem = ({ item, index }: { item: GridMenu, index: number }) => (
     <TouchableOpacity 
-      style={[styles.card, { borderTopColor: item.color }]} 
-      onPress={() => item.id === '4' ? navigation.navigate('TrafficSigns') : handlePress(item)}
+      style={[styles.card, { borderTopColor: item.color }, isEditing && styles.cardEditing]} 
+      onPress={() => {
+        if (isEditing) return;
+        item.id === '4' ? navigation.navigate('TrafficSigns') : handlePress(item);
+      }}
+      activeOpacity={isEditing ? 1 : 0.7}
     >
       <View style={[styles.iconContainer, { backgroundColor: item.color + '20' }]}>
         <Text style={styles.icon}>{item.icon}</Text>
       </View>
       <Text style={styles.cardTitle}>{item.title}</Text>
+      
+      {isEditing && (
+        <View style={styles.editControls}>
+          <TouchableOpacity 
+            style={[styles.arrowBtn, index === 0 && styles.arrowBtnDisabled]} 
+            onPress={() => moveItem(index, 'first')}
+            disabled={index === 0}
+          >
+            <Text style={styles.arrowText}>🔝</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={[styles.arrowBtn, index < 2 && styles.arrowBtnDisabled]} 
+            onPress={() => moveItem(index, 'up')}
+            disabled={index < 2}
+          >
+            <Text style={styles.arrowText}>⬆️</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={[styles.arrowBtn, index >= sortedMenuItems.length - 2 && styles.arrowBtnDisabled]} 
+            onPress={() => moveItem(index, 'down')}
+            disabled={index >= sortedMenuItems.length - 2}
+          >
+            <Text style={styles.arrowText}>⬇️</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={[styles.arrowBtn, index === sortedMenuItems.length - 1 && styles.arrowBtnDisabled]} 
+            onPress={() => moveItem(index, 'next')}
+            disabled={index === sortedMenuItems.length - 1}
+          >
+            <Text style={styles.arrowText}>➡️</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </TouchableOpacity>
   );
 
@@ -109,13 +206,18 @@ export default function DashboardScreen() {
             <Text style={styles.subtitle}>Dashboard do Agente</Text>
           </View>
         </View>
-        <TouchableOpacity onPress={handleLogout} style={styles.logoutBtn}>
-          <Text style={styles.logoutText}>Sair 🚪</Text>
-        </TouchableOpacity>
+        <View style={styles.headerActions}>
+          <TouchableOpacity onPress={() => setIsEditing(!isEditing)} style={[styles.actionBtn, isEditing && styles.actionBtnActive]}>
+            <Text style={styles.actionText}>{isEditing ? 'Concluir ✅' : 'Organizar ⚙️'}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleLogout} style={styles.logoutBtn}>
+            <Text style={styles.logoutText}>Sair 🚪</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <FlatList
-        data={visibleMenuItems}
+        data={sortedMenuItems}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         numColumns={2}
@@ -166,6 +268,27 @@ const styles = StyleSheet.create({
     color: '#94a3b8',
     marginTop: 4,
   },
+  headerActions: {
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    gap: 8,
+  },
+  actionBtn: {
+    padding: 8,
+    backgroundColor: '#334155',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#475569',
+  },
+  actionBtnActive: {
+    backgroundColor: '#10b981',
+    borderColor: '#059669',
+  },
+  actionText: {
+    color: '#f8fafc',
+    fontWeight: 'bold',
+    fontSize: 12,
+  },
   logoutBtn: {
     padding: 8,
     backgroundColor: '#334155',
@@ -174,7 +297,7 @@ const styles = StyleSheet.create({
   logoutText: {
     color: '#f8fafc',
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 12,
   },
   gridContainer: {
     padding: 12,
@@ -213,6 +336,32 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     textAlign: 'center',
+  },
+  cardEditing: {
+    borderWidth: 2,
+    borderColor: '#475569',
+    borderStyle: 'dashed',
+    opacity: 0.9,
+  },
+  editControls: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginTop: 15,
+    borderTopWidth: 1,
+    borderTopColor: '#334155',
+    paddingTop: 10,
+  },
+  arrowBtn: {
+    padding: 6,
+    backgroundColor: '#334155',
+    borderRadius: 6,
+  },
+  arrowBtnDisabled: {
+    opacity: 0.3,
+  },
+  arrowText: {
+    fontSize: 16,
   },
   footerInfo: {
     padding: 16,

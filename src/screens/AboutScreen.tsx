@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, Linking, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import appJson from '../../app.json';
 
 export default function AboutScreen() {
@@ -43,12 +44,12 @@ export default function AboutScreen() {
           <Text style={styles.sectionTitle}>Contato</Text>
           
           <TouchableOpacity style={styles.contactItem} onPress={handleEmail}>
-            <Text style={{ fontSize: 24 }}>📧</Text>
+            <MaterialIcons name="email" size={28} color="#f59e0b" />
             <Text style={styles.contactText}>helpmultas39@gmail.com</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.contactItem} onPress={handleWhatsApp}>
-            <Text style={{ fontSize: 24 }}>📱</Text>
+            <FontAwesome name="whatsapp" size={30} color="#25D366" />
             <Text style={styles.contactText}>(12) 99191-8154</Text>
           </TouchableOpacity>
         </View>

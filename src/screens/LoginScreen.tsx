@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator, Modal } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
@@ -10,6 +11,7 @@ export default function LoginScreen({ navigation }: any) {
   const insets = useSafeAreaInsets();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [loginError, setLoginError] = useState('');
 
@@ -97,14 +99,19 @@ export default function LoginScreen({ navigation }: any) {
           value={email}
           onChangeText={(text) => { setEmail(text); setLoginError(''); }}
         />
-        <TextInput
-          style={[styles.input, loginError ? styles.inputError : null]}
-          placeholder="Senha"
-          placeholderTextColor="#64748b"
-          secureTextEntry
-          value={password}
-          onChangeText={(text) => { setPassword(text); setLoginError(''); }}
-        />
+        <View style={[styles.passwordContainer, loginError ? styles.inputError : null]}>
+          <TextInput
+            style={styles.passwordInput}
+            placeholder="Senha"
+            placeholderTextColor="#64748b"
+            secureTextEntry={!showPassword}
+            value={password}
+            onChangeText={(text) => { setPassword(text); setLoginError(''); }}
+          />
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
+            <MaterialIcons name={showPassword ? "visibility" : "visibility-off"} size={22} color="#94a3b8" />
+          </TouchableOpacity>
+        </View>
 
         {loginError ? <Text style={styles.loginErrorText}>{loginError}</Text> : null}
 
@@ -229,6 +236,23 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
     borderColor: '#334155',
+  },
+  passwordContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0f172a',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#334155',
+    marginBottom: 15,
+  },
+  passwordInput: {
+    flex: 1,
+    color: '#f8fafc',
+    padding: 15,
+  },
+  eyeIcon: {
+    padding: 15,
   },
   inputError: {
     borderColor: '#ef4444',

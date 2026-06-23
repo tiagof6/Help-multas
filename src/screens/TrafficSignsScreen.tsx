@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, FlatList, TextInput, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import signsData from '../data/signs.json';
-import { SvgUri } from 'react-native-svg';
-
+import { Image } from 'expo-image';
 export default function TrafficSignsScreen() {
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = useState('');
@@ -22,11 +21,12 @@ export default function TrafficSignsScreen() {
   const renderSign = ({ item }: { item: any }) => (
     <View style={styles.card}>
       <View style={styles.imageContainer}>
-        {Platform.OS === 'web' ? (
-          <img src={item.svgUrl} style={{ width: '100%', height: '100%', objectFit: 'contain' }} alt={item.code} />
-        ) : (
-          <SvgUri width="100%" height="100%" uri={item.svgUrl} />
-        )}
+        <Image 
+          source={{ uri: item.svgUrl }} 
+          style={{ width: '100%', height: '100%' }} 
+          contentFit="contain"
+          transition={200}
+        />
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.codeText}>{item.code}</Text>

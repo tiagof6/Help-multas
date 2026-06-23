@@ -39,7 +39,9 @@ export default function QuickDraftScreen() {
           return;
         }
 
-        const loc = await Location.getCurrentPositionAsync({});
+        const loc = await Location.getCurrentPositionAsync({
+          accuracy: Location.Accuracy.Highest
+        });
         setLocation(loc);
 
         let addressStr = '';
@@ -95,12 +97,42 @@ export default function QuickDraftScreen() {
 
   const openMap = () => {
     if (location) {
-      const url = `geo:${location.coords.latitude},${location.coords.longitude}?q=${location.coords.latitude},${location.coords.longitude}`;
+      const isCoordinates = address.startsWith('Lat:');
+      const isSearching = address === 'Buscando endereço...';
+      const hasError = address.startsWith('Falha') || address.startsWith('Permissão');
+      
+      let queryParam = `${location.coords.latitude},${location.coords.longitude}`;
+      
+      // Se tivermos um endereço válido, usamos para abrir o mapa com o visual de rua certinho (ruas, construções)
+      if (!isCoordinates && !isSearching && !hasError && address) {
+        let searchAddress = address;
+        
+        // Se o usuário digitou um número manualmente, priorizamos ele para a busca
+        if (numeroResidencia && numeroResidencia !== 'S/N') {
+           const addressParts = address.split(' - ');
+           let streetPart = addressParts[0]; // Rua e número atual
+           
+           if (streetPart.includes(',')) {
+             streetPart = streetPart.split(',')[0]; // Remove o número antigo, mantendo só a rua
+           }
+           
+           // Remonta com o novo número
+           searchAddress = `${streetPart}, ${numeroResidencia}`;
+           if (addressParts.length > 1) {
+             searchAddress += ` - ${addressParts.slice(1).join(' - ')}`;
+           }
+        }
+        
+        queryParam = encodeURIComponent(searchAddress);
+      }
+
+      // No Android/iOS geo:0,0?q=endereço faz a busca pelo endereço e mostra a visualização completa
+      const url = `geo:0,0?q=${queryParam}`;
       Linking.canOpenURL(url).then(supported => {
         if (supported) {
           Linking.openURL(url);
         } else {
-          Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${location.coords.latitude},${location.coords.longitude}`);
+          Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${queryParam}`);
         }
       });
     }

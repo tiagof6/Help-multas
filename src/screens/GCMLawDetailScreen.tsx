@@ -32,35 +32,45 @@ export default function GCMLawDetailScreen() {
   const [currentMatchIndex, setCurrentMatchIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
 
-  const paragraphs = text.split('\n\n').filter(p => p.trim() !== '');
+  const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim() !== '');
   const searchTerms = getSearchTerms(searchText);
 
-  const filteredParagraphs = searchTerms.length === 0 
-    ? paragraphs 
-    : paragraphs.filter(p => {
+  const matchedIndices = searchTerms.length === 0 
+    ? [] 
+    : paragraphs.reduce((acc, p, index) => {
         const normalizedP = removeAccents(p).toLowerCase();
-        return searchTerms.some(term => normalizedP.includes(term));
-      });
+        if (searchTerms.some(term => normalizedP.includes(term))) {
+          acc.push(index);
+        }
+        return acc;
+      }, [] as number[]);
 
   useEffect(() => {
-    setCurrentMatchIndex(0);
+    if (matchedIndices.length > 0) {
+      setCurrentMatchIndex(0);
+      setTimeout(() => {
+        flatListRef.current?.scrollToIndex({ index: matchedIndices[0], animated: true, viewPosition: 0.2 });
+      }, 300);
+    } else {
+      setCurrentMatchIndex(0);
+    }
   }, [searchText]);
 
   const scrollToNext = () => {
-    if (filteredParagraphs.length > 0) {
+    if (matchedIndices.length > 0) {
       Keyboard.dismiss();
-      const nextIndex = currentMatchIndex < filteredParagraphs.length - 1 ? currentMatchIndex + 1 : 0;
+      const nextIndex = currentMatchIndex < matchedIndices.length - 1 ? currentMatchIndex + 1 : 0;
       setCurrentMatchIndex(nextIndex);
-      flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true, viewPosition: 0.1 });
+      flatListRef.current?.scrollToIndex({ index: matchedIndices[nextIndex], animated: true, viewPosition: 0.2 });
     }
   };
 
   const scrollToPrev = () => {
-    if (filteredParagraphs.length > 0) {
+    if (matchedIndices.length > 0) {
       Keyboard.dismiss();
-      const prevIndex = currentMatchIndex > 0 ? currentMatchIndex - 1 : filteredParagraphs.length - 1;
+      const prevIndex = currentMatchIndex > 0 ? currentMatchIndex - 1 : matchedIndices.length - 1;
       setCurrentMatchIndex(prevIndex);
-      flatListRef.current?.scrollToIndex({ index: prevIndex, animated: true, viewPosition: 0.1 });
+      flatListRef.current?.scrollToIndex({ index: matchedIndices[prevIndex], animated: true, viewPosition: 0.2 });
     }
   };
 
@@ -116,7 +126,8 @@ export default function GCMLawDetailScreen() {
   };
 
   const renderItem = ({ item, index }: { item: string, index: number }) => {
-    const isCurrentFocus = searchTerms.length > 0 && index === currentMatchIndex;
+    const isMatched = matchedIndices.includes(index);
+    const isCurrentFocus = matchedIndices.length > 0 && index === matchedIndices[currentMatchIndex];
     return (
       <View style={[styles.paragraphContainer, isCurrentFocus && styles.paragraphContainerFocused]}>
         {renderHighlightedText(item, isCurrentFocus)}
@@ -144,10 +155,10 @@ export default function GCMLawDetailScreen() {
           value={searchText}
           onChangeText={setSearchText}
         />
-        {searchTerms.length > 0 && filteredParagraphs.length > 0 && (
+        {searchTerms.length > 0 && matchedIndices.length > 0 && (
           <View style={styles.searchBarControls}>
             <Text style={styles.searchCountText}>
-              {currentMatchIndex + 1} de {filteredParagraphs.length}
+              {currentMatchIndex + 1} de {matchedIndices.length}
             </Text>
             <View style={styles.arrowsContainer}>
               <TouchableOpacity onPress={scrollToPrev} style={styles.arrowBtn}>
@@ -163,14 +174,14 @@ export default function GCMLawDetailScreen() {
 
       <FlatList
         ref={flatListRef}
-        data={filteredParagraphs}
+        data={paragraphs}
         keyExtractor={(_, index) => index.toString()}
         renderItem={renderItem}
         contentContainerStyle={styles.listContent}
         onScrollToIndexFailed={(info) => {
           const wait = new Promise(resolve => setTimeout(resolve, 500));
           wait.then(() => {
-            flatListRef.current?.scrollToIndex({ index: info.index, animated: true });
+            flatListRef.current?.scrollToIndex({ index: info.index, animated: true, viewPosition: 0.2 });
           });
         }}
         ListEmptyComponent={

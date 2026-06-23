@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, TextInput, Keyboard } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, SectionList, TextInput, Keyboard } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -33,10 +33,26 @@ export default function GCMLawsScreen() {
 
   const searchTerms = getSearchTerms(searchText);
   
+  const sectionsData = leisGCM.reduce((acc, lei) => {
+    // Default to 'Outros' if category is somehow missing
+    const cat = lei.category || 'Outros';
+    if (!acc[cat]) {
+      acc[cat] = [];
+    }
+    acc[cat].push(lei);
+    return acc;
+  }, {} as Record<string, typeof leisGCM>);
+
+  const sections = Object.keys(sectionsData).map(key => ({
+    title: key,
+    data: sectionsData[key],
+  }));
+
+  
   let searchResults: { lawTitle: string; text: string }[] = [];
   if (searchTerms.length > 0) {
     leisGCM.forEach(lei => {
-      const paragraphs = lei.text.split('\n\n').filter(p => p.trim() !== '');
+      const paragraphs = lei.text.split(/\n\s*\n/).filter(p => p.trim() !== '');
       paragraphs.forEach(p => {
         const normalizedP = removeAccents(p).toLowerCase();
         if (searchTerms.some(term => normalizedP.includes(term))) {
@@ -49,6 +65,11 @@ export default function GCMLawsScreen() {
   // Reset index when search changes
   useEffect(() => {
     setCurrentMatchIndex(0);
+    if (searchText.trim() !== '') {
+      setTimeout(() => {
+        flatListRef.current?.scrollToIndex({ index: 0, animated: true, viewPosition: 0.1 });
+      }, 300);
+    }
   }, [searchText]);
 
   const scrollToNext = () => {
@@ -120,20 +141,34 @@ export default function GCMLawsScreen() {
     return <Text style={styles.resultText}>{parts}</Text>;
   };
 
-  const renderLawItem = ({ item }: { item: typeof leisGCM[0] }) => (
-    <TouchableOpacity 
-      style={styles.card}
-      onPress={() => navigation.navigate('GCMLawDetail' as any, { title: item.title, text: item.text })}
-    >
-      <View style={styles.cardIcon}>
-        <Text style={{ fontSize: 24 }}>🏛️</Text>
-      </View>
-      <View style={styles.cardContent}>
-        <Text style={styles.cardTitle}>{item.title}</Text>
-        <Text style={styles.cardDesc}>{item.description}</Text>
-      </View>
-      <Text style={styles.arrow}>›</Text>
-    </TouchableOpacity>
+  const renderLawItem = ({ item }: { item: typeof leisGCM[0] }) => {
+    // Choose an icon based on category
+    let icon = '🏛️';
+    if (item.category === 'Meio Ambiente e Causa Animal') icon = '🌳';
+    if (item.category === 'Posturas Municipais') icon = '🏙️';
+    if (item.category === 'Estatuto e Carreira GCM') icon = '💼';
+
+    return (
+      <TouchableOpacity 
+        style={styles.card}
+        onPress={() => navigation.navigate('GCMLawDetail' as any, { title: item.title, text: item.text })}
+      >
+        <View style={styles.cardIcon}>
+          <Text style={{ fontSize: 24 }}>{icon}</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <Text style={styles.cardTitle}>{item.title}</Text>
+          <Text style={styles.cardDesc}>{item.description}</Text>
+        </View>
+        <Text style={styles.arrow}>›</Text>
+      </TouchableOpacity>
+    );
+  };
+
+  const renderSectionHeader = ({ section: { title } }: { section: { title: string } }) => (
+    <View style={styles.sectionHeaderContainer}>
+      <Text style={styles.sectionHeaderTitle}>{title}</Text>
+    </View>
   );
 
   const renderResultItem = ({ item, index }: { item: { lawTitle: string; text: string }, index: number }) => {
@@ -182,11 +217,13 @@ export default function GCMLawsScreen() {
       </View>
 
       {searchText.trim() === '' ? (
-        <FlatList
-          data={leisGCM}
+        <SectionList
+          sections={sections}
           keyExtractor={item => item.id}
           renderItem={renderLawItem}
+          renderSectionHeader={renderSectionHeader}
           contentContainerStyle={styles.listContainer}
+          stickySectionHeadersEnabled={false}
         />
       ) : (
         <FlatList
@@ -257,6 +294,21 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     padding: 20,
+    paddingTop: 10,
+  },
+  sectionHeaderContainer: {
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    marginTop: 15,
+    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#334155',
+  },
+  sectionHeaderTitle: {
+    color: '#fb923c',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
   card: {
     backgroundColor: '#1e293b',

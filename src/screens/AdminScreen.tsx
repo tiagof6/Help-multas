@@ -171,6 +171,17 @@ export default function AdminScreen() {
         ]}>
           Status: {item.status.toUpperCase()}
         </Text>
+        {item.createdAt && (() => {
+          const createdDate = new Date(item.createdAt);
+          const diffTime = Math.abs(new Date().getTime() - createdDate.getTime());
+          const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+          return (
+            <View style={{ marginTop: 10, padding: 8, backgroundColor: '#0f172a', borderRadius: 6, borderWidth: 1, borderColor: '#334155' }}>
+              <Text style={{ color: '#cbd5e1', fontSize: 13 }}>📅 Cadastrado em: {createdDate.toLocaleDateString('pt-BR')}</Text>
+              <Text style={{ color: '#cbd5e1', fontSize: 13, marginTop: 4 }}>⏳ Tempo no app: {diffDays} {diffDays === 1 ? 'dia' : 'dias'}</Text>
+            </View>
+          );
+        })()}
       </View>
       <View style={styles.actions}>
         {item.status !== 'ativo' && (

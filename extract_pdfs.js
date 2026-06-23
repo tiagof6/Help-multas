@@ -9,14 +9,16 @@ const files = {
   estatuto_gcm: 'LEI COMPLEMENTAR 97_2017 29_11_2017.pdf',
   plano_carreira: 'LEI COMPLEMENTAR 98_2017 29_11_2017.pdf',
   estatuto_servidor: 'C131993.pdf',
-  estatuto_geral: 'LEI-No-13.022.pdf'
+  estatuto_geral: 'LEI-No-13.022.pdf',
+  decreto_444: 'decreto_444_2018.pdf'
 };
 
 const metadata = {
   estatuto_gcm: { title: 'Estatuto da GCM (LC 97/2017)', description: 'Estatuto da Guarda Civil Municipal de Jacareí' },
   plano_carreira: { title: 'Plano de Carreira (LC 98/2017)', description: 'Plano de Carreira e Vencimentos da GCM' },
   estatuto_servidor: { title: 'Estatuto do Servidor Municipal', description: 'Regime Jurídico dos Servidores de Jacareí' },
-  estatuto_geral: { title: 'Estatuto Geral (Lei 13.022/14)', description: 'Estatuto Geral das Guardas Municipais (Federal)' }
+  estatuto_geral: { title: 'Estatuto Geral (Lei 13.022/14)', description: 'Estatuto Geral das Guardas Municipais (Federal)' },
+  decreto_444: { title: 'Decreto 444/2018', description: 'Regulamento de Uniformes e Equipamentos da GCM' }
 };
 
 async function processPDFs() {

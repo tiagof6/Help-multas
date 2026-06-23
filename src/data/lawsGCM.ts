@@ -5716,5 +5716,692 @@ Miriam Belchior
 Gilberto Magalhães Occhi
 Este texto não substitui o publicado no DOU de 11.8.2014 - Edição extra
 *`
+  },
+  {
+    id: 'decreto_444',
+    title: 'Decreto 444/2018',
+    description: 'Regulamento de Uniformes e Equipamentos da GCM',
+    text: `
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+DECRETO N° 444, DE 4 DE ABRIL DE 2018. 
+ 
+Dispõe sobre o Regulamento Disciplinar da Guarda Civil 
+Municipal  de  Jacareí,  conforme  disposto  na  Lei 
+Complementar nº 097/2017, de 02 de dezembro de 2017. 
+ 
+O PREFEITO DO MUNICÍPIO DE JACAREÍ, usando das 
+atribuições que lhe são conferidas por Lei, e 
+ 
+CONSIDERANDO a previsão do presente Regulamento 
+no § 3º do artigo 7º e no artigo 73 da Lei Complementar nº 97 de 02 de dezembro de 
+2017; 
+ 
+CONSIDERANDO que  o  Regulamento  Disciplinar  é 
+importante ferramenta para estrutura regida pelos princípios da hierarquia e disciplina, 
+como é o caso da Guarda Civil Municipal de Jacareí; 
+ 
+CONSIDERANDO que   a   individualização   das 
+responsabilidades  e  detalhamento  dos  direitos  e  obrigações  propiciará  uma  maior 
+transparência, eficiência e qualificação dos serviços a serem ofertados ao cidadão; 
+ 
+CONSIDERANDO  que  o  Regulamento  Disciplinar  é 
+instrumento  presente  na  maioria  das  Guardas  Civis  Municipais,  tendo  em  vista  as 
+peculiaridades  inerentes  ao  serviço  e  as  inovações  trazidas  pela  Lei  Federal  nº 
+13.022/14; 
+ 
+CONSIDERANDO o disposto na Lei Complementar nº 13 
+de 07 de outubro de 1993, que dispõe sobre o Estatuto dos Servidores Públicos do 
+Município de Jacareí; 
+ 
+CONSIDERANDO  que  a  observância  aos  princípios 
+constitucionalmente  vigentes,  notadamente  os direitos  e  as  garantias  individuais,  o 
+devido processo legal e o respeito à dignidade da pessoa humana; 
+ 
+D E C R E T A: 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+TÍTULO I 
+DAS DISPOSIÇÕES PRELIMINARES 
+  
+Art.  1º  Fica  instituído  o  Regulamento  Disciplinar  da 
+Guarda Civil Municipal de Jacareí. 
+ 
+Art. 2º A Hierarquia e a Disciplina estão definidas na Lei 
+Complementar nº 97 de 29 de novembro de 2017. 
+  
+Art. 3º São manifestações essenciais da Disciplina: 
+  
+a)   a pronta obediência às ordens superiores; 
+ 
+b)      a  rigorosa  observância  às  prescrições  legais  e 
+regulamentares; 
+ 
+c)      a correção de atitudes; 
+ 
+d)      a colaboração espontânea à disciplina coletiva e à 
+eficiência da Instituição. 
+  
+Art. 4º A hierarquia confere ao superior o poder de dar 
+ordens, desde que legais e se responsabilizando por elas, além de fiscalizar e de rever 
+decisões em relação ao subordinado, a quem ela impõe dever de obediência.  
+  
+§  1º  A  autoridade  hierárquica  para  fins  operacionais  e 
+administrativos, dentre os integrantes da Guarda Civil Municipal de Jacareí, segue a 
+respectiva ordem decrescente: 
+ 
+I - Prefeito do Município de Jacareí; 
+ 
+II - Secretário de Segurança e de Defesa do Cidadão; 
+ 
+III - Comandante da Guarda Civil Municipal; 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+IV - Subcomandante da Guarda Civil Municipal; 
+ 
+V - Inspetor Chefe de Divisão; 
+ 
+VI - Inspetor; 
+ 
+VII - Subinspetor; 
+ 
+VIII - Guarda Civil de 1ª Classe; 
+ 
+IX - Guarda Civil de 2ª Classe; 
+ 
+X - Guarda Civil de 3ª Classe; 
+ 
+XI - Guarda Civil Aluno. 
+ 
+§ 2º Havendo igualdade de classe terá precedência na 
+seguinte ordem: 
+  
+I - o que contar mais tempo no cargo; 
+ 
+II - o que tiver mais tempo na Guarda Civil Municipal de 
+Jacareí; 
+ 
+III - o de maior idade. 
+ 
+Art.  5º  Além  dos  dispostos  neste  Regulamento  e  nos 
+Estatutos pertinentes, são deveres do servidor da Guarda Civil Municipal de Jacareí: 
+ 
+I - ser assíduo e pontual; 
+ 
+II - cumprir as ordens legais superiores,  representando 
+quando forem manifestamente ilegais; 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+III - desempenhar com zelo e presteza os trabalhos de 
+que for incumbido; 
+ 
+IV  -  guardar  o  adequado  sigilo  sobre  os  assuntos  da 
+Administração Pública; 
+ 
+V - tratar com urbanidade os companheiros de serviço e o 
+público em geral; 
+ 
+VI - manter sempre atualizada sua declaração de família 
+e de seu domicílio; 
+ 
+VII  -  zelar  pela  economia  e  conservação  dos  bens  do 
+Município que forem confiados à sua guarda ou utilização; 
+ 
+VIII - apresentar-se convenientemente trajado em serviço 
+e com o uniforme determinado, quando for o caso; 
+ 
+IX - cooperar e manter o espírito de solidariedade com os 
+companheiros de trabalho; 
+ 
+X - estar em dia com as leis, regulamentos, regimentos, 
+instruções e ordens de serviço que digam respeito às suas funções; 
+ 
+XI  -  proceder,  pública  e  particularmente,  de  forma  que 
+dignifique a função pública. 
+ 
+Art. 6º O Guarda Civil Municipal que se deparar com ato 
+contrário à disciplina da Instituição deverá adotar medidas saneadoras, podendo sua 
+omissão ser também analisada sob a esfera disciplinar. 
+ 
+ §  1º  Se  detentor  de  precedência  hierárquica  sobre  o 
+infrator, o servidor da Guarda Civil Municipal que presenciar a transgressão deverá 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+adotar  as  providências  cabíveis  pessoalmente,  no  prazo  em  até  48  horas  da 
+constatação ou da ciência da infração disciplinar. 
+ 
+§ 2º Se subordinado ou de mesma hierarquia, o servidor 
+da Guarda Civil Municipal que presenciar a transgressão deverá comunicar por escrito 
+em até 48 horas da ocorrência ou conhecimento do fato ao seu superior funcional  
+ 
+imediato,  e  em  sendo  este  o  infrator,  ao  próximo  na  escala  hierárquica,  os  quais 
+deverão, em igual prazo, remeter ao Inspetor Chefe de Divisão Administrativa. 
+ 
+§ 3º A Representação é o documento competente para 
+comunicação  à  Administração  sobre  transgressão  disciplinar  cometida  por  Guarda 
+Civil Municipal independente de hierarquia. 
+ 
+§  4º  Ao  receber  a  Representação,  o  Chefe  de  Divisão 
+Administrativa a remeterá ao Corregedor da Guarda Civil Municipal até o próximo dia 
+de expediente útil, com a observação em despacho sobre a regularidade do trâmite e 
+cumprimento dos prazos estabelecidos. 
+ 
+TÍTULO II 
+DO CÓDIGO DE CONDUTA 
+ 
+CAPÍTULO I 
+DO PRESTAR CONTINÊNCIA 
+Art. 7º Prestar continência se insere no perfil estético de 
+instituições  uniformizadas  do  setor  de  segurança  pública,  simbolizando  seu  gesto, 
+saudação e respeito à Instituição e seus membros. 
+ 
+Parágrafo  único.  Na  Guarda  Civil  Municipal  de  Jacareí 
+deixar de prestar continência não deve se inserir no rol das infrações disciplinares, 
+sendo facultativa ao servidor da GCM. 
+ 
+CAPÍTULO II 
+DO COMPORTAMENTO DO SERVIDOR DA GUARDA CIVIL MUNICIPAL 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+Art. 8º Para fins disciplinares e para os demais efeitos 
+legais,  o  comportamento  do  servidor  da  Guarda  Civil  Municipal  de  Jacareí,  será 
+considerado: 
+ 
+I  -  EXCELENTE:  quando  nos  últimos  60  (sessenta) 
+meses, não tiver sofrido qualquer punição; 
+ 
+II  -  ÓTIMO:  quando  nos  últimos  48  (quarenta  e  oito) 
+meses, não tiver sofrido qualquer punição; 
+ 
+III - BOM: quando no período de 36 (trinta e seis) meses, 
+não tiver sofrido mais de 03 (três) advertências escritas; 
+ 
+IV - INSUFICIENTE: quando no período de 24 (vinte e 
+quatro) meses, não tiver sofrido mais de 02 (duas) suspensões; 
+ 
+V - MAU: quando no período de 12 (doze) meses, tiver 
+sofrido  uma  ou  mais  penas  de  suspensão,  as  quais  individualmente  ou  somadas, 
+ultrapassem o total de 15 (quinze) dias. 
+ 
+§  1º  Para  a  classificação  de  comportamento,  03  (três) 
+advertências equivalerão a uma suspensão. 
+§  2º  A  classificação  do  comportamento  dar-se-á, 
+anualmente, de ofício, por ato do Comandante da Guarda Civil Municipal de Jacareí. 
+ 
+Art.  9º  O  Comandante  da  Guarda  Civil  Municipal  de 
+Jacareí elaborará relatório anual, no mês de dezembro, sobre avaliação disciplinar do 
+seu efetivo a ser enviado ao Corregedor da Guarda Civil de Jacareí e ao Secretário de 
+Segurança e de Defesa do Cidadão. 
+ 
+§  1º  Os  critérios  de  avaliação  terão  por  base  as 
+disposições previstas neste Regulamento. 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+§  2º  A  avaliação  deverá  considerar  a  totalidade  das 
+infrações  praticadas,  a  tipificação  e  as  penalidades  correspondentes,  o  cargo  ou 
+função do infrator. 
+ 
+Art. 10. Do ato do Comandante da Guarda Civil Municipal 
+de Jacareí que avaliar os integrantes da Corporação, caberá recurso de classificação 
+do comportamento dirigido ao Corregedor da Guarda Civil Municipal de Jacareí, para 
+ulterior deliberação do Secretário de Segurança e de Defesa do Cidadão. 
+ 
+Parágrafo  único.  O  recurso  deverá  ser  interposto  no 
+prazo de 05 (cinco) dias úteis, contados a partir do primeiro dia útil subsequente à data 
+da publicação no órgão oficial do Município do ato impugnado e terá efeito suspensivo. 
+ 
+CAPÍTULO III 
+DAS RECOMPENSAS DO SERVIDOR DA GUARDA CIVIL MUNICIPAL 
+ 
+Art. 11. O servidor da Guarda Civil Municipal de Jacareí, 
+em reconhecimento por bons serviços, atos meritórios e trabalhos relevantes, poderá 
+ser  recompensado,  nos  termos  deste  Regulamento,  podendo  tais  circunstâncias 
+serem consideradas no ato da dosimetria de eventual penalidade. 
+ 
+Art. 12. São consideradas recompensas da Guarda Civil 
+Municipal de Jacareí: 
+ 
+I - condecorações por serviços prestados; e 
+ 
+II – elogios. 
+ 
+§  1º  Condecorações  se  constituem  em  referências 
+honrosas e insígnias conferidas aos integrantes da Guarda Civil Municipal de Jacareí 
+por sua atuação em ocorrências de relevo na preservação da vida, da integridade 
+física e do patrimônio municipal, e também pelo desempenho profissional calcado na 
+iniciativa, disponibilidade e capacidade além da média geral, podendo ser formalizadas 
+apenas aos servidores classificados, no mínimo, no comportamento considerado bom, 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+com a devida publicidade no órgão oficial de publicação do Município de Jacareí e 
+registro em prontuário. 
+ 
+§ 2º Elogio é o reconhecimento formal da Administração 
+Pública às qualidades morais e profissionais do servidor da Guarda Civil Municipal de 
+Jacareí, com a devida publicidade em Boletim Interno da Corporação e registro em 
+prontuário. 
+ 
+§  3º  As  recompensas  previstas  neste  artigo  serão 
+conferidas por determinação do Comandante da Guarda Civil Municipal de Jacareí, 
+com aprovação do Secretário de Segurança e de Defesa do Cidadão. 
+ 
+TÍTULO III 
+DAS INFRAÇÕES DISCIPLINARES E DAS PENALIDADES  
+ 
+CAPÍTULO I  
+DA DEFINIÇÃO E CLASSIFICAÇÃO DAS INFRAÇÕES DISCIPLINARES 
+Art. 13. Infração disciplinar é toda violação aos deveres, 
+descumprimento  de  atribuições  e  cometimento  de  proibições  previstos  neste 
+Regulamento, no Estatuto da Guarda Civil Municipal - Lei Complementar nº 97, de 29 
+de novembro de 2017, e no Estatuto dos Servidores Públicos do Município de Jacareí 
+- Lei Complementar nº 13, de 07 de outubro de 1993. 
+ 
+Parágrafo  único.  As  transgressões  cometidas  por 
+guardas civis alunos no período serão consideradas na avaliação final do curso do 
+aluno.  
+ 
+Art. 14. As infrações disciplinares, quanto à sua natureza, 
+classificam-se em: 
+ 
+I – leves; 
+ 
+II – médias; 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+III – graves. 
+ 
+Art. 15. São infrações disciplinares de natureza leve: 
+ 
+I - deixar de comunicar ao superior, tão logo possível, a 
+execução de ordem legal recebida; 
+ 
+II – deixar de se apresentar ao seu superior imediato no 
+início de sua jornada de trabalho, se estiverem no mesmo espaço físico, ou deixar de 
+seguir diretamente ao seu posto de trabalho constante em escala ou indicação de seu 
+superior, após registro em ponto biométrico; 
+ 
+III - chegar atrasado, sem justo motivo, a ato ou serviço; 
+ 
+IV  -  permutar  serviço  sem  permissão  da  autoridade 
+competente; 
+ 
+V - usar uniforme incompleto ou alterado, contrariando as 
+normas respectivas, ou vestuário incompatível com a função, ou, ainda, descurar-se 
+do asseio pessoal ou coletivo; 
+ 
+VI  -  sobrepor  ao  uniforme  insígnias  de  sociedades 
+particulares, entidades religiosas ou políticas; 
+ 
+VII  –  apresentar-se  com  corte  de  cabelo  em 
+desconformidade aos padrões estabelecidos em normas internas, ou uso de barba, 
+barba  por  fazer  ou  cavanhaque,  bem  como  quanto  ao  uso  de  adornos,  brincos, 
+piercings ou tatuagens em desacordo com regulamentação prévia; 
+ 
+VIII  -  negar-se  a  receber  uniforme,  equipamentos  ou 
+outros objetos que lhe sejam destinados ou devam ficar em seu poder; 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+IX - conduzir veículo da instituição sem autorização da 
+unidade competente da Guarda Civil do Município de Jacareí, ou não ter o devido zelo 
+para com sua manutenção, limpeza e conservação;  
+ 
+X – afastar-se sem justo motivo de viatura ou descuidar-
+se  da  segurança  da mesma,  quando  esta  estiver  temporariamente  estacionada  ou 
+posicionada; 
+ 
+XI - faltar com zelo e presteza no desempenho de suas 
+funções; 
+ 
+XII  –  deixar  de  zelar  pela  economia  do  material  do 
+Município e pela conservação do que for confiado à sua guarda ou utilização; 
+ 
+XIII - ofender a moral e os bons costumes por meio de 
+atos, palavras ou gestos; 
+ 
+XIV – utilizar assento de coletivo quando uniformizado, o 
+qual é preferencial para munícipes usuários; 
+ 
+XV  -  estando  em  trajes  civis,  andar  armado  sem  o 
+cuidado de ocultar a arma; 
+ 
+XVI - maltratar animais; 
+ 
+XVII - deixar de encaminhar documento no prazo legal ou 
+regulamentar. 
+ 
+Art. 16. São infrações disciplinares de natureza média: 
+ 
+I - deixar de dar informações em processos, quando lhe 
+competir; 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+II – afastar-se, ainda que momentaneamente, sem justo 
+motivo, do local em que deva encontrar-se por força de escala, ordens ou disposições 
+legais; 
+ 
+III - faltar, sem motivo justificado, a serviço de que deva 
+tomar parte; 
+ 
+IV - deixar de apresentar-se, nos prazos estabelecidos e 
+sem motivo justificado, nos locais em que deva comparecer; 
+ 
+V- entrar ou sair da Guarda Civil do Município de Jacareí, 
+ou  tentar  fazê-lo,  com  arma  de  fogo  da  Corporação,  sem  prévia  autorização  da 
+autoridade competente; 
+ 
+VI - retirar ou tentar retirar, de local sob a administração 
+da Guarda Civil do Município do Jacareí, objeto, viatura ou animal, sem ordem dos 
+respectivos responsáveis; 
+ 
+VII  -  dirigir-se  publicamente  de  modo  desrespeitoso  a 
+qualquer pessoa e por qualquer meio; 
+ 
+VIII - usar expressões jocosas ou pejorativas que atentem 
+contra  a  raça,  a  religião,  o  credo  ou  a  orientação  sexual  de  integrantes  da 
+Administração Pública ou particulares em geral; 
+ 
+IX  -  referir-se  depreciativamente  em  informações, 
+parecer, despacho, pela imprensa, ou por qualquer meio de divulgação, às ordens 
+legais; 
+ 
+X  -  publicar  ou  contribuir  para  que  sejam  publicados 
+fatos, fotos, vídeos ou documentos afetos à Guarda Civil do Município de Jacareí que 
+possam concorrer para ferir a disciplina ou a hierarquia, ou comprometer a segurança; 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+XI  -  designar  ou  manter  sob  sua  chefia  imediata,  em 
+cargo ou função de confiança, cônjuge, companheiro ou companheira ou parente até o 
+segundo grau; 
+ 
+XII - coagir ou aliciar servidores públicos com objetivos de 
+natureza político-partidária; 
+ 
+XIII  -  deixar  de  cumprir  ou  retardar  voluntariamente 
+serviço ou ordem legal; 
+ 
+XIV  -  interferir  em  área  ou  assunto  de  competência 
+específica de outra autoridade, a ponto de se obter resultado diverso do planejado 
+pela autoridade originária; 
+ 
+XV - aconselhar ou concorrer para o descumprimento de 
+ordem legal de autoridade competente; 
+ 
+XVI - deixar de assumir a responsabilidade por seus atos 
+ou pelos atos praticados por servidor da Guarda Civil do Município de Jacareí em 
+função subordinada, que agir em cumprimento de sua ordem; 
+ 
+XVII  -  omitir,  em  qualquer  documento,  dados 
+indispensáveis ao esclarecimento dos fatos; 
+ 
+XVIII – negar-se sem justo motivo, quando habilitado para 
+tal, a conduzir veículo oficial em serviço ou em razão deste; 
+ 
+XIX- evadir-se ou tentar evadir-se de escolta; 
+ 
+XX – trabalhar em estado de embriaguez ou sob efeito de 
+substância entorpecente; 
+ 
+XXI - faltar com a verdade; 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+XXII - simular doença para esquivar-se ao cumprimento 
+do dever; 
+ 
+XXIII - suprimir a identificação do uniforme ou utilizar-se 
+de meios ilícitos para dificultar sua identificação; 
+ 
+XXIV - deixar de punir o infrator da indisciplina, quando 
+dentro de sua competência; 
+ 
+XXV  -  impedir,  obstar  o  trâmite,  dificultar  ou  orientar 
+contrariamente  à  elaboração  de  representação,  petição  ou  recurso  do  servidor  da 
+Guarda Civil do Município de Jacareí; 
+ 
+XXVI  -  abandonar  o  serviço  para  o  qual  tenha  sido 
+designado; 
+ 
+XXVII - usar armamento, munição ou equipamento não 
+autorizado. 
+ 
+Art. 17. São infrações disciplinares de natureza grave: 
+ 
+I – manusear ou disparar arma de fogo com imprudência, 
+negligência ou imperícia; 
+ 
+II - extraviar munição da corporação; 
+ 
+III - disparar arma de fogo por descuido quando do ato 
+resultar morte ou lesão à integridade física de outrem; 
+ 
+IV  -  praticar  violência,  em  serviço  ou  em  razão  dele, 
+contra servidores ou particulares, salvo se em legítima defesa; 
+ 
+V - contribuir para que presos conservem em seu poder 
+objetos não permitidos; 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+VI  –  maltratar  ou  deixar  de  tomar  providências  para 
+garantir a integridade física de pessoa detida; 
+ 
+VII  -  liberar  pessoa  detida  ou  dispensar  parte  da 
+ocorrência sem atribuição legal; 
+ 
+VIII - abrir ou tentar abrir qualquer unidade da Guarda 
+Civil do Município de Jacareí ou nela entrar ou permanecer, sem autorização; 
+ 
+IX - ofender, provocar ou desafiar autoridade ou servidor 
+da Guarda Civil de Município do Jacareí, independentemente da função ou hierarquia, 
+com palavras, gestos ou ações; 
+ 
+X  -  retirar  ou  empregar,  sem  prévia  permissão  da 
+autoridade  competente,  qualquer  documento,  material,  objeto  ou  equipamento  do 
+serviço público municipal, para fins particulares; 
+ 
+XI  -  extraviar  ou  danificar  dolosamente  documentos, 
+objetos ou próprios pertencentes à Administração Pública; 
+ 
+XII - encaminhar dolosamente documento comunicando 
+infração  disciplinar  inexistente  ou  ainda  requerer  instauração  ou  instaurar 
+procedimento administrativo disciplinar sem indícios de fundamento fático; 
+ 
+XIII - dar ordem ilegal ou sabidamente inexequível; 
+ 
+XIV - determinar a execução de serviço não previsto no 
+ordenamento jurídico ou determinado pela autoridade competente; 
+ 
+XV - participar de gerência ou administração de empresa 
+privada, de sociedade civil, ou exercer comércio e, nessa qualidade, transacionar com 
+o Município; 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+XVI - valer-se ou fazer uso do cargo ou função pública 
+para praticar assédio sexual ou moral; 
+ 
+XVII - violar ou deixar de preservar local de crime; 
+ 
+XVIII - praticar usura sob qualquer de suas formas; 
+ 
+XIX  -  obtenção  de  vantagem  indevida  em  qualquer 
+circunstância; 
+ 
+XX  -  dirigir  veículo  da  Guarda  Civil  do  Município  de 
+Jacareí com negligência, imprudência ou imperícia; 
+ 
+XXI - transportar na viatura que esteja sob seu comando 
+ou responsabilidade, pessoal ou material, sem autorização da autoridade competente; 
+ 
+XXII  -  ameaçar,  induzir  ou  instigar  alguém  a  prestar 
+declarações falsas em procedimento administrativo ou judicial; 
+ 
+XXIII  -  acumulação  ilegal  de  cargos,  empregos  ou 
+funções públicas; 
+ 
+XXIV - deixar de comunicar ao superior imediato ato ou 
+fato  irregular  de  natureza  grave  que  presenciar,  mesmo  quando  não  lhe  couber 
+intervir;  
+ 
+XXV - representar a instituição ou assumir compromisso 
+pela Guarda Civil do Município de Jacareí sem estar autorizado; 
+ 
+XXVI  –  dormir  ou  cochilar,  resultando  em  desatenção 
+durante o serviço. 
+ 
+CAPÍTULO II 
+DAS PENALIDADES 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+Art. 18. São penalidades disciplinares: 
+  
+I - advertência; 
+ 
+II - suspensão; 
+ 
+III - demissão; 
+ 
+IV - cassação de aposentadoria ou disponibilidade; 
+ 
+V - destituição de cargo em comissão. 
+ 
+Art.  19.  A  advertência,  forma  mais  branda  das 
+penalidades,  será  aplicada  por  escrito  às  faltas  de  natureza  leve,  registrando  no 
+prontuário individual do infrator e na Avaliação de Desempenho em caso de Estágio 
+Probatório, e será levada em consideração para os efeitos de seu comportamento, 
+conforme disposto no artigo 8º.  
+ 
+Art.  20.  A  suspensão  será  aplicada  em  caso  de 
+reincidência de falta punida com a advertência e de faltas de natureza média, não 
+podendo  exceder  90  (noventa)  dias,  e  terá  publicidade  na  Imprensa  Oficial  do 
+Município de Jacareí, devendo ser averbada no prontuário individual do infrator para 
+os devidos fins, conforme disposto no artigo 8º.  
+ 
+Art.  21.  As  penalidades  dos  incisos  III  a  V  do  art.  18 
+poderão ser aplicadas na ocorrência de faltas de natureza grave.  
+ 
+Art. 22. As penalidades detalhadas neste Regulamento 
+não excluem a aplicação das penalidades previstas na Lei Complementar nº 13, de 07 
+de outubro de 1993. 
+ 
+Parágrafo único. As penalidades poderão ser abrandadas 
+pelas autoridades competentes devendo ser avaliadas as circunstâncias da infração 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+disciplinar cometida, o dano causado pela infração e o histórico de comportamento do 
+servidor. 
+ 
+Art. 23. Uma vez submetido a processo administrativo, o 
+servidor só poderá ser exonerado à pedido, depois de ocorrida absolvição ou após o 
+cumprimento da penalidade que lhe houver sido imposta. 
+ 
+TÍTULO IV 
+DAS REGRAS GERAIS SOBRE O PROCEDIMENTO ADMINISTRATIVO  
+ 
+Art.  24.  O  integrante  da  GCM  que  tiver  ciência  ou 
+presenciar irregularidade desempenhada por integrantes da Guarda Civil Municipal de 
+Jacareí, mesmo que a irregularidade seja praticada por superior hierárquico, tem o 
+dever de levar ao conhecimento de seus superiores, na forma do disposto no artigo 6º 
+e parágrafos, até a chegada do expediente à Corregedoria da Guarda Civil Municipal, 
+a  qual  deverá  promover  a  apuração,  mediante  procedimento  de  sindicância  ou 
+processo administrativo disciplinar. 
+ 
+Art. 25. A decisão nos procedimentos disciplinares será 
+proferida  por  despacho  devidamente  fundamentado  da  autoridade  competente,  no 
+qual será mencionada a disposição legal em que se baseia o ato, conforme a Lei 
+Complementar nº 13 de 07 de outubro de 1993. 
+ 
+Art. 26. Os procedimentos disciplinares serão realizados 
+por  Comissão  Sindicante  e  Comissão  Processante  nomeada  pelo  Secretário  de 
+Segurança e de Defesa do Cidadão.  
+ 
+§ 1º A Comissão Sindicante será composta por 3 (três) 
+servidores estáveis, atendidos os seguintes requisitos: 
+ 
+I  –  o  Corregedor  da  Guarda  Civil  que  presidirá  a 
+Comissão Sindicante; 
+ 
+ 
+
+ 
+Praça dos Três Poderes, 73 -2º andar- Centro - Jacareí-SP 
+Telefone: (12) 3955-9111 - Fax: (12) 3961-1092 - gabinete@jacarei.sp.gov.br 
+II - 02 (dois) servidores efetivos da Administração Pública 
+Municipal de Jacareí com formação de nível superior. 
+ 
+§  2º  A  Comissão  Processante  será  composta  por  03 
+(três) servidores efetivos, atendidos os seguintes requisitos: 
+ 
+I - 01 (um) Guarda Civil de Jacareí integrante da classe 
+de Inspetoria ou Subinspetoria que presidirá a Comissão Processante; 
+ 
+II – 02 (dois) servidores efetivos da Administração Pública 
+Municipal de Jacareí, não pertencente a Guarda Civil Municipal, com formação de 
+nível superior. 
+ 
+§ 3º As Comissões Sindicante e Processante terão como 
+secretários  servidores  estáveis  designados  pelo  seu  Presidente,  podendo  as 
+indicações recair em um de seus membros. 
+ 
+TÍTULO V 
+DAS DISPOSIÇÕES FINAIS 
+ 
+Art.  27.  Este  Decreto  entra  em  vigor  na  data  de  sua 
+publicação.                                                                                
+Gabinete do Prefeito, 04 de abril de 2018. 
+ 
+ 
+IZAIAS JOSÉ DE SANTANA 
+Prefeito do Município de Jacareí 
+ 
+ 
+PAULO HENRIQUE DOMINGUES      
+Secretário de Segurança e de Defesa do Cidadão 
+ 
+ 
+CARLOS FELIPE SEPINHO APPARECIDO 
+Secretário de Administração e Recursos Humanos  
+ 
+MOYRA GABRIELA BAPTISTA BRAGA FERNANDES 
+Procuradora Geral  `
   }
 ];

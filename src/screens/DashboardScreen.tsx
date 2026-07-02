@@ -57,7 +57,7 @@ const MENU_ITEMS: GridMenu[] = [
   { id: '22', title: 'Jacareí/Servidor', icon: '🏢', color: '#059669', route: 'JacareiServidor' },
   { id: '23', title: 'Smart Sampa', icon: '🏙️', color: '#3b82f6', url: 'https://play.google.com/store/apps/details?id=br.com.sentinelx.citizenapp.smartsampa', packageName: 'br.com.sentinelx.citizenapp.smartsampa' },
   { id: '24', title: 'Comunicação', icon: '💬', color: '#f43f5e', route: 'ChatList' },
-  { id: '25', title: 'QAP Multas', icon: '📱', imageIcon: require('../../assets/qap_logo.png'), color: '#1e3a8a', url: 'https://play.google.com/store/apps/details?id=gf.qapmultas', packageName: 'gf.qapmultas' },
+  { id: '25', title: 'QAP Multas', icon: '📱', imageIcon: require('../../assets/qap_logo.jpg'), color: '#1e3a8a', url: 'https://play.google.com/store/apps/details?id=gf.qapmultas', packageName: 'gf.qapmultas' },
 ];
 
 export default function DashboardScreen() {

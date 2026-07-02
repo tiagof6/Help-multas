@@ -20,7 +20,10 @@ module.exports = function withAndroidQueries(config) {
       'br.gov.serpro.denatran.fiscalizacaodenatran',
       'br.kms.placafipe',
       'com.jeyluta.timestampcamerafree',
-      'com.devplank.masterplaca'
+      'com.devplank.masterplaca',
+      'gf.qapmultas',
+      'br.com.sentinelx.citizenapp.smartsampa',
+      'com.android.vending'
     ];
 
     appsToQuery.forEach((packageName) => {

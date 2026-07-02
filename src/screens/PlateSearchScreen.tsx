@@ -1,29 +1,44 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Linking, Alert, ScrollView, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Linking, ScrollView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SendIntentAndroid from 'react-native-send-intent';
+import * as IntentLauncher from 'expo-intent-launcher';
 
 export default function PlateSearchScreen() {
   const navigation = useNavigation();
   
   const openApp = async (packageName: string) => {
-    if (Platform.OS === 'web' || Platform.OS === 'ios') {
-      Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
-      return;
-    }
-
-    try {
-      const isInstalled = await SendIntentAndroid.isAppInstalled(packageName);
-      if (isInstalled) {
-        SendIntentAndroid.openApp(packageName);
-      } else {
+    // App nativo Android (APK)
+    if (Platform.OS === 'android') {
+      try {
+        await IntentLauncher.startActivityAsync(
+          'android.intent.action.MAIN',
+          {
+            packageName: packageName,
+            className: undefined,
+            category: 'android.intent.category.LAUNCHER',
+          }
+        );
+        return;
+      } catch (error) {
         Linking.openURL(`market://details?id=${packageName}`).catch(() => {
           Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
         });
+        return;
       }
-    } catch (error) {
-      Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
     }
+
+    // Navegador web no Android (Chrome)
+    if (Platform.OS === 'web') {
+      const isAndroid = /android/i.test((navigator as any).userAgent);
+      if (isAndroid) {
+        const fallback = encodeURIComponent(`https://play.google.com/store/apps/details?id=${packageName}`);
+        (window as any).location.href = `intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${packageName};S.browser_fallback_url=${fallback};end`;
+        return;
+      }
+    }
+    
+    // iOS ou Desktop
+    Linking.openURL(`https://play.google.com/store/apps/details?id=${packageName}`);
   };
 
   return (

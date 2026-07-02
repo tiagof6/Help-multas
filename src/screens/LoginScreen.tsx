@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityInd
 import { MaterialIcons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, updateDoc, collection, query, where, getDocs, getDoc } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { auth, db } from '../services/firebase';
 
@@ -41,8 +41,22 @@ export default function LoginScreen({ navigation }: any) {
       await AsyncStorage.setItem('@help_multas_session_id', newSessionId);
       
       // Atualiza no banco de dados do usuário
-      await updateDoc(doc(db, 'users', userCredential.user.uid), {
-        sessionId: newSessionId
+      const now = new Date().toISOString();
+      const userRef = doc(db, 'users', userCredential.user.uid);
+      
+      const userSnap = await getDoc(userRef);
+      let newHistory = [now];
+      if (userSnap.exists()) {
+        const userData = userSnap.data();
+        if (userData.loginHistory && Array.isArray(userData.loginHistory)) {
+          newHistory = [now, ...userData.loginHistory].slice(0, 10);
+        }
+      }
+
+      await updateDoc(userRef, {
+        sessionId: newSessionId,
+        lastLogin: now,
+        loginHistory: newHistory
       });
     } catch (error: any) {
       setLoginError('E-mail ou senha incorretos. Tente novamente.');

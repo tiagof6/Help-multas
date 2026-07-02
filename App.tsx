@@ -24,6 +24,11 @@ import QuickDraftScreen from './src/screens/QuickDraftScreen';
 import GCMLawsScreen from './src/screens/GCMLawsScreen';
 import GCMLawDetailScreen from './src/screens/GCMLawDetailScreen';
 import AboutScreen from './src/screens/AboutScreen';
+import JacareiServidorScreen from './src/screens/JacareiServidorScreen';
+import ServidoresScreen from './src/screens/ServidoresScreen';
+import ChatListScreen from './src/screens/ChatListScreen';
+import NewChatScreen from './src/screens/NewChatScreen';
+import ChatRoomScreen from './src/screens/ChatRoomScreen';
 
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { doc, onSnapshot, getDoc } from 'firebase/firestore';
@@ -51,6 +56,11 @@ export type RootStackParamList = {
   GCMLaws: undefined;
   GCMLawDetail: { title: string; text: string };
   About: undefined;
+  JacareiServidor: undefined;
+  Servidores: undefined;
+  ChatList: undefined;
+  NewChat: undefined;
+  ChatRoom: { chatId: string; chatName: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -84,6 +94,11 @@ function MainStack() {
       <Stack.Screen name="GCMLaws" component={GCMLawsScreen} />
       <Stack.Screen name="GCMLawDetail" component={GCMLawDetailScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="JacareiServidor" component={JacareiServidorScreen} />
+      <Stack.Screen name="Servidores" component={ServidoresScreen} />
+      <Stack.Screen name="ChatList" component={ChatListScreen} />
+      <Stack.Screen name="NewChat" component={NewChatScreen} />
+      <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
     </Stack.Navigator>
   );
 }
@@ -157,6 +172,8 @@ export default function App() {
             }
           } else {
             setUserStatus('desconhecido');
+            // Se o documento não existe, desloga para não prender o usuário na tela de login
+            signOut(auth);
           }
           setLoading(false);
         }, (error) => {
@@ -209,6 +226,20 @@ export default function App() {
         <Text style={{ color: '#ef4444', fontSize: 24, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>Acesso Bloqueado</Text>
         <Text style={{ color: '#94a3b8', fontSize: 16, textAlign: 'center', marginBottom: 30 }}>
           O seu acesso ao aplicativo foi revogado pelo administrador.
+        </Text>
+        <TouchableOpacity style={{ backgroundColor: '#f59e0b', padding: 15, borderRadius: 8 }} onPress={() => signOut(auth)}>
+          <Text style={{ color: '#0f172a', fontWeight: 'bold' }}>Sair da Conta</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  if (user && userStatus === 'excluido') {
+    return (
+      <View style={{ flex: 1, backgroundColor: '#0f172a', justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+        <Text style={{ color: '#ef4444', fontSize: 24, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>Conta Excluída</Text>
+        <Text style={{ color: '#94a3b8', fontSize: 16, textAlign: 'center', marginBottom: 30 }}>
+          Esta conta foi excluída permanentemente.
         </Text>
         <TouchableOpacity style={{ backgroundColor: '#f59e0b', padding: 15, borderRadius: 8 }} onPress={() => signOut(auth)}>
           <Text style={{ color: '#0f172a', fontWeight: 'bold' }}>Sair da Conta</Text>

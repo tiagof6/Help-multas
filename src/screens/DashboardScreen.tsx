@@ -6,7 +6,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 import { signOut, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
 import { auth } from '../services/firebase';
-import SendIntentAndroid from 'react-native-send-intent';
+import * as IntentLauncher from 'expo-intent-launcher';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Dashboard'>;
 
@@ -29,6 +29,7 @@ interface GridMenu {
   url?: string;
   packageName?: string;
   adminOnly?: boolean;
+  imageIcon?: any;
 }
 
 const MENU_ITEMS: GridMenu[] = [
@@ -53,6 +54,10 @@ const MENU_ITEMS: GridMenu[] = [
   { id: '19', title: 'Timestamp', icon: '📸', color: '#ec4899', url: 'https://play.google.com/store/apps/details?id=com.jeyluta.timestampcamerafree', packageName: 'com.jeyluta.timestampcamerafree' },
   { id: '20', title: 'Sobre o App', icon: 'ℹ️', color: '#a855f7', route: 'About' },
   { id: '21', title: 'Painel Admin', icon: '⚙️', color: '#334155', route: 'Admin', adminOnly: true },
+  { id: '22', title: 'Jacareí/Servidor', icon: '🏢', color: '#059669', route: 'JacareiServidor' },
+  { id: '23', title: 'Smart Sampa', icon: '🏙️', color: '#3b82f6', url: 'https://play.google.com/store/apps/details?id=br.com.sentinelx.citizenapp.smartsampa', packageName: 'br.com.sentinelx.citizenapp.smartsampa' },
+  { id: '24', title: 'Comunicação', icon: '💬', color: '#f43f5e', route: 'ChatList' },
+  { id: '25', title: 'QAP Multas', icon: '📱', imageIcon: require('../../assets/qap_logo.png'), color: '#1e3a8a', url: 'https://play.google.com/store/apps/details?id=gf.qapmultas', packageName: 'gf.qapmultas' },
 ];
 
 export default function DashboardScreen() {
@@ -63,6 +68,7 @@ export default function DashboardScreen() {
   const [isEditing, setIsEditing] = useState(false);
   const [menuOrder, setMenuOrder] = useState<string[]>([]);
   
+  const [toolsModalVisible, setToolsModalVisible] = useState(false);
   const [pwdModalVisible, setPwdModalVisible] = useState(false);
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -165,24 +171,40 @@ export default function DashboardScreen() {
     });
 
   const handlePress = async (item: GridMenu) => {
-    if (item.packageName && Platform.OS !== 'web' && Platform.OS !== 'ios') {
+    // --- APP NATIVO ANDROID (APK instalado) ---
+    if (item.packageName && Platform.OS === 'android') {
       try {
-        const isInstalled = await SendIntentAndroid.isAppInstalled(item.packageName);
-        if (isInstalled) {
-          SendIntentAndroid.openApp(item.packageName);
-        } else {
-          if (item.url) {
-            Linking.openURL(`market://details?id=${item.packageName}`).catch(() => {
-              Linking.openURL(item.url!);
-            });
+        await IntentLauncher.startActivityAsync(
+          IntentLauncher.ActivityAction.MAIN_ACTION || 'android.intent.action.MAIN',
+          {
+            packageName: item.packageName,
+            className: undefined,
+            category: 'android.intent.category.LAUNCHER',
           }
-        }
+        );
+        return;
       } catch (error) {
-        if (item.url) {
-          Linking.openURL(item.url);
-        }
+        // App não instalado - abre Play Store
+        Linking.openURL(`market://details?id=${item.packageName}`).catch(() => {
+          Linking.openURL(`https://play.google.com/store/apps/details?id=${item.packageName}`);
+        });
+        return;
       }
-    } else if (item.url) {
+    }
+    
+    // --- NAVEGADOR WEB no Android (site no Chrome) ---
+    if (item.packageName && Platform.OS === 'web') {
+      const isAndroid = /android/i.test((navigator as any).userAgent);
+      if (isAndroid) {
+        // Formato correto do Chrome Android intent URL
+        const fallback = encodeURIComponent(`https://play.google.com/store/apps/details?id=${item.packageName}`);
+        (window as any).location.href = `intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${item.packageName};S.browser_fallback_url=${fallback};end`;
+        return;
+      }
+    }
+    
+    // --- URL externa (iOS, Desktop) ---
+    if (item.url) {
       Linking.openURL(item.url).catch(() => {
         Alert.alert('Erro', 'Não foi possível abrir o link externo.');
       });
@@ -201,7 +223,11 @@ export default function DashboardScreen() {
       activeOpacity={isEditing ? 1 : 0.7}
     >
       <View style={[styles.iconContainer, { backgroundColor: item.color + '20' }]}>
-        <Text style={styles.icon}>{item.icon}</Text>
+        {item.imageIcon ? (
+          <Image source={item.imageIcon} style={{ width: 36, height: 36, borderRadius: 8, resizeMode: 'contain' }} />
+        ) : (
+          <Text style={styles.icon}>{item.icon}</Text>
+        )}
       </View>
       <Text style={styles.cardTitle}>{item.title}</Text>
       
@@ -251,11 +277,8 @@ export default function DashboardScreen() {
           </View>
         </View>
         <View style={styles.headerActions}>
-          <TouchableOpacity onPress={() => setIsEditing(!isEditing)} style={[styles.actionBtn, isEditing && styles.actionBtnActive]}>
-            <Text style={styles.actionText}>{isEditing ? 'Concluir ✅' : 'Organizar ⚙️'}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => setPwdModalVisible(true)} style={styles.pwdBtn}>
-            <Text style={styles.actionText}>Senha 🔑</Text>
+          <TouchableOpacity onPress={() => setToolsModalVisible(true)} style={[styles.actionBtn, isEditing && styles.actionBtnActive]}>
+            <Text style={styles.actionText}>{isEditing ? 'Concluir ✅' : 'Ferramentas 🛠️'}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={handleLogout} style={styles.logoutBtn}>
             <Text style={styles.logoutText}>Sair 🚪</Text>
@@ -272,6 +295,46 @@ export default function DashboardScreen() {
         columnWrapperStyle={styles.row}
         showsVerticalScrollIndicator={false}
       />
+
+      <Modal visible={toolsModalVisible} transparent animationType="fade" onRequestClose={() => setToolsModalVisible(false)}>
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Ferramentas</Text>
+              <TouchableOpacity onPress={() => setToolsModalVisible(false)}>
+                <Text style={styles.closeButtonText}>❌</Text>
+              </TouchableOpacity>
+            </View>
+            
+            <TouchableOpacity 
+              style={[styles.toolsBtn, isEditing && styles.toolsBtnActive]} 
+              onPress={() => {
+                setIsEditing(!isEditing);
+                setToolsModalVisible(false);
+              }}
+            >
+              <Text style={styles.toolsBtnText}>{isEditing ? 'Concluir Organização ✅' : 'Organizar Ícones ⚙️'}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.toolsBtn} 
+              onPress={() => {
+                setToolsModalVisible(false);
+                setPwdModalVisible(true);
+              }}
+            >
+              <Text style={styles.toolsBtnText}>Alterar Senha 🔑</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.toolsBtnOutline} 
+              onPress={() => setToolsModalVisible(false)}
+            >
+              <Text style={styles.toolsBtnOutlineText}>Voltar ⬅️</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
 
       <Modal visible={pwdModalVisible} transparent animationType="slide" onRequestClose={() => setPwdModalVisible(false)}>
         <View style={styles.modalOverlay}>
@@ -532,6 +595,34 @@ const styles = StyleSheet.create({
   },
   saveBtnText: {
     color: '#0f172a',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  toolsBtn: {
+    backgroundColor: '#3b82f6',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  toolsBtnActive: {
+    backgroundColor: '#10b981',
+  },
+  toolsBtnText: {
+    color: '#f8fafc',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  toolsBtnOutline: {
+    borderWidth: 1,
+    borderColor: '#64748b',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 5,
+  },
+  toolsBtnOutlineText: {
+    color: '#cbd5e1',
     fontWeight: 'bold',
     fontSize: 16,
   }
